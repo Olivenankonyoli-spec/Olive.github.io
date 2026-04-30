@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services - Elite STEM Tutors</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    /* Navigation Bar */
+    nav {
+      background-color: #800000;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #d4af37;
+    }
+
+    /* Header Section */
+    .header {
+      background: linear-gradient(135deg, #800000 0%, #1a1a40 100%);
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .service-card {
+      background: white;
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
+      padding: 2rem;
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      border-color: #667eea;
+    }
+
+    .service-card h3 {
+      color: #800000;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .service-card p {
+      color: #666;
+      margin-bottom: 1rem;
+    }
+
+    .price {
+      font-size: 1.3rem;
+      color: #d4af37;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    .btn-enroll {
+      background-color: #800000;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      width: 100%;
+      font-size: 1rem;
+    }
+
+    .btn-enroll:hover {
+      background-color: #d4af37;
+      color: #000000;
+    }
+
+    h2 {
+      text-align: center;
+      color: #1a1a40;
+      font-size: 2rem;
+      margin: 2rem 0;
+    }
+
+    .section {
+      margin: 3rem 0;
+    }
+
+    .features-list {
+      list-style: none;
+      margin: 1rem 0;
+    }
+
+    .features-list li {
+      padding: 0.5rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .features-list li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #667eea;
+      font-weight: bold;
+    }
+
+    .pricing-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .pricing-table th,
+    .pricing-table td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .pricing-table th {
+      background-color: #2c3e50;
+      color: white;
+      font-weight: bold;
+    }
+
+    .pricing-table tr:hover {
+      background-color: #f8f9fa;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #1a1a40;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+
+    footer p {
+      margin: 0.5rem 0;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header Section -->
+  <div class="header">
+    <h1>Our Services</h1>
+    <p>Quality Tutoring Tailored to Your Needs</p>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <section class="section">
+      <h2>Tutoring Options</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>👤 One-on-One Tutoring</h3>
+          <p>Personalized sessions with an expert tutor focused entirely on your needs. Perfect for students who need intensive support or want to excel faster.</p>
+          <ul class="features-list">
+            <li>Customized lesson plan</li>
+            <li>Flexible scheduling</li>
+            <li>Progress tracking</li>
+            <li>30-min to 2-hour sessions</li>
+          </ul>
+          <div class="price">UGX 50,000 - 100,000 per session</div>
+          <button class="btn-enroll" onclick="enrollService('One-on-One Tutoring')">Enroll Now</button>
+        </div>
+
+        <div class="service-card">
+          <h3>👥 Group Classes</h3>
+          <p>Learn with peers in small groups (3-5 students). Collaborative learning environment with competitive pricing and group dynamics.</p>
+          <ul class="features-list">
+            <li>Small class sizes</li>
+            <li>Peer learning</li>
+            <li>Fixed schedule</li>
+            <li>Weekly sessions</li>
+          </ul>
+          <div class="price">UGX 20,000 - 30,000 per student/session</div>
+          <button class="btn-enroll" onclick="enrollService('Group Classes')">Enroll Now</button>
+        </div>
+
+        <div class="service-card">
+          <h3>📝 Intensive Exam Prep</h3>
+          <p>Focused crash courses before major exams (O-Level, A-Level, University entrance). High-impact sessions to boost performance.</p>
+          <ul class="features-list">
+            <li>Past papers</li>
+            <li>Practice tests</li>
+            <li>Exam strategies</li>
+            <li>Last-minute review</li>
+          </ul>
+          <div class="price">UGX 500,000 - 1,000,000 (Full package)</div>
+          <button class="btn-enroll" onclick="enrollService('Intensive Exam Prep')">Enroll Now</button>
+        </div>
+
+        <div class="service-card">
+          <h3>💻 Online Sessions</h3>
+          <p>Live video tutoring from the comfort of your home. Same quality as in-person with added convenience and flexibility.</p>
+          <ul class="features-list">
+            <li>Zoom/Google Meet</li>
+            <li>Screen sharing</li>
+            <li>Recording available</li>
+            <li>Global access</li>
+          </ul>
+          <div class="price">UGX 40,000 - 80,000 per session</div>
+          <button class="btn-enroll" onclick="enrollService('Online Sessions')">Enroll Now</button>
+        </div>
+
+        <div class="service-card">
+          <h3>📚 Resource Packages</h3>
+          <p>Digital study materials, notes, practice problems, and video tutorials. Self-paced learning for independent students.</p>
+          <ul class="features-list">
+            <li>Study guides</li>
+            <li>Video lessons</li>
+            <li>Practice problems</li>
+            <li>Answer keys</li>
+          </ul>
+          <div class="price">UGX 10,000 - 50,000 per package</div>
+          <button class="btn-enroll" onclick="enrollService('Resource Packages')">Enroll Now</button>
+        </div>
+
+        <div class="service-card">
+          <h3>🎓 University Entrance Prep</h3>
+          <p>Specialized coaching for university admissions. Mock interviews, personal statement help, and advanced subject mastery.</p>
+          <ul class="features-list">
+            <li>Interview prep</li>
+            <li>Essay writing</li>
+            <li>Subject mastery</li>
+            <li>Career guidance</li>
+          </ul>
+          <div class="price">UGX 200,000 - 500,000 (Full program)</div>
+          <button class="btn-enroll" onclick="enrollService('University Entrance Prep')">Enroll Now</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Comparison -->
+    <section class="section">
+      <h2>Pricing Comparison</h2>
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Duration</th>
+            <th>Price (UGX)</th>
+            <th>Best For</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>One-on-One Session</td>
+            <td>1-2 hours</td>
+            <td>50,000 - 100,000</td>
+            <td>Intensive support</td>
+          </tr>
+          <tr>
+            <td>Group Class</td>
+            <td>1.5 hours</td>
+            <td>20,000 - 30,000/student</td>
+            <td>Collaborative learning</td>
+          </tr>
+          <tr>
+            <td>Weekly Package</td>
+            <td>4 sessions/month</td>
+            <td>150,000 - 300,000</td>
+            <td>Regular support</td>
+          </tr>
+          <tr>
+            <td>Monthly Bundle</td>
+            <td>Unlimited chat</td>
+            <td>100,000 - 200,000</td>
+            <td>Continuous access</td>
+          </tr>
+          <tr>
+            <td>Exam Prep (6 weeks)</td>
+            <td>12 sessions</td>
+            <td>600,000 - 1,000,000</td>
+            <td>Exam success</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section">
+      <h2>How It Works</h2>
+      <div style="background: #f8f9fa; padding: 2rem; border-radius: 10px;">
+        <ol style="margin-left: 2rem; font-size: 1.1rem; line-height: 2;">
+          <li><strong>Sign Up:</strong> Create an account or contact us at +256 706 387 777</li>
+          <li><strong>Consultation:</strong> Free 15-minute consultation to assess your needs</li>
+          <li><strong>Customize Plan:</strong> We design a personalized learning plan</li>
+          <li><strong>Schedule Sessions:</strong> Choose dates and times that work for you</li>
+          <li><strong>Learn & Progress:</strong> Attend sessions and track your improvement</li>
+          <li><strong>Excel:</strong> Achieve your academic goals!</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" style="text-align: center; background: #f0f0f0; padding: 2rem; border-radius: 10px;">
+      <h2>Ready to Get Started?</h2>
+      <p style="font-size: 1.1rem; margin: 1rem 0;">
+        Contact us today to discuss which service is best for you!
+      </p>
+      <p style="margin: 1rem 0;">
+        <strong>📱 Phone:</strong> +256 706 387 777<br>
+        <strong>📧 Email:</strong> info@elitestemtutors.com<br>
+        <a href="https://wa.me/256706387777" style="color: #667eea; text-decoration: none;">💬 WhatsApp us</a>
+      </p>
+      <a href="index.html#contact" style="display: inline-block; background-color: #667eea; color: white; padding: 1rem 2rem; border-radius: 5px; text-decoration: none; margin-top: 1rem; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#764ba2'" onmouseout="this.style.backgroundColor='#667eea'">Send Inquiry</a>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Elite STEM Tutors. All rights reserved.</p>
+    <p>Building Future Scientists & Engineers</p>
+  </footer>
+
+  <script>
+    function enrollService(serviceName) {
+      alert(`Thank you for your interest in ${serviceName}!\n\nPlease call +256 706 387 777 or fill out the contact form to complete your enrollment.`);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Elite STEM Tutors</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    /* Navigation Bar */
+    nav {
+      background-color: #800000;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #d4af37;
+    }
+
+    /* Header Section */
+    .header {
+      background: linear-gradient(135deg, #800000 0%, #1a1a40 100%);
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .content-section {
+      margin: 3rem 0;
+    }
+
+    .content-section h2 {
+      color: #1a1a40;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .content-section p {
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .team-member {
+      background: #f8f9fa;
+      padding: 2rem;
+      border-radius: 10px;
+      text-align: center;
+      border-left: 4px solid #800000;
+    }
+
+    .team-member h3 {
+      color: #800000;
+      margin: 1rem 0 0.5rem;
+    }
+
+    .team-member p {
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      background: #f0f0f0;
+      padding: 2rem;
+      border-radius: 10px;
+      margin: 2rem 0;
+    }
+
+    .stat-box {
+      text-align: center;
+    }
+
+    .stat-box h3 {
+      color: #800000;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-box p {
+      color: #555;
+      font-size: 1rem;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #1a1a40;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+
+    footer p {
+      margin: 0.5rem 0;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header Section -->
+  <div class="header">
+    <h1>About Elite STEM Tutors</h1>
+    <p>Building Tomorrow's Scientists & Engineers</p>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <!-- Our Mission -->
+    <section class="content-section">
+      <h2>Our Mission</h2>
+      <p>
+        Elite STEM Tutors is dedicated to transforming the way students learn science, technology, engineering, and mathematics. 
+        We believe that every student has the potential to excel, and with the right guidance and support, they can achieve extraordinary results.
+      </p>
+      <p>
+        Our mission is to provide high-quality, personalized tutoring that builds confidence, deepens understanding, and inspires a love for learning.
+      </p>
+    </section>
+
+    <!-- Our Story -->
+    <section class="content-section">
+      <h2>Our Story</h2>
+      <p>
+        Founded in 2020, Elite STEM Tutors started with a simple vision: to bridge the gap between classroom learning and true understanding. 
+        Our founder noticed that many students struggled not because they lacked intelligence, but because they lacked proper guidance and mentorship.
+      </p>
+      <p>
+        What began as a one-on-one tutoring service has grown into a comprehensive educational platform serving hundreds of students across Uganda. 
+        Today, we pride ourselves on our personalized approach, experienced tutors, and proven track record of success.
+      </p>
+    </section>
+
+    <!-- Statistics -->
+    <div class="stats">
+      <div class="stat-box">
+        <h3>500+</h3>
+        <p>Students Tutored</p>
+      </div>
+      <div class="stat-box">
+        <h3>95%</h3>
+        <p>Success Rate</p>
+      </div>
+      <div class="stat-box">
+        <h3>20+</h3>
+        <p>Expert Tutors</p>
+      </div>
+      <div class="stat-box">
+        <h3>A+</h3>
+        <p>Average Grade</p>
+      </div>
+    </div>
+
+    <!-- Why Choose Us -->
+    <section class="content-section">
+      <h2>Why Choose Us?</h2>
+      <p>
+        <strong>Experienced Tutors:</strong> Our team consists of highly qualified educators with years of experience in their respective fields.
+      </p>
+      <p>
+        <strong>Personalized Learning:</strong> We tailor our teaching methods to each student's unique learning style and pace.
+      </p>
+      <p>
+        <strong>Proven Results:</strong> Our students consistently achieve top grades and gain admission to leading universities.
+      </p>
+      <p>
+        <strong>Flexible & Affordable:</strong> We offer flexible scheduling and competitive rates to make quality education accessible to all.
+      </p>
+      <p>
+        <strong>Holistic Approach:</strong> Beyond academics, we build critical thinking, problem-solving, and confidence.
+      </p>
+    </section>
+
+    <!-- Our Team -->
+    <section class="content-section">
+      <h2>Meet Our Team</h2>
+      <div class="team-grid">
+        <div class="team-member">
+          <h3>👨‍🏫 Dr. James Mwangi</h3>
+          <p><strong>Lead Tutor - Mathematics</strong></p>
+          <p>PhD in Pure Mathematics with 15+ years of teaching experience. Specializes in advanced calculus and statistics.</p>
+        </div>
+        <div class="team-member">
+          <h3>👨‍🔬 Prof. Sarah Ochieng</h3>
+          <p><strong>Lead Tutor - Physics & Chemistry</strong></p>
+          <p>M.Sc in Physics with laboratory expertise. Known for making complex concepts easy to understand.</p>
+        </div>
+        <div class="team-member">
+          <h3>👩‍💻 Engineer David Ssebugwawo</h3>
+          <p><strong>Lead Tutor - Computer Science</strong></p>
+          <p>Software engineer with industry experience. Teaches programming from basics to advanced algorithms.</p>
+        </div>
+        <div class="team-member">
+          <h3>📚 Ms. Amina Hassan</h3>
+          <p><strong>Curriculum Coordinator</strong></p>
+          <p>Education specialist ensuring all materials align with national curriculum standards.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="content-section" style="text-align: center; background: #f8f9fa; padding: 2rem; border-radius: 10px;">
+      <h2>Get In Touch</h2>
+      <p>Have questions? We'd love to hear from you!</p>
+      <p style="margin: 1rem 0;">
+        <strong>📱 Phone:</strong> +256 706 387 777<br>
+        <strong>📧 Email:</strong> info@elitestemtutors.com<br>
+        <a href="https://wa.me/256706387777" style="color: #667eea; text-decoration: none;">💬 WhatsApp us</a>
+      </p>
+      <a href="index.html#contact" style="display: inline-block; background-color: #800000; color: white; padding: 1rem 2rem; border-radius: 5px; text-decoration: none; margin-top: 1rem; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#d4af37'; this.style.color='#000000'" onmouseout="this.style.backgroundColor='#800000'; this.style.color='#ffffff'">Send us a Message</a>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Elite STEM Tutors. All rights reserved.</p>
+    <p>Building Future Scientists & Engineers</p>
+  </footer>
+</body>
+</html>

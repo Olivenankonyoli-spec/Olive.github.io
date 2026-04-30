@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testimonials - Elite STEM Tutors</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    /* Navigation Bar */
+    nav {
+      background-color: #800000;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      padding: 0 1rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      color: #d4af37;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        gap: 1rem;
+      }
+      nav a {
+        font-size: 0.85rem;
+      }
+    }
+
+    /* Header Section */
+    .header {
+      background: linear-gradient(135deg, #800000 0%, #1a1a40 100%);
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 1.8rem;
+      }
+      .header {
+        padding: 2rem 1rem;
+      }
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem;
+      }
+    }
+
+    h2 {
+      text-align: center;
+      color: #1a1a40;
+      font-size: 2rem;
+      margin: 2rem 0;
+    }
+
+    @media (max-width: 768px) {
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+
+    /* Testimonials Grid */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+
+    .testimonial-card {
+      background: white;
+      border-left: 5px solid #800000;
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .stars {
+      color: #ffc107;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      color: #555;
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+    }
+
+    .student-info {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .student-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #800000 0%, #1a1a40 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 1.5rem;
+      object-fit: cover;
+    }
+
+    .student-details h4 {
+      color: #1a1a40;
+      margin-bottom: 0.25rem;
+    }
+
+    .student-details p {
+      color: #999;
+      font-size: 0.9rem;
+    }
+
+    /* Stats Section */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 2rem;
+      background: #f8f9fa;
+      padding: 2rem;
+      border-radius: 10px;
+      margin: 2rem 0;
+      text-align: center;
+    }
+
+    .stat-box h3 {
+      color: #800000;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-box p {
+      color: #666;
+    }
+
+    @media (max-width: 768px) {
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        padding: 1.5rem;
+      }
+      .stat-box h3 {
+        font-size: 1.5rem;
+      }
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(135deg, #800000 0%, #1a1a40 100%);
+      color: white;
+      padding: 3rem 2rem;
+      border-radius: 10px;
+      text-align: center;
+      margin: 3rem 0;
+    }
+
+    .cta-section h2 {
+      color: white;
+      margin: 0 0 1rem 0;
+    }
+
+    .cta-button {
+      background-color: white;
+      color: #800000;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.3s;
+      display: inline-block;
+      margin-top: 1rem;
+    }
+
+    .cta-button:hover {
+      background-color: #d4af37;
+      color: #000000;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #1a1a40;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+      font-size: 0.95rem;
+    }
+
+    footer p {
+      margin: 0.5rem 0;
+    }
+
+    @media (max-width: 768px) {
+      footer {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header Section -->
+  <div class="header">
+    <h1>What Our Students Say</h1>
+    <p>Real Success Stories from Real Students</p>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <!-- Statistics -->
+    <div class="stats">
+      <div class="stat-box">
+        <h3>4.9/5</h3>
+        <p>Average Rating</p>
+      </div>
+      <div class="stat-box">
+        <h3>500+</h3>
+        <p>Happy Students</p>
+      </div>
+      <div class="stat-box">
+        <h3>95%</h3>
+        <p>Pass Rate</p>
+      </div>
+      <div class="stat-box">
+        <h3>A+</h3>
+        <p>Average Grade</p>
+      </div>
+    </div>
+
+    <!-- Testimonials -->
+    <h2>Student Testimonials</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">
+          "Elite STEM Tutors completely transformed my understanding of mathematics. My tutor's patient approach helped me go from a D grade to an A. Highly recommended!"
+        </p>
+        <div class="student-info">
+          <div class="student-avatar">👩</div>
+          <div class="student-details">
+            <h4>Sarah Nakimuli</h4>
+            <p>Grade 9 Mathematics | London, UK</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">
+          "I was struggling with Physics until I joined Elite STEM. The personalized sessions and clear explanations made everything click. I aced my exam!"
+        </p>
+        <div class="student-info">
+          <div class="student-avatar">👨</div>
+          <div class="student-details">
+            <h4>James Okonkwo</h4>
+            <p>Grade 11 Physics (IB) | Singapore</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">
+          "The online Chemistry sessions are incredibly convenient. My tutor explains concepts so well that I finally understand reactions and stoichiometry. Worth every shilling!"
+        </p>
+        <div class="student-info">
+          <div class="student-avatar">👩</div>
+          <div class="student-details">
+            <h4>Grace Mwambazi</h4>
+            <p>Grade 10 Chemistry (IGCSE) | Toronto, Canada</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">
+          "Elite STEM helped me prepare for university entrance exams. The intensive exam prep was exactly what I needed. Now I'm studying at Makerere University!"
+        </p>
+        <div class="student-info">
+          <div class="student-avatar">👨</div>
+          <div class="student-details">
+            <h4>Timothy Musa</h4>
+            <p>Grade 12 AP Biology | New York, USA</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">
+          "My son was failing Computer Science. After just 3 months with Elite STEM tutors, he's now top of his class. The tutors are patient, knowledgeable, and inspiring!"
+        </p>
+        <div class="student-info">
+          <div class="student-avatar">👴</div>
+          <div class="student-details">
+            <h4>Mr. Kamya (Parent)</h4>
+            <p>Parent of Grade 8 CS Student | Dubai, UAE</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">
+          "I love the group classes! Learning with peers is motivating, and the tutor makes STEM so engaging. Plus, the prices are really affordable compared to other tutors."
+        </p>
+        <div class="student-info">
+          <div class="student-avatar">👩</div>
+          <div class="student-details">
+            <h4>Fatima Ali</h4>
+            <p>Grade 7 Mathematics | Sydney, Australia</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">
+          "The free first session was amazing! The tutor assessed my level and created a perfect learning plan. I've been with them for 6 months and improved so much."
+        </p>
+        <div class="student-info">
+          <div class="student-avatar">👨</div>
+          <div class="student-details">
+            <h4>Moses Kiprotich</h4>
+            <p>Grade 11 Physics | Berlin, Germany</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">
+          "Elite STEM's study resources are incredible! The notes and practice problems helped me understand difficult topics. Great value for money."
+        </p>
+        <div class="student-info">
+          <div class="student-avatar">👩</div>
+          <div class="student-details">
+            <h4>Priya Sharma</h4>
+            <p>Grade 10 Chemistry (ICSE) | Mumbai, India</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="cta-section">
+      <h2>Ready to Join Our Success Stories?</h2>
+      <p style="font-size: 1.1rem; margin: 1rem 0;">
+        Get your FREE 1-hour first session and see why over 500 students trust Elite STEM Tutors
+      </p>
+      <a href="login.html" class="cta-button">Book Your Free Session</a>
+    </div>
+
+    <!-- Add Review Section -->
+    <section style="background: #f8f9fa; padding: 2rem; border-radius: 10px; margin: 2rem 0;">
+      <h2>Share Your Experience</h2>
+      <p style="text-align: center; margin-bottom: 1.5rem;">If you're a student or parent, we'd love to hear your story!</p>
+      <form id="reviewForm" style="max-width: 600px; margin: 0 auto;">
+        <div style="margin-bottom: 1rem;">
+          <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Your Name</label>
+          <input type="text" required style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem;">
+        </div>
+        <div style="margin-bottom: 1rem;">
+          <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Email</label>
+          <input type="email" required style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem;">
+        </div>
+        <div style="margin-bottom: 1rem;">
+          <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Your Review</label>
+          <textarea rows="4" required style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem;"></textarea>
+        </div>
+        <button type="submit" style="background: #800000; color: white; padding: 0.75rem 2rem; border: none; border-radius: 5px; cursor: pointer; font-size: 1rem; width: 100%; font-weight: 600;">Submit Review</button>
+      </form>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Elite STEM Tutors. All rights reserved.</p>
+    <p>Contact: +256 706 387 777 | info@elitestemtutors.com</p>
+  </footer>
+
+  <script>
+    document.getElementById('reviewForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for your review! We appreciate your feedback and will add it to our testimonials soon.');
+      this.reset();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login & Register - Elite STEM Tutors</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Navigation Bar */
+    nav {
+      background-color: rgba(44, 62, 80, 0.95);
+      padding: 1rem 0;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #3498db;
+    }
+
+    /* Main Container */
+    .container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .auth-wrapper {
+      display: flex;
+      gap: 2rem;
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    .auth-box {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 10px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .auth-box h2 {
+      color: #2c3e50;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      font-size: 1.8rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: #2c3e50;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+    }
+
+    input:focus,
+    select:focus {
+      outline: none;
+      border-color: #667eea;
+      box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+    }
+
+    .form-group small {
+      display: block;
+      color: #999;
+      margin-top: 0.3rem;
+      font-size: 0.85rem;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 0.75rem;
+      background-color: #667eea;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #764ba2;
+    }
+
+    .toggle-link {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .toggle-link a {
+      color: #667eea;
+      text-decoration: none;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .toggle-link a:hover {
+      text-decoration: underline;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .password-strength {
+      margin-top: 0.5rem;
+      height: 5px;
+      background: #e0e0e0;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .strength-bar {
+      height: 100%;
+      width: 0;
+      background: red;
+      transition: width 0.3s, background-color 0.3s;
+    }
+
+    .remember-forgot {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .remember-forgot a {
+      color: #667eea;
+      text-decoration: none;
+    }
+
+    .remember-forgot a:hover {
+      text-decoration: underline;
+    }
+
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .checkbox-group input[type="checkbox"] {
+      width: auto;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .auth-wrapper {
+        flex-direction: column;
+      }
+
+      .auth-box {
+        min-width: 100%;
+      }
+
+      nav ul {
+        gap: 1rem;
+      }
+    }
+
+    /* Footer */
+    footer {
+      background-color: rgba(44, 62, 80, 0.95);
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    footer p {
+      margin: 0.3rem 0;
+      font-size: 0.9rem;
+    }
+
+    .info-box {
+      background: rgba(102, 126, 234, 0.1);
+      border-left: 4px solid #667eea;
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 5px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Container -->
+  <div class="container">
+    <div class="auth-wrapper">
+      <!-- Login Form -->
+      <div class="auth-box" id="loginBox">
+        <h2>Login</h2>
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="loginEmail">Email Address</label>
+            <input type="email" id="loginEmail" name="email" required placeholder="your@email.com">
+          </div>
+
+          <div class="form-group">
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword" name="password" required placeholder="Enter your password">
+          </div>
+
+          <div class="remember-forgot">
+            <div class="checkbox-group">
+              <input type="checkbox" id="rememberMe" name="rememberMe">
+              <label for="rememberMe" style="margin: 0;">Remember me</label>
+            </div>
+            <a href="#" onclick="alert('Please contact us at +256 706 387 777 to reset your password')">Forgot Password?</a>
+          </div>
+
+          <button type="submit" class="btn">Login</button>
+
+          <div class="toggle-link">
+            Don't have an account? <a onclick="toggleForms()">Register here</a>
+          </div>
+        </form>
+
+        <div class="info-box">
+          <strong>Demo Login:</strong><br>
+          Email: student@example.com<br>
+          Password: password123
+        </div>
+      </div>
+
+      <!-- Register Form -->
+      <div class="auth-box hidden" id="registerBox">
+        <h2>Create Account</h2>
+        <form id="registerForm">
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" required placeholder="John Doe">
+          </div>
+
+          <div class="form-group">
+            <label for="registerEmail">Email Address</label>
+            <input type="email" id="registerEmail" name="email" required placeholder="your@email.com">
+            <small>We'll never share your email</small>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="+256 706 387 777">
+          </div>
+
+          <div class="form-group">
+            <label for="userType">I am a:</label>
+            <select id="userType" name="userType" required>
+              <option value="">Select...</option>
+              <option value="student">Student</option>
+              <option value="parent">Parent</option>
+              <option value="tutor">Tutor (Prospective)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="registerPassword">Password</label>
+            <input type="password" id="registerPassword" name="password" required placeholder="At least 8 characters">
+            <div class="password-strength">
+              <div class="strength-bar" id="strengthBar"></div>
+            </div>
+            <small>Min. 8 characters, 1 uppercase, 1 number</small>
+          </div>
+
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Repeat password">
+          </div>
+
+          <div class="form-group">
+            <div class="checkbox-group">
+              <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+              <label for="agreeTerms" style="margin: 0;">I agree to the <a href="#" style="color: #667eea;">Terms of Service</a> and <a href="#" style="color: #667eea;">Privacy Policy</a></label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn">Create Account</button>
+
+          <div class="toggle-link">
+            Already have an account? <a onclick="toggleForms()">Login here</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Elite STEM Tutors. All rights reserved.</p>
+    <p>Contact: +256 706 387 777 | info@elitestemtutors.com</p>
+  </footer>
+
+  <script>
+    // Toggle between login and register forms
+    function toggleForms() {
+      const loginBox = document.getElementById('loginBox');
+      const registerBox = document.getElementById('registerBox');
+      
+      loginBox.classList.toggle('hidden');
+      registerBox.classList.toggle('hidden');
+    }
+
+    // Password strength indicator
+    document.getElementById('registerPassword')?.addEventListener('input', function(e) {
+      const password = e.target.value;
+      const strengthBar = document.getElementById('strengthBar');
+      let strength = 0;
+
+      if (password.length >= 8) strength += 25;
+      if (/[A-Z]/.test(password)) strength += 25;
+      if (/[0-9]/.test(password)) strength += 25;
+      if (/[^a-zA-Z0-9]/.test(password)) strength += 25;
+
+      strengthBar.style.width = strength + '%';
+      
+      if (strength < 25) strengthBar.style.backgroundColor = 'red';
+      else if (strength < 50) strengthBar.style.backgroundColor = 'orange';
+      else if (strength < 75) strengthBar.style.backgroundColor = 'yellow';
+      else strengthBar.style.backgroundColor = 'green';
+    });
+
+    // Handle Login Form Submission
+    document.getElementById('loginForm')?.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = document.getElementById('loginEmail').value;
+      alert(`Welcome back! You have successfully logged in as ${email}.\n\nRedirecting to dashboard...`);
+      // Redirect to dashboard
+      setTimeout(() => {
+        window.location.href = 'dashboard.html';
+      }, 1500);
+      this.reset();
+    });
+
+    // Handle Register Form Submission
+    document.getElementById('registerForm')?.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const fullName = document.getElementById('fullName').value;
+      const email = document.getElementById('registerEmail').value;
+      const password = document.getElementById('registerPassword').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+
+      // Validation
+      if (password !== confirmPassword) {
+        alert('Passwords do not match!');
+        return;
+      }
+
+      if (password.length < 8) {
+        alert('Password must be at least 8 characters long!');
+        return;
+      }
+
+      if (!/[A-Z]/.test(password) || !/[0-9]/.test(password)) {
+        alert('Password must contain at least one uppercase letter and one number!');Redirecting to dashboard for your FREE 1-hour first session...`);
+      this.reset();
+      setTimeout(() => {
+        window.location.href = 'dashboard.html';
+      }, 2000
+
+      alert(`Welcome ${fullName}!\n\nYour account has been created successfully.\n\nEmail: ${email}\n\nThis is a demo registration. For actual account creation, please call +256 706 387 777`);
+      this.reset();
+      toggleForms();
+    });
+  </script>
+</body>
+</html>
