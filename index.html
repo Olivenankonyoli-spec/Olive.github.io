@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elite STEM Tutors - Master Your Skills</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    /* Navigation Bar */
+    nav {
+      background-color: #800000;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #d4af37;
+    }
+
+    /* Header Section */
+    .header {
+      background: linear-gradient(135deg, #800000 0%, #1a1a40 100%);
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .header p {
+      font-size: 1.3rem;
+      opacity: 0.9;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    /* Subjects Section */
+    .subjects {
+      margin: 3rem 0;
+    }
+
+    .subjects h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      color: #2c3e50;
+    }
+
+    .subject-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .subject-card {
+      background: white;
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
+      padding: 2rem;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+
+    .subject-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .subject-card h3 {
+      color: #800000;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .subject-card p {
+      color: #666;
+    }
+
+    /* Features Section */
+    .features {
+      background-color: #f8f9fa;
+      margin: 3rem 0;
+      padding: 3rem 2rem;
+      border-radius: 10px;
+    }
+
+    .features h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #2c3e50;
+    }
+
+    .feature-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+
+    .feature-item {
+      text-align: center;
+    }
+
+    .feature-item h3 {
+      color: #800000;
+      margin-bottom: 0.5rem;
+    }
+
+    /* CTA Button */
+    .cta-button {
+      background-color: #800000;
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      display: inline-block;
+      text-decoration: none;
+      margin-top: 1rem;
+    }
+
+    .cta-button:hover {
+      background-color: #d4af37;
+      color: #000000;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #1a1a40;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+
+    footer p {
+      margin: 0.5rem 0;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="testimonials.html">Testimonials</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header Section -->
+  <div class="header" id="home">
+    <h1>Elite STEM Tutors</h1>
+    <p>Master Math, Physics, Chemistry & Computer Science</p>
+    <button class="cta-button">Get Started</button>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <!-- Subjects Section -->
+    <section class="subjects" id="subjects">
+      <h2>Our Subjects</h2>
+      <div class="subject-grid">
+        <div class="subject-card">
+          <h3>📐 Mathematics</h3>
+          <p>Algebra, Geometry, Calculus, Statistics - Master every concept from basics to advanced levels.</p>
+        </div>
+        <div class="subject-card">
+          <h3>⚛️ Physics</h3>
+          <p>Mechanics, Electricity, Thermodynamics - Understand the laws of motion and energy.</p>
+        </div>
+        <div class="subject-card">
+          <h3>🧪 Chemistry</h3>
+          <p>Organic, Inorganic, Physical Chemistry - Explore reactions and molecular structures.</p>
+        </div>
+        <div class="subject-card">
+          <h3>💻 Computer Science</h3>
+          <p>Programming, Data Structures, Algorithms - Build your coding skills from scratch.</p>
+        </div>
+        <div class="subject-card">
+          <h3>🧬 Biology</h3>
+          <p>Cell Biology, Genetics, Evolution, Human Anatomy - Understand living systems deeply.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+      <h2>Why Choose Us?</h2>
+      <div class="feature-list">
+        <div class="feature-item">
+          <h3>✓ Expert Tutors</h3>
+          <p>Experienced educators with proven track records</p>
+        </div>
+        <div class="feature-item">
+          <h3>✓ Flexible Schedule</h3>
+          <p>Learn at your own pace, anytime, anywhere</p>
+        </div>
+        <div class="feature-item">
+          <h3>✓ Affordable Rates</h3>
+          <p>Quality education without breaking the bank</p>
+        </div>
+        <div class="feature-item">
+          <h3>✓ 100% Success</h3>
+          <p>Our students consistently excel in exams</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Contact Section -->
+  <section class="container" id="contact">
+    <h2 style="text-align: center; margin: 2rem 0; color: #2c3e50;">Get In Touch</h2>
+    <div style="max-width: 600px; margin: 0 auto;">
+      <form id="contactForm" style="background: #f8f9fa; padding: 2rem; border-radius: 10px;">
+        <div style="margin-bottom: 1.5rem;">
+          <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Full Name</label>
+          <input type="text" id="name" name="name" required style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem;">
+        </div>
+        <div style="margin-bottom: 1.5rem;">
+          <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Email Address</label>
+          <input type="email" id="email" name="email" required style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem;">
+        </div>
+        <div style="margin-bottom: 1.5rem;">
+          <label for="phone" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Phone Number</label>
+          <input type="tel" id="phone" name="phone" style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem;">
+        </div>
+        <div style="margin-bottom: 1.5rem;">
+          <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Message</label>
+          <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem;"></textarea>
+        </div>
+        <button type="submit" class="cta-button" style="width: 100%;">Send Message</button>
+      </form>
+      <div style="text-align: center; margin-top: 2rem;">
+        <p><strong>Direct Contact:</strong></p>
+        <p>📧 Email: info@elitestemtutors.com</p>
+        <p>📱 Phone: +256 706 387 777</p>
+        <p><a href="https://wa.me/256706387777" target="_blank" style="color: #667eea; text-decoration: none;">💬 WhatsApp us</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Elite STEM Tutors. All rights reserved.</p>
+    <p>Building Future Scientists & Engineers</p>
+  </footer>
+
+  <script>
+    // Simple smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Handle contact form submission
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+        
+        // Show confirmation
+        alert(`Thank you ${name}! We received your message. We'll contact you at ${email} soon.`);
+        contactForm.reset();
+      });
+    }
+
+    // Add click animation to buttons
+    document.querySelectorAll('.cta-button').forEach(button => {
+      button.addEventListener('click', function() {
+        if (this.id !== 'contactForm') {
+          if (!this.closest('form')) {
+            alert('Contact us to book your first session!');
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
