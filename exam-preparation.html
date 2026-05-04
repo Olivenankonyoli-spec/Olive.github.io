@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Exam Preparation: Your 4-Week Action Plan | Elite STEM Tutors</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #0f1117;
+      --mid: #444b5a;
+      --light: #8a91a0;
+      --rule: #e4e6eb;
+      --accent: #2e5bdc;
+      --accent-light: #eef1fc;
+      --gold: #c8972a;
+      --bg: #f9f9fb;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.75;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(145deg, #0f1c3f 0%, #1a3178 55%, #2e5bdc 100%);
+      padding: 80px 24px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 70% 30%, rgba(200,151,42,.18) 0%, transparent 60%);
+    }
+    .hero-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(200,151,42,.4);
+      padding: 5px 14px;
+      border-radius: 40px;
+      margin-bottom: 22px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.2;
+      max-width: 680px;
+      margin: 0 auto 20px;
+    }
+    .hero-meta {
+      color: rgba(255,255,255,.55);
+      font-size: 14px;
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .hero-meta span { display: flex; align-items: center; gap: 6px; }
+
+    /* ── ARTICLE WRAPPER ── */
+    .article-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+
+    /* ── INTRO ── */
+    .intro {
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: var(--mid);
+      border-left: 3px solid var(--gold);
+      padding-left: 20px;
+      margin-bottom: 48px;
+      line-height: 1.8;
+    }
+
+    /* ── WEEK CARDS ── */
+    .week-card {
+      background: #fff;
+      border: 1px solid var(--rule);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 36px;
+      box-shadow: 0 2px 16px rgba(0,0,0,.05);
+    }
+    .week-header {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 22px 28px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .week-badge {
+      flex-shrink: 0;
+      width: 52px; height: 52px;
+      border-radius: 12px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .week-badge .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      line-height: 1;
+    }
+    .w1 .week-badge { background: #e8f0fe; color: #2e5bdc; }
+    .w2 .week-badge { background: #fef3e2; color: #c8972a; }
+    .w3 .week-badge { background: #e6f4ea; color: #2d7a47; }
+    .w4 .week-badge { background: #fce8e6; color: #c0392b; }
+
+    .week-title-group h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+    .week-title-group p {
+      font-size: 13px;
+      color: var(--light);
+      font-weight: 500;
+    }
+    .week-body { padding: 24px 28px; }
+    .week-body p { color: var(--mid); margin-bottom: 16px; font-size: .97rem; }
+
+    /* ── ACTION LIST ── */
+    .action-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .action-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: .93rem;
+      color: var(--ink);
+    }
+    .action-list li::before {
+      content: '';
+      flex-shrink: 0;
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: var(--accent-light);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%232e5bdc'%3E%3Cpath d='M13.485 3.515a1 1 0 0 0-1.414 0L6 9.586 3.929 7.515A1 1 0 0 0 2.515 8.929l2.778 2.778a1 1 0 0 0 1.414 0l6.778-6.778a1 1 0 0 0 0-1.414z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 11px;
+      margin-top: 2px;
+    }
+
+    /* ── CALLOUT BOX ── */
+    .callout {
+      background: var(--accent-light);
+      border-left: 4px solid var(--accent);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin: 40px 0;
+    }
+    .callout-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .callout p { color: var(--ink); font-size: .96rem; margin: 0; }
+
+    /* ── SECTION HEADING ── */
+    .section-h {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 48px 0 16px;
+    }
+    .section-p { color: var(--mid); margin-bottom: 16px; font-size: .97rem; }
+
+    /* ── TIPS GRID ── */
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .tip-card {
+      background: #fff;
+      border: 1px solid var(--rule);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .tip-icon { font-size: 24px; margin-bottom: 10px; }
+    .tip-card h4 { font-size: .93rem; font-weight: 600; margin-bottom: 6px; }
+    .tip-card p { font-size: .85rem; color: var(--mid); margin: 0; }
+
+    /* ── CTA ── */
+    .cta-block {
+      background: linear-gradient(135deg, #0f1c3f, #2e5bdc);
+      border-radius: 20px;
+      padding: 48px 36px;
+      text-align: center;
+      margin-top: 60px;
+    }
+    .cta-block h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .cta-block p { color: rgba(255,255,255,.65); font-size: .97rem; margin-bottom: 28px; }
+    .cta-btn {
+      display: inline-block;
+      background: var(--gold);
+      color: #0f1c3f;
+      font-weight: 700;
+      font-size: .95rem;
+      padding: 14px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      letter-spacing: .02em;
+    }
+
+    /* ── FOOTER META ── */
+    .article-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      border-top: 1px solid var(--rule);
+      margin-top: 56px;
+      padding-top: 24px;
+      font-size: 13px;
+      color: var(--light);
+    }
+    .tags span {
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 40px;
+      margin-right: 6px;
+    }
+
+    @media (max-width: 540px) {
+      .week-header { flex-direction: column; align-items: flex-start; }
+      .article-wrap { padding: 40px 18px 60px; }
+      .cta-block { padding: 36px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav style="background: #2c3e50; padding: 1rem 0; position: sticky; top: 0; z-index: 100;">
+  <div style="max-width: 720px; margin: 0 auto; padding: 0 24px;">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <a href="index.html" style="color: white; text-decoration: none; font-weight: 600;">← Elite STEM Tutors</a>
+      <a href="blog.html" style="color: white; text-decoration: none; font-weight: 600;">Blog Index</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">Study Tips</div>
+  <h1>Exam Preparation: Your 4-Week Action Plan</h1>
+  <div class="hero-meta">
+    <span>📅 April 15, 2026</span>
+    <span>⏱ 10 min read</span>
+    <span>✍️ Elite STEM Tutors</span>
+  </div>
+</div>
+
+<!-- ARTICLE BODY -->
+<div class="article-wrap">
+
+  <p class="intro">
+    Four weeks out from exam day is not a crisis — it's a golden window. Students who use this period strategically don't just pass; they <em>dominate</em>. This guide gives you a week-by-week blueprint to walk into your exam confident, prepared, and in control.
+  </p>
+
+  <!-- WEEK 1 -->
+  <div class="week-card w1">
+    <div class="week-header">
+      <div class="week-badge">
+        <span class="num">1</span>
+        <span>Week</span>
+      </div>
+      <div class="week-title-group">
+        <h2>Audit & Map the Battlefield</h2>
+        <p>Days 1–7 · Foundation & Diagnosis</p>
+      </div>
+    </div>
+    <div class="week-body">
+      <p>Before you can study smarter, you need to know exactly what you're up against. Week one is about ruthless honesty — identifying your strongest and weakest areas so that every hour of study counts.</p>
+      <ul class="action-list">
+        <li>Collect your syllabus, past papers, and mark schemes for every topic on the exam</li>
+        <li>Do a timed diagnostic test under real exam conditions to expose genuine weak spots</li>
+        <li>Colour-code topics: Green (confident), Amber (shaky), Red (need to rebuild from scratch)</li>
+        <li>Build a four-week study timetable — assign more sessions to Red topics, maintenance sessions to Green ones</li>
+        <li>Gather all resources: textbooks, notes, online videos, and your tutor's materials in one organised space</li>
+        <li>Set a non-negotiable daily study block and protect it fiercely</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- WEEK 2 -->
+  <div class="week-card w2">
+    <div class="week-header">
+      <div class="week-badge">
+        <span class="num">2</span>
+        <span>Week</span>
+      </div>
+      <div class="week-title-group">
+        <h2>Deep Work on Weak Zones</h2>
+        <p>Days 8–14 · Concept Reconstruction</p>
+      </div>
+    </div>
+    <div class="week-body">
+      <p>This is where most students go wrong — they skim over hard topics hoping they won't appear. Week two demands the opposite. Attack your Red topics head-on while the exam is still far enough away to make a real difference.</p>
+      <ul class="action-list">
+        <li>Begin every session with your weakest topic — your focus is sharpest at the start</li>
+        <li>Use the Feynman Technique: explain each concept out loud as if teaching a 12-year-old</li>
+        <li>Create concept maps linking formulas, definitions, and worked examples for STEM topics</li>
+        <li>Do at least five targeted practice questions per topic before moving on</li>
+        <li>Schedule a mid-week check-in with your tutor to get expert feedback on specific gaps</li>
+        <li>End each day with a 10-minute review of what you covered — no screens, just recall</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CALLOUT -->
+  <div class="callout">
+    <div class="callout-label">💡 Elite Insight</div>
+    <p>Research in cognitive science consistently shows that <strong>spaced repetition</strong> outperforms marathon cramming by a factor of 2–4x in long-term retention. Spreading your study across four weeks isn't just less stressful — it's neurologically superior to last-minute revision.</p>
+  </div>
+
+  <!-- WEEK 3 -->
+  <div class="week-card w3">
+    <div class="week-header">
+      <div class="week-badge">
+        <span class="num">3</span>
+        <span>Week</span>
+      </div>
+      <div class="week-title-group">
+        <h2>Past Papers & Active Recall</h2>
+        <p>Days 15–21 · Exam Simulation</p>
+      </div>
+    </div>
+    <div class="week-body">
+      <p>By week three, your knowledge base is rebuilding. Now it's time to stress-test it. The single highest-return activity a student can do in the lead-up to an exam is timed past paper practice — and that starts now.</p>
+      <ul class="action-list">
+        <li>Complete a full past paper every two days under strict timed, closed-book conditions</li>
+        <li>Mark each paper using the official mark scheme — be brutal and honest with yourself</li>
+        <li>Log every mark you drop in an "error journal" and categorise it: silly mistake, knowledge gap, or misread question</li>
+        <li>Revisit the mark schemes to learn the exact phrasing examiners reward</li>
+        <li>Replace passive re-reading with active recall — close the book and write down everything you know from memory</li>
+        <li>Use flashcards (physical or Anki) for definitions, formulas, and key equations in STEM subjects</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- WEEK 4 -->
+  <div class="week-card w4">
+    <div class="week-header">
+      <div class="week-badge">
+        <span class="num">4</span>
+        <span>Week</span>
+      </div>
+      <div class="week-title-group">
+        <h2>Polish, Rest & Game-Day Prep</h2>
+        <p>Days 22–28 · Final Consolidation</p>
+      </div>
+    </div>
+    <div class="week-body">
+      <p>The worst thing you can do in the final week is panic and start learning new content. Week four is about sharpening what you already know, managing your mental state, and walking into the exam room feeling like you own it.</p>
+      <ul class="action-list">
+        <li>Review your error journal — these are your highest-probability exam risks, so fix them now</li>
+        <li>Do one final full past paper two days before the exam, then stop and let your brain consolidate</li>
+        <li>Create a one-page "cheat sheet" of formulas and key facts per subject (the act of making it is the revision)</li>
+        <li>Prioritise 8 hours of sleep every night — sleep is when memory consolidation actually happens</li>
+        <li>Prepare everything the night before: stationery, ID, water, a light meal plan for exam day</li>
+        <li>On the morning of the exam, review your one-pager, do a 10-minute walk, and arrive early</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- UNIVERSAL TIPS -->
+  <h2 class="section-h">Habits That Work Across All Four Weeks</h2>
+  <p class="section-p">Beyond the week-by-week structure, these non-negotiable habits will compound your results throughout the entire preparation window.</p>
+
+  <div class="tips-grid">
+    <div class="tip-card">
+      <div class="tip-icon">🧠</div>
+      <h4>Pomodoro Sessions</h4>
+      <p>Study in 45-minute focused blocks with 10-minute breaks. Prevents burnout and maintains deep focus.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">📵</div>
+      <h4>Phone in Another Room</h4>
+      <p>Merely having your phone visible reduces cognitive capacity. Remove it — not silence it.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">💧</div>
+      <h4>Hydration & Nutrition</h4>
+      <p>Even mild dehydration impairs concentration. Drink water consistently throughout every study session.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🏃</div>
+      <h4>Daily Movement</h4>
+      <p>30 minutes of physical activity increases BDNF — the brain's learning protein. Walk, run, anything.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">📖</div>
+      <h4>Teach to Learn</h4>
+      <p>Explaining a concept to a peer or even a wall exposes gaps faster than re-reading ever will.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🎯</div>
+      <h4>Set Session Goals</h4>
+      <p>Start every study session with a specific outcome, not a time target. "Master quadratic equations" beats "study for 2 hours."</p>
+    </div>
+  </div>
+
+  <!-- CLOSING -->
+  <h2 class="section-h">A Final Word on Mindset</h2>
+  <p class="section-p">Exam preparation is as much a psychological challenge as an academic one. Students who perform at their highest level share one trait: they treat exam preparation as a skill, not a personality trait. You are not "bad at exams." You may simply never have had a structured system — until now.</p>
+  <p class="section-p">Four weeks is enough time to shift from anxious to in command. Start with week one today. Be honest about your gaps. Put in the work. And trust the process.</p>
+  <p class="section-p">At Elite STEM Tutors, this is exactly what we do with every student — build structured, personalised pathways to exam success in Mathematics, Physics, Chemistry, Biology, and beyond. Our tutors don't just teach content; they teach you how to think like an examiner.</p>
+
+  <!-- CTA -->
+  <div class="cta-block">
+    <h3>Ready to Build Your Personal Plan?</h3>
+    <p>Book a free consultation with an Elite STEM Tutor and get a customised 4-week exam strategy built around your specific syllabus and exam date.</p>
+    <a href="index.html#contact" class="cta-btn">Book a Free Session →</a>
+  </div>
+
+  <!-- FOOTER META -->
+  <div class="article-footer">
+    <div class="tags">
+      <span>Study Tips</span>
+      <span>Exam Prep</span>
+      <span>STEM</span>
+    </div>
+    <div>Published: April 15, 2026 · Elite STEM Tutors</div>
+  </div>
+
+</div>
+</body>
+</html>

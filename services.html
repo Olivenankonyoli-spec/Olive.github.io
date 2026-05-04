@@ -200,6 +200,7 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="services.html">Services</a></li>
+      <li><a href="reading-materials.html">Reading Materials</a></li>
       <li><a href="testimonials.html">Testimonials</a></li>
       <li><a href="blog.html">Blog</a></li>
       <li><a href="index.html#contact">Contact</a></li>
@@ -298,6 +299,21 @@
       </div>
     </section>
 
+    <!-- Apply as Tutor Section -->
+    <section class="section" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 3rem 2rem; border-radius: 10px; text-align: center;">
+      <h2 style="color: white;">Join Our Team of Expert Tutors</h2>
+      <p style="font-size: 1.1rem; margin: 1rem 0;">
+        Are you passionate about STEM education? Share your expertise and help students excel!
+      </p>
+      <ul class="features-list" style="text-align: left; display: inline-block; margin: 1rem 0;">
+        <li>Flexible working hours</li>
+        <li>Competitive compensation</li>
+        <li>Professional development opportunities</li>
+        <li>Supportive work environment</li>
+      </ul>
+      <button class="btn-enroll" style="background: white; color: #667eea; margin-top: 1rem;" onclick="applyAsTutor()">Apply as Tutor</button>
+    </section>
+
     <!-- Pricing Comparison -->
     <section class="section">
       <h2>Pricing Comparison</h2>
@@ -379,11 +395,21 @@
   <footer>
     <p>&copy; 2026 Elite STEM Tutors. All rights reserved.</p>
     <p>Building Future Scientists & Engineers</p>
+    <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1rem;">
+      <a href="https://linkedin.com/company/elitestemtutors" target="_blank" style="color: white; font-size: 1.5rem;">📘 LinkedIn</a>
+      <a href="https://twitter.com/elitestemtutors" target="_blank" style="color: white; font-size: 1.5rem;">🐦 Twitter</a>
+      <a href="https://instagram.com/elitestemtutors" target="_blank" style="color: white; font-size: 1.5rem;">📷 Instagram</a>
+      <a href="https://facebook.com/elitestemtutors" target="_blank" style="color: white; font-size: 1.5rem;">📘 Facebook</a>
+    </div>
   </footer>
 
   <script>
     function enrollService(serviceName) {
       alert(`Thank you for your interest in ${serviceName}!\n\nPlease call +256 706 387 777 or fill out the contact form to complete your enrollment.`);
+    }
+
+    function applyAsTutor() {
+      alert('Thank you for your interest in joining our team!\n\nPlease send your CV and cover letter to info@elitestemtutors.com with the subject "Tutor Application". We will contact you within 3 business days.');
     }
   </script>
 </body>

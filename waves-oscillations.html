@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Waves & Oscillations: Physics of Motion | Elite STEM Tutors</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #0f1117;
+      --mid: #444b5a;
+      --light: #8a91a0;
+      --rule: #e4e6eb;
+      --accent: #2e5bdc;
+      --accent-light: #eef1fc;
+      --gold: #c8972a;
+      --bg: #f9f9fb;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.75;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(145deg, #0f1c3f 0%, #1a3178 55%, #2e5bdc 100%);
+      padding: 80px 24px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 30% 60%, rgba(200,151,42,.15) 0%, transparent 60%);
+    }
+    .hero-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(200,151,42,.4);
+      padding: 5px 14px;
+      border-radius: 40px;
+      margin-bottom: 22px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.2;
+      max-width: 680px;
+      margin: 0 auto 20px;
+    }
+    .hero-meta {
+      color: rgba(255,255,255,.55);
+      font-size: 14px;
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    /* ── ARTICLE WRAPPER ── */
+    .article-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+
+    /* ── INTRO ── */
+    .intro {
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: var(--mid);
+      border-left: 3px solid var(--gold);
+      padding-left: 20px;
+      margin-bottom: 48px;
+      line-height: 1.8;
+    }
+
+    /* ── TOPIC CARDS ── */
+    .topic-card {
+      background: #fff;
+      border: 1px solid var(--rule);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 28px;
+      box-shadow: 0 2px 16px rgba(0,0,0,.05);
+    }
+    .topic-header {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 20px 26px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .topic-number {
+      flex-shrink: 0;
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: var(--accent);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .topic-number.gold { background: var(--gold); }
+    .topic-number.green { background: #2d7a47; }
+    .topic-number.teal { background: #1a7a7a; }
+    .topic-number.purple { background: #6c3fc5; }
+    .topic-number.navy { background: #1a3178; }
+
+    .topic-title h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+    .topic-title p {
+      font-size: 12px;
+      color: var(--light);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
+    .topic-body { padding: 22px 26px; }
+    .topic-body p {
+      color: var(--mid);
+      font-size: .96rem;
+      margin-bottom: 14px;
+    }
+    .topic-body p:last-child { margin-bottom: 0; }
+
+    /* ── KEY CONCEPT BOX ── */
+    .key-box {
+      background: var(--accent-light);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-top: 16px;
+    }
+    .key-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .key-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      font-size: .9rem;
+    }
+    .key-item strong { color: var(--ink); }
+    .key-item { color: var(--mid); }
+
+    /* ── EQUATION BOX ── */
+    .eq-box {
+      background: #f9f9fb;
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-family: 'DM Sans', sans-serif;
+      font-size: .95rem;
+    }
+    .eq-box .equation {
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+    .eq-box .desc { color: var(--mid); font-size: .85rem; }
+
+    /* ── STAT STRIP ── */
+    .stat-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 40px 0;
+    }
+    .stat-box {
+      background: #fff;
+      border: 1px solid var(--rule);
+      border-radius: 14px;
+      padding: 22px 16px;
+      text-align: center;
+    }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat-label {
+      font-size: .78rem;
+      color: var(--light);
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    /* ── CALLOUT ── */
+    .callout {
+      background: linear-gradient(135deg, #fef3e2, #fff8ed);
+      border-left: 4px solid var(--gold);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin: 36px 0;
+    }
+    .callout-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .callout p { color: var(--ink); font-size: .96rem; margin: 0; }
+
+    /* ── SECTION HEADING ── */
+    .section-h {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 48px 0 14px;
+    }
+    .section-p { color: var(--mid); margin-bottom: 20px; font-size: .97rem; }
+
+    /* ── APPLICATIONS GRID ── */
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .app-card {
+      background: #fff;
+      border: 1px solid var(--rule);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .app-icon { font-size: 24px; margin-bottom: 10px; }
+    .app-card h4 { font-size: .93rem; font-weight: 600; margin-bottom: 6px; }
+    .app-card p { font-size: .85rem; color: var(--mid); margin: 0; }
+
+    /* ── CTA ── */
+    .cta-block {
+      background: linear-gradient(135deg, #0f1c3f, #2e5bdc);
+      border-radius: 20px;
+      padding: 48px 36px;
+      text-align: center;
+      margin-top: 60px;
+    }
+    .cta-block h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .cta-block p { color: rgba(255,255,255,.65); font-size: .97rem; margin-bottom: 28px; }
+    .cta-btn {
+      display: inline-block;
+      background: var(--gold);
+      color: #0f1c3f;
+      font-weight: 700;
+      font-size: .95rem;
+      padding: 14px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+    }
+
+    /* ── FOOTER META ── */
+    .article-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      border-top: 1px solid var(--rule);
+      margin-top: 56px;
+      padding-top: 24px;
+      font-size: 13px;
+      color: var(--light);
+    }
+    .tags span {
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 40px;
+      margin-right: 6px;
+    }
+
+    @media (max-width: 540px) {
+      .stat-strip { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+      .stat-num { font-size: 1.5rem; }
+      .article-wrap { padding: 40px 18px 60px; }
+      .cta-block { padding: 36px 20px; }
+      .key-content { grid-template-columns: 1fr; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav style="background: #2c3e50; padding: 1rem 0; position: sticky; top: 0; z-index: 100;">
+  <div style="max-width: 720px; margin: 0 auto; padding: 0 24px;">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <a href="index.html" style="color: white; text-decoration: none; font-weight: 600;">← Elite STEM Tutors</a>
+      <a href="blog.html" style="color: white; text-decoration: none; font-weight: 600;">Blog Index</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">Physics</div>
+  <h1>Waves & Oscillations: Physics of Motion</h1>
+  <div class="hero-meta">
+    <span>📅 March 20, 2026</span>
+    <span>⏱ 8 min read</span>
+    <span>✍️ Elite STEM Tutors</span>
+  </div>
+</div>
+
+<!-- ARTICLE BODY -->
+<div class="article-wrap">
+
+  <p class="intro">
+    Waves and oscillations are everywhere in physics — from the sound waves that carry music to your ears, to the electromagnetic waves that power your WiFi. Understanding these phenomena requires connecting simple harmonic motion (SHM) with wave theory. This guide bridges the gap between oscillating particles and traveling waves, showing how the same mathematical principles govern both.
+  </p>
+
+  <!-- STAT STRIP -->
+  <div class="stat-strip">
+    <div class="stat-box">
+      <div class="stat-num">80%</div>
+      <div class="stat-label">of physics exam questions involve waves or oscillations</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">7</div>
+      <div class="stat-label">fundamental wave types in physics</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">π</div>
+      <div class="stat-label">appears in every oscillation equation</div>
+    </div>
+  </div>
+
+  <!-- TOPIC 1 -->
+  <div class="topic-card">
+    <div class="topic-header">
+      <div class="topic-number">1</div>
+      <div class="topic-title">
+        <h2>Simple Harmonic Motion (SHM)</h2>
+        <p>The foundation of oscillations</p>
+      </div>
+    </div>
+    <div class="topic-body">
+      <p>SHM occurs when the acceleration of an object is directly proportional to its displacement from equilibrium, and always directed towards the equilibrium position. This creates the smooth, sinusoidal motion we associate with springs and pendulums.</p>
+      <div class="key-box">
+        <div class="key-label">Key Characteristics</div>
+        <div class="key-content">
+          <div class="key-item"><strong>Period (T):</strong> Time for one complete cycle</div>
+          <div class="key-item"><strong>Frequency (f):</strong> Number of cycles per second (f = 1/T)</div>
+          <div class="key-item"><strong>Amplitude (A):</strong> Maximum displacement from equilibrium</div>
+          <div class="key-item"><strong>Angular Frequency (ω):</strong> 2πf radians per second</div>
+        </div>
+      </div>
+      <div class="eq-box">
+        <div class="equation">x = A sin(ωt + φ)</div>
+        <div class="desc">Displacement equation for SHM. φ is the phase constant.</div>
+      </div>
+      <p>The defining equation of SHM is a = -ω²x, where a is acceleration and x is displacement. The negative sign means the acceleration always opposes the displacement — pushing the object back towards equilibrium.</p>
+    </div>
+  </div>
+
+  <!-- TOPIC 2 -->
+  <div class="topic-card">
+    <div class="topic-header">
+      <div class="topic-number gold">2</div>
+      <div class="topic-title">
+        <h2>Energy in SHM</h2>
+        <p>Conservation and conversion</p>
+      </div>
+    </div>
+    <div class="topic-body">
+      <p>In SHM, energy constantly converts between kinetic and potential forms. At maximum displacement (amplitude), all energy is potential. At equilibrium, all energy is kinetic. Total mechanical energy remains constant in the absence of damping.</p>
+      <div class="eq-box">
+        <div class="equation">E_total = (1/2)kA² = (1/2)mω²A²</div>
+        <div class="desc">Total energy equals maximum potential energy (for springs) or maximum kinetic energy.</div>
+      </div>
+      <p>This energy conservation is crucial for understanding damping and resonance. When you add damping (friction), energy is lost to heat. At resonance, small driving forces can produce large amplitudes because energy is added at the natural frequency.</p>
+      <div class="key-box">
+        <div class="key-label">Energy Relationships</div>
+        <div class="key-content">
+          <div class="key-item"><strong>Kinetic Energy:</strong> (1/2)mv²</div>
+          <div class="key-item"><strong>Potential Energy:</strong> (1/2)kx² (springs)</div>
+          <div class="key-item"><strong>Conservation:</strong> KE + PE = constant</div>
+          <div class="key-item"><strong>Maximum Speed:</strong> v_max = ωA</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOPIC 3 -->
+  <div class="topic-card">
+    <div class="topic-header">
+      <div class="topic-number green">3</div>
+      <div class="topic-title">
+        <h2>From Oscillations to Waves</h2>
+        <p>How particles create traveling disturbances</p>
+      </div>
+    </div>
+    <div class="topic-body">
+      <p>Waves are created when oscillating particles disturb their neighbors. In transverse waves, particles move perpendicular to wave propagation. In longitudinal waves, particles move parallel to wave propagation. The key insight: waves transport energy, not matter.</p>
+      <div class="key-box">
+        <div class="key-label">Wave Properties</div>
+        <div class="key-content">
+          <div class="key-item"><strong>Wavelength (λ):</strong> Distance between identical points</div>
+          <div class="key-item"><strong>Wave Speed (v):</strong> How fast energy travels</div>
+          <div class="key-item"><strong>Frequency (f):</strong> Same as oscillation frequency</div>
+          <div class="key-item"><strong>Wave Equation:</strong> v = fλ</div>
+        </div>
+      </div>
+      <p>The relationship v = fλ connects everything. If you increase frequency, wavelength must decrease to maintain speed (and vice versa). This equation appears in sound waves, light waves, and even quantum mechanics.</p>
+    </div>
+  </div>
+
+  <!-- TOPIC 4 -->
+  <div class="topic-card">
+    <div class="topic-header">
+      <div class="topic-number teal">4</div>
+      <div class="topic-title">
+        <h2>Wave Types & Characteristics</h2>
+        <p>Mechanical vs electromagnetic</p>
+      </div>
+    </div>
+    <div class="topic-body">
+      <p>Mechanical waves require a medium (air, water, solids). Electromagnetic waves travel through vacuum. Both follow the same mathematical principles, but electromagnetic waves have unique properties like polarization and the ability to travel through empty space.</p>
+      <div class="eq-box">
+        <div class="equation">v = √(T/μ) for strings, v = √(B/ρ) for solids</div>
+        <div class="desc">Wave speed depends on medium properties: tension T, mass per unit length μ, bulk modulus B, density ρ.</div>
+      </div>
+      <p>Understanding wave types helps explain real-world phenomena: why sound doesn't travel in space (needs medium), why light bends in water (refracts), and why radio waves penetrate walls better than visible light (different wavelengths).</p>
+    </div>
+  </div>
+
+  <!-- TOPIC 5 -->
+  <div class="topic-card">
+    <div class="topic-header">
+      <div class="topic-number purple">5</div>
+      <div class="topic-title">
+        <h2>Superposition & Interference</h2>
+        <p>When waves meet</p>
+      </div>
+    </div>
+    <div class="topic-body">
+      <p>The principle of superposition states that when two waves meet, the resultant displacement equals the sum of individual displacements. This leads to constructive interference (amplitudes add) and destructive interference (amplitudes subtract).</p>
+      <div class="eq-box">
+        <div class="equation">Path difference = nλ (constructive), (n + 1/2)λ (destructive)</div>
+        <div class="desc">For interference, the path difference determines whether waves reinforce or cancel.</div>
+      </div>
+      <p>Interference explains diffraction patterns, beats in sound, and the colors in soap bubbles. It's also the basis for technologies like noise-canceling headphones and interferometers used in precision measurement.</p>
+    </div>
+  </div>
+
+  <!-- TOPIC 6 -->
+  <div class="topic-card">
+    <div class="topic-header">
+      <div class="topic-number navy">6</div>
+      <div class="topic-title">
+        <h2>Standing Waves & Resonance</h2>
+        <p>Stationary patterns from traveling waves</p>
+      </div>
+    </div>
+    <div class="topic-body">
+      <p>Standing waves form when two identical waves traveling in opposite directions interfere. This creates nodes (zero displacement) and antinodes (maximum displacement). The frequencies that produce standing waves are quantized — only certain frequencies work.</p>
+      <div class="eq-box">
+        <div class="equation">f_n = n v / (2L) for strings, f_n = n v / (4L) for open pipes</div>
+        <div class="desc">Resonant frequencies depend on the boundary conditions and wave type.</div>
+      </div>
+      <p>Resonance explains why opera singers can shatter glass, why bridges collapse in high winds, and why musical instruments produce specific notes. It's also crucial for MRI machines and laser technology.</p>
+    </div>
+  </div>
+
+  <!-- CALLOUT -->
+  <div class="callout">
+    <div class="callout-label">💡 Elite Insight</div>
+    <p>The mathematics of waves and oscillations is universal. The same sine and cosine functions describe everything from pendulum motion to electromagnetic radiation. Master the core equations (SHM: a = -ω²x, waves: v = fλ), and you'll understand 90% of wave phenomena. The rest is applying these principles to specific situations.</p>
+  </div>
+
+  <!-- APPLICATIONS -->
+  <h2 class="section-h">Real-World Applications</h2>
+  <p class="section-p">Waves and oscillations power modern technology and explain natural phenomena.</p>
+
+  <div class="apps-grid">
+    <div class="app-card">
+      <div class="app-icon">🔊</div>
+      <h4>Sound & Music</h4>
+      <p>Standing waves in instruments, interference in noise cancellation, Doppler effect in motion.</p>
+    </div>
+    <div class="app-card">
+      <div class="app-icon">📡</div>
+      <h4>Communications</h4>
+      <p>Radio waves, microwaves, fiber optics, satellite communications.</p>
+    </div>
+    <div class="app-card">
+      <div class="app-icon">🏥</div>
+      <h4>Medical Imaging</h4>
+      <p>Ultrasound, MRI, X-rays, echocardiograms all use wave principles.</p>
+    </div>
+    <div class="app-card">
+      <div class="app-icon">🌊</div>
+      <h4>Earth Science</h4>
+      <p>Seismic waves, tsunami propagation, weather patterns.</p>
+    </div>
+    <div class="app-card">
+      <div class="app-icon">💻</div>
+      <h4>Technology</h4>
+      <p>Quantum computing, laser technology, nanotechnology.</p>
+    </div>
+    <div class="app-card">
+      <div class="app-icon">🚀</div>
+      <h4>Space Exploration</h4>
+      <p>Gravitational waves, cosmic microwave background, satellite communications.</p>
+    </div>
+  </div>
+
+  <!-- CLOSING -->
+  <h2 class="section-h">Mastering Waves & Oscillations</h2>
+  <p class="section-p">Start with SHM — understand the mathematics of sinusoidal motion. Then connect it to waves by seeing how oscillating particles create traveling disturbances. Practice drawing wave diagrams and calculating frequencies, wavelengths, and speeds. The key is recognizing that the same equations govern both simple pendulums and electromagnetic radiation.</p>
+  <p class="section-p">At Elite STEM Tutors, we teach waves and oscillations by building intuition first. Our students don't just memorize formulas — they understand why waves behave the way they do, from quantum mechanics to earthquake prediction.</p>
+
+  <!-- CTA -->
+  <div class="cta-block">
+    <h3>Need Help with Waves & Oscillations?</h3>
+    <p>Get expert Physics tutoring that makes wave theory click. Master SHM, interference, and resonance with confidence.</p>
+    <a href="index.html#contact" class="cta-btn">Book a Free Physics Session →</a>
+  </div>
+
+  <!-- FOOTER META -->
+  <div class="article-footer">
+    <div class="tags">
+      <span>Physics</span>
+      <span>Waves</span>
+      <span>Oscillations</span>
+      <span>IGCSE</span>
+      <span>A-Level</span>
+    </div>
+    <div>Published: March 20, 2026 · Elite STEM Tutors</div>
+  </div>
+
+</div>
+</body>
+</html>

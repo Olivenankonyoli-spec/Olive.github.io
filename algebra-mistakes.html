@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Algebra Mistakes: 10 Common Errors & How to Fix Them | Elite STEM Tutors</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #0f1117;
+      --mid: #444b5a;
+      --light: #8a91a0;
+      --rule: #e4e6eb;
+      --accent: #2e5bdc;
+      --accent-light: #eef1fc;
+      --gold: #c8972a;
+      --bg: #f9f9fb;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.75;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(145deg, #0f1c3f 0%, #1a3178 55%, #2e5bdc 100%);
+      padding: 80px 24px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 30% 60%, rgba(200,151,42,.15) 0%, transparent 60%);
+    }
+    .hero-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(200,151,42,.4);
+      padding: 5px 14px;
+      border-radius: 40px;
+      margin-bottom: 22px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.2;
+      max-width: 680px;
+      margin: 0 auto 20px;
+    }
+    .hero-meta {
+      color: rgba(255,255,255,.55);
+      font-size: 14px;
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    /* ── ARTICLE WRAPPER ── */
+    .article-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+
+    /* ── INTRO ── */
+    .intro {
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: var(--mid);
+      border-left: 3px solid var(--gold);
+      padding-left: 20px;
+      margin-bottom: 48px;
+      line-height: 1.8;
+    }
+
+    /* ── MISTAKE CARDS ── */
+    .mistake-card {
+      background: #fff;
+      border: 1px solid var(--rule);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 28px;
+      box-shadow: 0 2px 16px rgba(0,0,0,.05);
+    }
+    .mistake-header {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 20px 26px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .mistake-number {
+      flex-shrink: 0;
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: #fce8e6;
+      color: #c0392b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .mistake-number.gold { background: #fef3e2; color: #c8972a; }
+    .mistake-number.green { background: #e6f4ea; color: #2d7a47; }
+    .mistake-number.teal { background: #e0f2f1; color: #1a7a7a; }
+    .mistake-number.purple { background: #f3e5f5; color: #6c3fc5; }
+    .mistake-number.navy { background: #e8eaf6; color: #1a3178; }
+    .mistake-number.red { background: #fce8e6; color: #c0392b; }
+    .mistake-number.orange { background: #fff3e0; color: #e65100; }
+    .mistake-number.blue { background: #e3f2fd; color: #0277bd; }
+    .mistake-number.pink { background: #fce4ec; color: #ad1457; }
+    .mistake-number.indigo { background: #e8eaf6; color: #283593; }
+
+    .mistake-title h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+    .mistake-title p {
+      font-size: 12px;
+      color: var(--light);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
+    .mistake-body { padding: 22px 26px; }
+    .mistake-body p {
+      color: var(--mid);
+      font-size: .96rem;
+      margin-bottom: 14px;
+    }
+    .mistake-body p:last-child { margin-bottom: 0; }
+
+    /* ── EXAMPLE BOX ── */
+    .example-box {
+      background: var(--accent-light);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-top: 16px;
+    }
+    .example-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .example-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      font-size: .9rem;
+    }
+    .wrong { color: #c0392b; }
+    .right { color: #2d7a47; font-weight: 600; }
+
+    /* ── FIX STEPS ── */
+    .fix-steps {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .fix-steps li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      font-size: .9rem;
+      color: var(--ink);
+    }
+    .fix-steps li::before {
+      content: '✓';
+      color: var(--accent);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* ── STAT STRIP ── */
+    .stat-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 40px 0;
+    }
+    .stat-box {
+      background: #fff;
+      border: 1px solid var(--rule);
+      border-radius: 14px;
+      padding: 22px 16px;
+      text-align: center;
+    }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat-label {
+      font-size: .78rem;
+      color: var(--light);
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    /* ── CALLOUT ── */
+    .callout {
+      background: linear-gradient(135deg, #fef3e2, #fff8ed);
+      border-left: 4px solid var(--gold);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin: 36px 0;
+    }
+    .callout-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .callout p { color: var(--ink); font-size: .96rem; margin: 0; }
+
+    /* ── SECTION HEADING ── */
+    .section-h {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 48px 0 14px;
+    }
+    .section-p { color: var(--mid); margin-bottom: 20px; font-size: .97rem; }
+
+    /* ── PREVENTION TIPS ── */
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .tip-card {
+      background: #fff;
+      border: 1px solid var(--rule);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .tip-icon { font-size: 24px; margin-bottom: 10px; }
+    .tip-card h4 { font-size: .93rem; font-weight: 600; margin-bottom: 6px; }
+    .tip-card p { font-size: .85rem; color: var(--mid); margin: 0; }
+
+    /* ── CTA ── */
+    .cta-block {
+      background: linear-gradient(135deg, #0f1c3f, #2e5bdc);
+      border-radius: 20px;
+      padding: 48px 36px;
+      text-align: center;
+      margin-top: 60px;
+    }
+    .cta-block h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .cta-block p { color: rgba(255,255,255,.65); font-size: .97rem; margin-bottom: 28px; }
+    .cta-btn {
+      display: inline-block;
+      background: var(--gold);
+      color: #0f1c3f;
+      font-weight: 700;
+      font-size: .95rem;
+      padding: 14px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+    }
+
+    /* ── FOOTER META ── */
+    .article-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      border-top: 1px solid var(--rule);
+      margin-top: 56px;
+      padding-top: 24px;
+      font-size: 13px;
+      color: var(--light);
+    }
+    .tags span {
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 40px;
+      margin-right: 6px;
+    }
+
+    @media (max-width: 540px) {
+      .stat-strip { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+      .stat-num { font-size: 1.5rem; }
+      .article-wrap { padding: 40px 18px 60px; }
+      .cta-block { padding: 36px 20px; }
+      .example-content { grid-template-columns: 1fr; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav style="background: #2c3e50; padding: 1rem 0; position: sticky; top: 0; z-index: 100;">
+  <div style="max-width: 720px; margin: 0 auto; padding: 0 24px;">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <a href="index.html" style="color: white; text-decoration: none; font-weight: 600;">← Elite STEM Tutors</a>
+      <a href="blog.html" style="color: white; text-decoration: none; font-weight: 600;">Blog Index</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">Mathematics</div>
+  <h1>Algebra Mistakes: 10 Common Errors & How to Fix Them</h1>
+  <div class="hero-meta">
+    <span>📅 March 30, 2026</span>
+    <span>⏱ 7 min read</span>
+    <span>✍️ Elite STEM Tutors</span>
+  </div>
+</div>
+
+<!-- ARTICLE BODY -->
+<div class="article-wrap">
+
+  <p class="intro">
+    Algebra is a language of patterns and relationships, but it's also a minefield of potential errors. The most frustrating part? These mistakes often seem "obvious" in hindsight. But they cost marks on exams and create confusion that compounds throughout a student's mathematical journey. Here are the ten most common algebra errors we see — and exactly how to avoid them.
+  </p>
+
+  <!-- STAT STRIP -->
+  <div class="stat-strip">
+    <div class="stat-box">
+      <div class="stat-num">70%</div>
+      <div class="stat-label">of algebra exam errors are from these 10 mistakes</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">85%</div>
+      <div class="stat-label">of students make at least 3 of these errors regularly</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">95%</div>
+      <div class="stat-label">of these mistakes are preventable with careful checking</div>
+    </div>
+  </div>
+
+  <!-- MISTAKE 1 -->
+  <div class="mistake-card">
+    <div class="mistake-header">
+      <div class="mistake-number">1</div>
+      <div class="mistake-title">
+        <h2>Distributing Signs Incorrectly</h2>
+        <p>The classic expansion error</p>
+      </div>
+    </div>
+    <div class="mistake-body">
+      <p>When expanding brackets, students often forget that the negative sign applies to every term inside the brackets. This leads to errors like - (x + 3) = -x - 3 (correct) vs - (x + 3) = -x + 3 (wrong).</p>
+      <div class="example-box">
+        <div class="example-label">Common Error</div>
+        <div class="example-content">
+          <div class="wrong">-(2x + 5) = -2x + 5</div>
+          <div class="right">-(2x + 5) = -2x - 5</div>
+        </div>
+      </div>
+      <ul class="fix-steps">
+        <li>Always distribute the sign to EVERY term inside the brackets</li>
+        <li>Think of it as multiplying by -1: -1 × (2x + 5) = -1×2x + (-1)×5 = -2x - 5</li>
+        <li>Double-check by substituting a number: let x=1, -(2+5) = -7, so -2-5 = -7 ✓</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- MISTAKE 2 -->
+  <div class="mistake-card">
+    <div class="mistake-header">
+      <div class="mistake-number gold">2</div>
+      <div class="mistake-title">
+        <h2>Canceling Terms Prematurely</h2>
+        <p>Seeing what you want to see</p>
+      </div>
+    </div>
+    <div class="mistake-body">
+      <p>Students often "cancel" terms that look similar but aren't actually factors. For example, in (x² - 4)/(x - 2), you cannot cancel the x² - 4 to get x + 2. This is only valid if x² - 4 = (x - 2)(x + 2), which it does — but you must factor first.</p>
+      <div class="example-box">
+        <div class="example-label">Common Error</div>
+        <div class="example-content">
+          <div class="wrong">(x² - 4)/(x - 2) = x + 2</div>
+          <div class="right">(x² - 4)/(x - 2) = [(x-2)(x+2)]/(x-2) = x + 2 (for x ≠ 2)</div>
+        </div>
+      </div>
+      <ul class="fix-steps">
+        <li>Only cancel common factors, never add or subtract terms</li>
+        <li>Factor the numerator completely before attempting to cancel</li>
+        <li>Always check the domain — canceling creates restrictions (x ≠ 2 in this case)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- MISTAKE 3 -->
+  <div class="mistake-card">
+    <div class="mistake-header">
+      <div class="mistake-number green">3</div>
+      <div class="mistake-title">
+        <h2>Misapplying the Distributive Law</h2>
+        <p>Expanding vs factoring confusion</p>
+      </div>
+    </div>
+    <div class="mistake-body">
+      <p>The distributive law works both ways: a(b + c) = ab + ac (expanding) and ab + ac = a(b + c) (factoring). Students often try to "distribute" when they should factor, or vice versa. Remember: you can only factor out a common factor.</p>
+      <div class="example-box">
+        <div class="example-label">Common Error</div>
+        <div class="example-content">
+          <div class="wrong">2x + 4 = 2(x + 2) ✓ but 2x + 3 ≠ 2(x + 1.5)</div>
+          <div class="right">2x + 3 cannot be factored further</div>
+        </div>
+      </div>
+      <ul class="fix-steps">
+        <li>To factor: find the greatest common factor of all terms</li>
+        <li>To expand: multiply each term inside by the term outside</li>
+        <li>Check by expanding your factored answer — it should match the original</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- MISTAKE 4 -->
+  <div class="mistake-card">
+    <div class="mistake-header">
+      <div class="mistake-number teal">4</div>
+      <div class="mistake-title">
+        <h2>Squaring Both Sides Incorrectly</h2>
+        <p>Creating extraneous solutions</p>
+      </div>
+    </div>
+    <div class="mistake-body">
+      <p>When solving √x = 3, squaring both sides gives x = 9, which is correct. But when solving x = 3, squaring both sides gives x² = 9, so x = ±3. The issue arises when you forget that squaring can introduce extraneous solutions that don't satisfy the original equation.</p>
+      <div class="example-box">
+        <div class="example-label">Common Error</div>
+        <div class="example-content">
+          <div class="wrong">√(x - 1) = x - 1 → square both sides: x - 1 = (x - 1)² → x - 1 = x² - 2x + 1 → 0 = x² - 3x → x(x - 3) = 0 → x = 0 or x = 3</div>
+          <div class="right">Check solutions: x=0: √(-1) = -1? No. x=3: √2 = 2? No. Both extraneous! Original equation has no real solutions.</div>
+        </div>
+      </div>
+      <ul class="fix-steps">
+        <li>Always check solutions by substituting back into the original equation</li>
+        <li>Squaring both sides can introduce extraneous solutions — discard any that don't work</li>
+        <li>Be especially careful with √(expression) = expression — this often has no solutions</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- MISTAKE 5 -->
+  <div class="mistake-card">
+    <div class="mistake-header">
+      <div class="mistake-number purple">5</div>
+      <div class="mistake-title">
+        <h2>Dividing by Zero</h2>
+        <p>The undefined disaster</p>
+      </div>
+    </div>
+    <div class="mistake-body">
+      <p>Division by zero is undefined in mathematics. When solving equations, you must exclude values that make the denominator zero. This is particularly common when solving rational equations or finding domains of functions.</p>
+      <div class="example-box">
+        <div class="example-label">Common Error</div>
+        <div class="example-content">
+          <div class="wrong">Solve: (x-2)/(x-2) = 1 → multiply both sides by (x-2): 1 = x-2 → x = 3</div>
+          <div class="right">Domain restriction: x ≠ 2. When x=2, denominator = 0, so equation is undefined. x=3 is valid, but you must state the restriction.</div>
+        </div>
+      </div>
+      <ul class="fix-steps">
+        <li>Always identify values that make denominators zero before solving</li>
+        <li>Exclude these values from your solution set</li>
+        <li>When multiplying both sides by a variable expression, check if it could be zero</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- MISTAKE 6 -->
+  <div class="mistake-card">
+    <div class="mistake-header">
+      <div class="mistake-number navy">6</div>
+      <div class="mistake-title">
+        <h2>Mixing Up Negative Signs in Quadratics</h2>
+        <p>The quadratic formula trap</p>
+      </div>
+    </div>
+    <div class="mistake-body">
+      <p>When using the quadratic formula x = [-b ± √(b² - 4ac)] / 2a, students often forget that the entire numerator is divided by 2a, not just the square root part. This leads to errors in sign handling.</p>
+      <div class="example-box">
+        <div class="example-label">Common Error</div>
+        <div class="example-content">
+          <div class="wrong">2x² - 4x - 6 = 0 → x = [4 ± √(16 + 48)] / 4 = [4 ± √64]/4 = [4 ± 8]/4</div>
+          <div class="right">x = [-(-4) ± √((-4)² - 4×2×(-6))] / (2×2) = [4 ± √(16 + 48)] / 4 = [4 ± √64]/4 = [4 ± 8]/4</div>
+        </div>
+      </div>
+      <ul class="fix-steps">
+        <li>Write the formula as x = [-b ± √(b² - 4ac)] / (2a) — note the parentheses around -b ± ...</li>
+        <li>Substitute values carefully: a=2, b=-4, c=-6</li>
+        <li>Double-check by substituting solutions back into original equation</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- MISTAKE 7 -->
+  <div class="mistake-card">
+    <div class="mistake-header">
+      <div class="mistake-number red">7</div>
+      <div class="mistake-title">
+        <h2>Ignoring the Equals Sign</h2>
+        <p>Treating equations like expressions</p>
+      </div>
+    </div>
+    <div class="mistake-body">
+      <p>Students sometimes perform operations on one side without doing the same to the other. This breaks the equality. Remember: whatever you do to one side, you must do to the other side.</p>
+      <div class="example-box">
+        <div class="example-label">Common Error</div>
+        <div class="example-content">
+          <div class="wrong">2x + 3 = 7 → 2x = 7 - 3 → 2x = 4 ✓ but then 2x + 3 = 7 → 2x = 7 - 3 → x = 2</div>
+          <div class="right">2x + 3 = 7 → subtract 3 from both sides: 2x = 4 → divide both sides by 2: x = 2</div>
+        </div>
+      </div>
+      <ul class="fix-steps">
+        <li>Always perform the same operation on both sides of the equation</li>
+        <li>When adding/subtracting, do it to both sides; when multiplying/dividing, do it to both sides</li>
+        <li>Check your work by substituting the solution back into the original equation</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- MISTAKE 8 -->
+  <div class="mistake-card">
+    <div class="mistake-header">
+      <div class="mistake-number orange">8</div>
+      <div class="mistake-title">
+        <h2>Confusing Absolute Value</h2>
+        <p>The distance misconception</p>
+      </div>
+    </div>
+    <div class="mistake-body">
+      <p>|x| represents the distance from zero, so |x| = 3 means x = 3 or x = -3. But |expression| = value has two solutions, and students often forget the negative case.</p>
+      <div class="example-box">
+        <div class="example-label">Common Error</div>
+        <div class="example-content">
+          <div class="wrong">|2x - 1| = 5 → 2x - 1 = 5 → x = 3</div>
+          <div class="right">|2x - 1| = 5 → 2x - 1 = 5 or 2x - 1 = -5 → x = 3 or x = 2</div>
+        </div>
+      </div>
+      <ul class="fix-steps">
+        <li>|expression| = positive number means expression = number or expression = -number</li>
+        <li>Always solve both cases when removing absolute value</li>
+        <li>Check both solutions in the original equation to eliminate extraneous ones</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- MISTAKE 9 -->
+  <div class="mistake-card">
+    <div class="mistake-header">
+      <div class="mistake-number blue">9</div>
+      <div class="mistake-title">
+        <h2>FOIL Method Errors</h2>
+        <p>Forgetting the middle terms</p>
+      </div>
+    </div>
+    <div class="mistake-body">
+      <p>When multiplying binomials (x + a)(x + b) = x² + (a+b)x + ab, students often forget to add the middle terms correctly. FOIL (First, Outer, Inner, Last) helps, but you still need to combine like terms.</p>
+      <div class="example-box">
+        <div class="example-label">Common Error</div>
+        <div class="example-content">
+          <div class="wrong">(x + 2)(x + 3) = x² + 5x + 6 ✓ but (x + 2)(x - 3) = x² - x - 6</div>
+          <div class="right">(x + 2)(x - 3) = x×x + x×(-3) + 2×x + 2×(-3) = x² - 3x + 2x - 6 = x² - x - 6</div>
+        </div>
+      </div>
+      <ul class="fix-steps">
+        <li>Use FOIL but remember to combine like terms at the end</li>
+        <li>Practice the general form: (x + a)(x + b) = x² + (a+b)x + ab</li>
+        <li>Check by expanding: (x + a)(x + b) should give you back the original when factored</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- MISTAKE 10 -->
+  <div class="mistake-card">
+    <div class="mistake-header">
+      <div class="mistake-number pink">10</div>
+      <div class="mistake-title">
+        <h2>Losing Track of Negative Numbers</h2>
+        <p>The sign flip confusion</p>
+      </div>
+    </div>
+    <div class="mistake-body">
+      <p>When multiplying or dividing negative numbers, students often get confused about how many negatives make a positive. Remember: negative × negative = positive, but negative ÷ negative = positive too.</p>
+      <div class="example-box">
+        <div class="example-label">Common Error</div>
+        <div class="example-content">
+          <div class="wrong">(-2) × (-3) = 6 ✓ but (-2) ÷ (-3) = 2/3</div>
+          <div class="right">(-2) ÷ (-3) = 2/3 is correct, but (-2) ÷ 3 = -2/3</div>
+        </div>
+      </div>
+      <ul class="fix-steps">
+        <li>Multiplication: even number of negatives = positive, odd = negative</li>
+        <li>Division: same rules as multiplication (since division is multiplication by reciprocal)</li>
+        <li>Use number lines or think in terms of debt: owing money to someone who owes you</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CALLOUT -->
+  <div class="callout">
+    <div class="callout-label">💡 Elite Insight</div>
+    <p>The most common thread across all these mistakes? <strong>Rushing through the algebra without checking</strong>. Every error above can be caught by substituting your answer back into the original equation. Make this your final step for every problem — it takes 30 seconds but saves countless marks.</p>
+  </div>
+
+  <!-- PREVENTION TIPS -->
+  <h2 class="section-h">Prevention Strategies</h2>
+  <p class="section-p">Don't just avoid these mistakes — build habits that prevent them.</p>
+
+  <div class="tips-grid">
+    <div class="tip-card">
+      <div class="tip-icon">🔍</div>
+      <h4>Always Check Solutions</h4>
+      <p>Substitute every answer back into the original equation. This catches 80% of algebra errors.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">📝</div>
+      <h4>Write Every Step</h4>
+      <p>Don't do math in your head. Write out each operation clearly to avoid sign errors.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">⏸️</div>
+      <h4>Pause Before Solving</h4>
+      <p>Read the problem twice. Identify the type of equation and potential pitfalls before starting.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🔄</div>
+      <h4>Work Backwards</h4>
+      <p>Start with your answer and work backwards to the original equation to verify.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">📊</div>
+      <h4>Use Number Examples</h4>
+      <p>Pick specific numbers and verify your algebraic manipulations work for those values.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🎯</div>
+      <h4>Focus on One Thing</h4>
+      <p>When practicing, focus on one type of error at a time until you master it.</p>
+    </div>
+  </div>
+
+  <!-- CLOSING -->
+  <h2 class="section-h">Algebra is a Skill, Not a Gift</h2>
+  <p class="section-p">These mistakes aren't signs of stupidity — they're signs that algebra requires precision and attention to detail. The best mathematicians in history made these exact same errors when they were learning. The difference is that they learned to check their work systematically.</p>
+  <p class="section-p">At Elite STEM Tutors, we don't just teach students the rules of algebra. We teach them to think like algebraists — to spot potential errors before they happen, to check their work relentlessly, and to develop the habits that turn good students into great ones.</p>
+
+  <!-- CTA -->
+  <div class="cta-block">
+    <h3>Stop Losing Marks to Algebra Mistakes</h3>
+    <p>Get personalised Mathematics tutoring that identifies your specific error patterns and builds foolproof techniques.</p>
+    <a href="index.html#contact" class="cta-btn">Book a Free Math Session →</a>
+  </div>
+
+  <!-- FOOTER META -->
+  <div class="article-footer">
+    <div class="tags">
+      <span>Mathematics</span>
+      <span>Algebra</span>
+      <span>Common Mistakes</span>
+      <span>IGCSE</span>
+      <span>A-Level</span>
+    </div>
+    <div>Published: March 30, 2026 · Elite STEM Tutors</div>
+  </div>
+
+</div>
+</body>
+</html>

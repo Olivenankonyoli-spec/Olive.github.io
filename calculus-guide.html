@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Calculus Guide: Differentiation Made Simple | Elite STEM Tutors</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #0f1117;
+      --mid: #444b5a;
+      --light: #8a91a0;
+      --rule: #e4e6eb;
+      --accent: #2e5bdc;
+      --accent-light: #eef1fc;
+      --gold: #c8972a;
+      --bg: #f9f9fb;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.75;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(145deg, #0f1c3f 0%, #1a3178 55%, #2e5bdc 100%);
+      padding: 80px 24px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 70% 30%, rgba(200,151,42,.18) 0%, transparent 60%);
+    }
+    .hero-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(200,151,42,.4);
+      padding: 5px 14px;
+      border-radius: 40px;
+      margin-bottom: 22px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.2;
+      max-width: 680px;
+      margin: 0 auto 20px;
+    }
+    .hero-meta {
+      color: rgba(255,255,255,.55);
+      font-size: 14px;
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    /* ── ARTICLE WRAPPER ── */
+    .article-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+
+    /* ── INTRO ── */
+    .intro {
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: var(--mid);
+      border-left: 3px solid var(--gold);
+      padding-left: 20px;
+      margin-bottom: 48px;
+      line-height: 1.8;
+    }
+
+    /* ── CONCEPT CARDS ── */
+    .concept-card {
+      background: #fff;
+      border: 1px solid var(--rule);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 32px;
+      box-shadow: 0 2px 16px rgba(0,0,0,.05);
+    }
+    .concept-header {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 22px 28px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .concept-icon {
+      flex-shrink: 0;
+      width: 52px; height: 52px;
+      border-radius: 12px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      font-size: 24px;
+    }
+    .c1 .concept-icon { background: #e8f0fe; }
+    .c2 .concept-icon { background: #fef3e2; }
+    .c3 .concept-icon { background: #e6f4ea; }
+    .c4 .concept-icon { background: #fce8e6; }
+    .c5 .concept-icon { background: #f3e5f5; }
+
+    .concept-title-group h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+    .concept-title-group p {
+      font-size: 13px;
+      color: var(--light);
+      font-weight: 500;
+    }
+    .concept-body { padding: 24px 28px; }
+    .concept-body p { color: var(--mid); margin-bottom: 16px; font-size: .97rem; }
+
+    /* ── RULE BOX ── */
+    .rule-box {
+      background: var(--accent-light);
+      border-left: 4px solid var(--accent);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin: 20px 0;
+    }
+    .rule-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .rule-equation {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+    .rule-desc { font-size: .9rem; color: var(--mid); }
+
+    /* ── EXAMPLE GRID ── */
+    .example-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .example-card {
+      background: #fff;
+      border: 1px solid var(--rule);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .example-card h4 { font-size: .93rem; font-weight: 600; margin-bottom: 6px; }
+    .example-card p { font-size: .85rem; color: var(--mid); margin: 0; }
+
+    /* ── CALLOUT BOX ── */
+    .callout {
+      background: var(--accent-light);
+      border-left: 4px solid var(--accent);
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin: 40px 0;
+    }
+    .callout-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .callout p { color: var(--ink); font-size: .96rem; margin: 0; }
+
+    /* ── SECTION HEADING ── */
+    .section-h {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 48px 0 16px;
+    }
+    .section-p { color: var(--mid); margin-bottom: 16px; font-size: .97rem; }
+
+    /* ── COMMON PITFALLS ── */
+    .pitfalls-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 24px;
+    }
+    .pitfall-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      background: #fff;
+      border: 1px solid #fce8e6;
+      border-radius: 10px;
+      padding: 16px 18px;
+    }
+    .pitfall-icon {
+      flex-shrink: 0;
+      width: 24px; height: 24px;
+      border-radius: 50%;
+      background: #fce8e6;
+      color: #c0392b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .pitfall-content h4 {
+      font-size: .9rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: #c0392b;
+    }
+    .pitfall-content p {
+      font-size: .85rem;
+      color: var(--mid);
+      margin: 0;
+    }
+
+    /* ── APPLICATIONS ── */
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .app-card {
+      background: #fff;
+      border: 1px solid var(--rule);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .app-icon { font-size: 24px; margin-bottom: 10px; }
+    .app-card h4 { font-size: .93rem; font-weight: 600; margin-bottom: 6px; }
+    .app-card p { font-size: .85rem; color: var(--mid); margin: 0; }
+
+    /* ── CTA ── */
+    .cta-block {
+      background: linear-gradient(135deg, #0f1c3f, #2e5bdc);
+      border-radius: 20px;
+      padding: 48px 36px;
+      text-align: center;
+      margin-top: 60px;
+    }
+    .cta-block h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .cta-block p { color: rgba(255,255,255,.65); font-size: .97rem; margin-bottom: 28px; }
+    .cta-btn {
+      display: inline-block;
+      background: var(--gold);
+      color: #0f1c3f;
+      font-weight: 700;
+      font-size: .95rem;
+      padding: 14px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      letter-spacing: .02em;
+    }
+
+    /* ── FOOTER META ── */
+    .article-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      border-top: 1px solid var(--rule);
+      margin-top: 56px;
+      padding-top: 24px;
+      font-size: 13px;
+      color: var(--light);
+    }
+    .tags span {
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 40px;
+      margin-right: 6px;
+    }
+
+    @media (max-width: 540px) {
+      .concept-header { flex-direction: column; align-items: flex-start; }
+      .article-wrap { padding: 40px 18px 60px; }
+      .cta-block { padding: 36px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav style="background: #2c3e50; padding: 1rem 0; position: sticky; top: 0; z-index: 100;">
+  <div style="max-width: 720px; margin: 0 auto; padding: 0 24px;">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <a href="index.html" style="color: white; text-decoration: none; font-weight: 600;">← Elite STEM Tutors</a>
+      <a href="blog.html" style="color: white; text-decoration: none; font-weight: 600;">Blog Index</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">Mathematics</div>
+  <h1>Calculus Guide: Differentiation Made Simple</h1>
+  <div class="hero-meta">
+    <span>📅 March 25, 2026</span>
+    <span>⏱ 9 min read</span>
+    <span>✍️ Elite STEM Tutors</span>
+  </div>
+</div>
+
+<!-- ARTICLE BODY -->
+<div class="article-wrap">
+
+  <p class="intro">
+    Calculus is the mathematics of change — how things move, grow, and transform. Differentiation, the first pillar of calculus, answers the question: "How fast is this changing?" While the theory can seem abstract, the applications are everywhere: from predicting population growth to designing roller coasters. This guide breaks down differentiation into digestible concepts that build your intuition before diving into the formulas.
+  </p>
+
+  <!-- CONCEPT 1 -->
+  <div class="concept-card c1">
+    <div class="concept-header">
+      <div class="concept-icon">📈</div>
+      <div class="concept-title-group">
+        <h2>The Big Idea: Rates of Change</h2>
+        <p>What differentiation actually measures</p>
+      </div>
+    </div>
+    <div class="concept-body">
+      <p>Differentiation is fundamentally about measuring how quickly something changes. If you have a function f(x) that describes a relationship (like distance traveled over time), the derivative f'(x) tells you the instantaneous rate of change at any point.</p>
+      <p>Think of driving a car: your speedometer shows your instantaneous speed (the derivative of distance with respect to time). Average speed is distance/time, but instantaneous speed requires calculus.</p>
+      <div class="rule-box">
+        <div class="rule-label">The Derivative</div>
+        <div class="rule-equation">f'(x) = lim<sub>h→0</sub> [f(x+h) - f(x)] / h</div>
+        <div class="rule-desc">The slope of the tangent line at point x — how steep the curve is at that exact point.</div>
+      </div>
+      <div class="example-grid">
+        <div class="example-card">
+          <h4>Physics: Velocity</h4>
+          <p>If s(t) = distance at time t, then v(t) = s'(t) = instantaneous velocity.</p>
+        </div>
+        <div class="example-card">
+          <h4>Economics: Marginal Cost</h4>
+          <p>If C(x) = total cost for x units, C'(x) = cost of producing one more unit.</p>
+        </div>
+        <div class="example-card">
+          <h4>Biology: Population Growth</h4>
+          <p>If P(t) = population at time t, P'(t) = growth rate at that moment.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONCEPT 2 -->
+  <div class="concept-card c2">
+    <div class="concept-header">
+      <div class="concept-icon">📊</div>
+      <div class="concept-title-group">
+        <h2>Power Rule: The Workhorse</h2>
+        <p>Differentiating polynomials</p>
+      </div>
+    </div>
+    <div class="concept-body">
+      <p>The power rule is the most frequently used differentiation rule. For any power function f(x) = xⁿ, the derivative is f'(x) = n x^(n-1). This rule handles polynomials, which form the basis of most calculus problems.</p>
+      <p>The intuition: when you have x³, differentiating "uses up" one x, leaving 3x². The 3 comes from the exponent, and you reduce the power by 1.</p>
+      <div class="rule-box">
+        <div class="rule-label">Power Rule</div>
+        <div class="rule-equation">d/dx [xⁿ] = n x^(n-1)</div>
+        <div class="rule-desc">Bring down the exponent, reduce power by 1. Works for any real number n.</div>
+      </div>
+      <div class="example-grid">
+        <div class="example-card">
+          <h4>d/dx [x⁵] = 5x⁴</h4>
+          <p>Bring down 5, reduce exponent to 4.</p>
+        </div>
+        <div class="example-card">
+          <h4>d/dx [√x] = d/dx [x^(1/2)] = (1/2)x^(-1/2)</h4>
+          <p>Works for fractional powers too.</p>
+        </div>
+        <div class="example-card">
+          <h4>d/dx [x] = d/dx [x¹] = 1×x⁰ = 1</h4>
+          <p>Any constant to the power 1 differentiates to 1.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONCEPT 3 -->
+  <div class="concept-card c3">
+    <div class="concept-header">
+      <div class="concept-icon">➕</div>
+      <div class="concept-title-group">
+        <h2>Sum, Product, and Chain Rules</h2>
+        <p>Combining functions</p>
+      </div>
+    </div>
+    <div class="concept-body">
+      <p>Most functions aren't simple powers — they're combinations. The sum rule lets you differentiate term by term. The product rule handles multiplication. The chain rule is for composite functions (functions within functions).</p>
+      <p>These rules let you break down complex functions into simpler parts you already know how to differentiate.</p>
+      <div class="rule-box">
+        <div class="rule-label">Chain Rule</div>
+        <div class="rule-equation">d/dx [f(g(x))] = f'(g(x)) × g'(x)</div>
+        <div class="rule-desc">Derivative of outer function times derivative of inner function.</div>
+      </div>
+      <div class="example-grid">
+        <div class="example-card">
+          <h4>d/dx [sin(x²)] = cos(x²) × 2x</h4>
+          <p>Outer: sin(u), derivative cos(u). Inner: x², derivative 2x.</p>
+        </div>
+        <div class="example-card">
+          <h4>d/dx [(x+1)³] = 3(x+1)² × 1</h4>
+          <p>Outer: u³, derivative 3u². Inner: x+1, derivative 1.</p>
+        </div>
+        <div class="example-card">
+          <h4>d/dx [e^(x²)] = e^(x²) × 2x</h4>
+          <p>Outer: e^u, derivative e^u. Inner: x², derivative 2x.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONCEPT 4 -->
+  <div class="concept-card c4">
+    <div class="concept-header">
+      <div class="concept-icon">📈</div>
+      <div class="concept-title-group">
+        <h2>Trigonometric Derivatives</h2>
+        <p>Circles and waves</p>
+      </div>
+    </div>
+    <div class="concept-body">
+      <p>Trigonometric functions describe circular motion and waves. Their derivatives are cyclical: sine differentiates to cosine, cosine to negative sine, and so on. These patterns repeat every 2π radians.</p>
+      <p>The key insight: trig derivatives are about phase shifts. Each differentiation shifts the function by 90° (π/2 radians) in the unit circle.</p>
+      <div class="rule-box">
+        <div class="rule-label">Trig Derivatives</div>
+        <div class="rule-equation">d/dx [sin x] = cos x</div>
+        <div class="rule-desc">d/dx [cos x] = -sin x, d/dx [tan x] = sec² x</div>
+      </div>
+      <div class="example-grid">
+        <div class="example-card">
+          <h4>d/dx [sin(3x)] = 3 cos(3x)</h4>
+          <p>Chain rule: derivative of sin(u) is cos(u) × du/dx.</p>
+        </div>
+        <div class="example-card">
+          <h4>d/dx [cos² x] = 2 cos x (-sin x) = -2 cos x sin x</h4>
+          <p>Chain rule plus product rule for cos² x.</p>
+        </div>
+        <div class="example-card">
+          <h4>d/dx [sin x / cos x] = d/dx [tan x] = sec² x</h4>
+          <p>Quotient rule or recognize as tan x.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONCEPT 5 -->
+  <div class="concept-card c5">
+    <div class="concept-header">
+      <div class="concept-icon">📉</div>
+      <div class="concept-title-group">
+        <h2>Exponential and Logarithmic</h2>
+        <p>Growth and decay</p>
+      </div>
+    </div>
+    <div class="concept-body">
+      <p>Exponential functions model growth and decay. Their derivatives are special: e^x differentiates to itself. Logarithms are the inverse, and their derivatives involve 1/x.</p>
+      <p>This is why e is the "natural" base — it's the only number where the derivative equals the function itself.</p>
+      <div class="rule-box">
+        <div class="rule-label">Exponential Rule</div>
+        <div class="rule-equation">d/dx [e^x] = e^x</div>
+        <div class="rule-desc">d/dx [a^x] = a^x ln a, d/dx [ln x] = 1/x</div>
+      </div>
+      <div class="example-grid">
+        <div class="example-card">
+          <h4>d/dx [e^(2x)] = 2 e^(2x)</h4>
+          <p>Chain rule: e^u differentiates to e^u × du/dx.</p>
+        </div>
+        <div class="example-card">
+          <h4>d/dx [ln(x²)] = (1/x²) × 2x = 2/x</h4>
+          <p>Chain rule: ln(u) differentiates to (1/u) × du/dx.</p>
+        </div>
+        <div class="example-card">
+          <h4>d/dx [2^x] = 2^x ln 2</h4>
+          <p>General exponential rule for base other than e.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CALLOUT -->
+  <div class="callout">
+    <div class="callout-label">💡 Elite Insight</div>
+    <p>Calculus isn't about memorizing formulas — it's about recognizing patterns. Every differentiation problem is really just: "What rule applies here? How do the rules combine?" Master the five core rules above, and you can differentiate 90% of A-Level calculus problems. The rest is practice and pattern recognition.</p>
+  </div>
+
+  <!-- COMMON PITFALLS -->
+  <h2 class="section-h">Common Pitfalls & How to Avoid Them</h2>
+  <p class="section-p">These mistakes cost marks. Learn them now to avoid them later.</p>
+
+  <ul class="pitfalls-list">
+    <li class="pitfall-item">
+      <div class="pitfall-icon">⚠️</div>
+      <div class="pitfall-content">
+        <h4>Forgetting the chain rule</h4>
+        <p>When you see a function within a function, you need the chain rule. d/dx [sin(x²)] ≠ cos(x²) — it needs the extra 2x.</p>
+      </div>
+    </li>
+    <li class="pitfall-item">
+      <div class="pitfall-icon">⚠️</div>
+      <div class="pitfall-content">
+        <h4>Mixing up trig derivatives</h4>
+        <p>d/dx [sin x] = cos x, but d/dx [cos x] = -sin x. The negative sign is easy to forget.</p>
+      </div>
+    </li>
+    <li class="pitfall-item">
+      <div class="pitfall-icon">⚠️</div>
+      <div class="pitfall-content">
+        <h4>Treating constants as variables</h4>
+        <p>Constants differentiate to zero. In d/dx [3x² + 7], the 7 disappears, and the 3 is a constant multiplier.</p>
+      </div>
+    </li>
+    <li class="pitfall-item">
+      <div class="pitfall-icon">⚠️</div>
+      <div class="pitfall-content">
+        <h4>Product rule confusion</h4>
+        <p>d/dx [f g] = f' g + f g'. Remember: first times derivative of second, plus second times derivative of first.</p>
+      </div>
+    </li>
+    <li class="pitfall-item">
+      <div class="pitfall-icon">⚠️</div>
+      <div class="pitfall-content">
+        <h4>Quotient rule complexity</h4>
+        <p>d/dx [f/g] = (f' g - f g') / g². It's easier to rewrite as a product: f/g = f × g^(-1), then use product and chain rules.</p>
+      </div>
+    </li>
+  </ul>
+
+  <!-- APPLICATIONS -->
+  <h2 class="section-h">Why Differentiation Matters</h2>
+  <p class="section-p">Calculus isn't just abstract math — it powers the modern world.</p>
+
+  <div class="apps-grid">
+    <div class="app-card">
+      <div class="app-icon">🚗</div>
+      <h4>Engineering</h4>
+      <p>Designing bridges, calculating maximum loads, optimizing fuel efficiency.</p>
+    </div>
+    <div class="app-card">
+      <div class="app-icon">💊</div>
+      <h4>Medicine</h4>
+      <p>Modeling drug concentrations, understanding population dynamics in epidemiology.</p>
+    </div>
+    <div class="app-card">
+      <div class="app-icon">📈</div>
+      <h4>Economics</h4>
+      <p>Marginal analysis, optimization of production costs, elasticity of demand.</p>
+    </div>
+    <div class="app-card">
+      <div class="app-icon">🧬</div>
+      <h4>Biology</h4>
+      <p>Population growth models, enzyme kinetics, neural signal processing.</p>
+    </div>
+    <div class="app-card">
+      <div class="app-icon">🛰️</div>
+      <h4>Physics</h4>
+      <p>Velocity, acceleration, electric fields, quantum mechanics wave functions.</p>
+    </div>
+    <div class="app-card">
+      <div class="app-icon">🎮</div>
+      <h4>Computer Science</h4>
+      <p>Machine learning algorithms, computer graphics, optimization problems.</p>
+    </div>
+  </div>
+
+  <!-- CLOSING -->
+  <h2 class="section-h">The Path Forward</h2>
+  <p class="section-p">Differentiation is a skill built through deliberate practice. Start with the power rule, master the chain rule, then add the others. Don't just memorize — understand why each rule works. Work through examples until the patterns become automatic.</p>
+  <p class="section-p">At Elite STEM Tutors, we teach calculus the way it should be taught: with intuition first, then rigor. Our students don't just learn to differentiate — they learn why differentiation matters and how to apply it to real problems in physics, engineering, and beyond.</p>
+
+  <!-- CTA -->
+  <div class="cta-block">
+    <h3>Struggling with Differentiation?</h3>
+    <p>Get expert calculus tutoring that builds your intuition and eliminates confusion. Master differentiation with confidence.</p>
+    <a href="index.html#contact" class="cta-btn">Book a Free Calculus Session →</a>
+  </div>
+
+  <!-- FOOTER META -->
+  <div class="article-footer">
+    <div class="tags">
+      <span>Mathematics</span>
+      <span>Calculus</span>
+      <span>Differentiation</span>
+      <span>A-Level</span>
+    </div>
+    <div>Published: March 25, 2026 · Elite STEM Tutors</div>
+  </div>
+
+</div>
+</body>
+</html>

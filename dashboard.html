@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Student Dashboard - Elite STEM Tutors</title>
+  <title>Admin Dashboard - Elite STEM Tutors</title>
   <style>
     * {
       margin: 0;
@@ -399,11 +399,11 @@
     <div class="sidebar">
       <ul>
         <li><a href="#overview" class="active" onclick="navigateTo('overview')">📊 Overview</a></li>
-        <li><a href="#sessions" onclick="navigateTo('sessions')">📅 My Sessions</a></li>
-        <li><a href="#progress" onclick="navigateTo('progress')">📈 My Progress</a></li>
-        <li><a href="#resources" onclick="navigateTo('resources')">📚 Resources</a></li>
-        <li><a href="#messages" onclick="navigateTo('messages')">💬 Messages</a></li>
-        <li><a href="#profile" onclick="navigateTo('profile')">👤 Profile</a></li>
+        <li><a href="#emails" onclick="navigateTo('emails')">📧 Manage Emails</a></li>
+        <li><a href="#students" onclick="navigateTo('students')">👨‍🎓 Students</a></li>
+        <li><a href="#tutors" onclick="navigateTo('tutors')">👨‍🏫 Tutors</a></li>
+        <li><a href="#reports" onclick="navigateTo('reports')">📈 Reports</a></li>
+        <li><a href="#settings" onclick="navigateTo('settings')">⚙️ Settings</a></li>
       </ul>
     </div>
 
@@ -412,282 +412,402 @@
       <!-- Overview Section -->
       <div id="overview-section">
         <div class="welcome-message">
-          <h2>Welcome back, Sarah! 👋</h2>
-          <p>You're doing great! Keep up the momentum with your tutoring sessions.</p>
+          <h2>Welcome back, Admin! 👋</h2>
+          <p>Here's what's happening with Elite STEM Tutors today.</p>
         </div>
 
         <div class="page-header">
-          <h1>Your Dashboard</h1>
+          <h1>Admin Dashboard</h1>
         </div>
 
         <!-- Stats Grid -->
         <div class="dashboard-grid">
           <div class="card">
-            <h3>📊 Overall Grade</h3>
-            <div class="card-value">A-</div>
-            <div class="card-label">+5% improvement</div>
+            <h3>📧 Unread Emails</h3>
+            <div class="card-value">12</div>
+            <div class="card-label">5 from students, 4 from parents, 3 from tutors</div>
             <div class="progress-bar">
-              <div class="progress-fill" style="width: 90%"></div>
+              <div class="progress-fill" style="width: 60%"></div>
             </div>
           </div>
 
           <div class="card">
-            <h3>⏰ Total Hours</h3>
-            <div class="card-value">24.5</div>
-            <div class="card-label">Since joining</div>
+            <h3>👨‍🎓 Active Students</h3>
+            <div class="card-value">87</div>
+            <div class="card-label">+5 this month</div>
             <div class="progress-bar">
-              <div class="progress-fill" style="width: 65%"></div>
+              <div class="progress-fill" style="width: 87%"></div>
             </div>
           </div>
 
           <div class="card">
-            <h3>🎯 Sessions Completed</h3>
-            <div class="card-value">18</div>
-            <div class="card-label">Out of 20 scheduled</div>
+            <h3>👨‍🏫 Active Tutors</h3>
+            <div class="card-value">8</div>
+            <div class="card-label">2 applications pending</div>
             <div class="progress-bar">
-              <div class="progress-fill" style="width: 90%"></div>
+              <div class="progress-fill" style="width: 80%"></div>
             </div>
           </div>
 
           <div class="card">
-            <h3>🏆 Points Earned</h3>
-            <div class="card-value">850</div>
-            <div class="card-label">Redeem for rewards</div>
+            <h3>💰 Monthly Revenue</h3>
+            <div class="card-value">UGX 2.4M</div>
+            <div class="card-label">+15% from last month</div>
             <div class="progress-bar">
               <div class="progress-fill" style="width: 85%"></div>
             </div>
           </div>
         </div>
 
-        <!-- Upcoming Sessions -->
+        <!-- Recent Emails -->
         <div class="section">
-          <h2>📅 Upcoming Sessions</h2>
+          <h2>📧 Recent Emails</h2>
           <table>
             <thead>
               <tr>
-                <th>Subject</th>
-                <th>Tutor</th>
-                <th>Date & Time</th>
-                <th>Duration</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Mathematics</td>
-                <td>Dr. James Mwangi</td>
-                <td>May 5, 2026 - 3:00 PM</td>
-                <td>1 hour</td>
-                <td><span class="status-badge status-free">FREE (First)</span></td>
-              </tr>
-              <tr>
-                <td>Physics</td>
-                <td>Prof. Sarah Ochieng</td>
-                <td>May 7, 2026 - 4:00 PM</td>
-                <td>1.5 hours</td>
-                <td><span class="status-badge status-pending">Scheduled</span></td>
-              </tr>
-              <tr>
-                <td>Chemistry</td>
-                <td>Dr. James Mwangi</td>
-                <td>May 9, 2026 - 2:00 PM</td>
-                <td>1 hour</td>
-                <td><span class="status-badge status-pending">Scheduled</span></td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="btn-group">
-            <button class="btn btn-primary">Book New Session</button>
-            <button class="btn btn-secondary">View Calendar</button>
-          </div>
-        </div>
-
-        <!-- Recent Achievements -->
-        <div class="section">
-          <h2>🏅 Recent Achievements</h2>
-          <table>
-            <thead>
-              <tr>
-                <th>Achievement</th>
-                <th>Date Earned</th>
-                <th>Points</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>✅ Completed 10 Sessions</td>
-                <td>April 28, 2026</td>
-                <td>+100</td>
-              </tr>
-              <tr>
-                <td>🎯 Perfect Attendance</td>
-                <td>April 25, 2026</td>
-                <td>+50</td>
-              </tr>
-              <tr>
-                <td>📈 Grade Improved to A-</td>
-                <td>April 20, 2026</td>
-                <td>+200</td>
-              </tr>
-              <tr>
-                <td>🌟 First Session Free</td>
-                <td>April 15, 2026</td>
-                <td>+100</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <!-- Sessions Section -->
-      <div id="sessions-section" class="hidden">
-        <div class="page-header">
-          <h1>My Sessions</h1>
-        </div>
-        <div class="section">
-          <h2>Session History</h2>
-          <table>
-            <thead>
-              <tr>
-                <th>Subject</th>
-                <th>Tutor</th>
-                <th>Date</th>
-                <th>Duration</th>
-                <th>Rating</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Mathematics</td>
-                <td>Dr. James Mwangi</td>
-                <td>April 20, 2026</td>
-                <td>1 hour</td>
-                <td>⭐⭐⭐⭐⭐</td>
-              </tr>
-              <tr>
-                <td>Physics</td>
-                <td>Prof. Sarah Ochieng</td>
-                <td>April 18, 2026</td>
-                <td>1.5 hours</td>
-                <td>⭐⭐⭐⭐⭐</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <!-- Progress Section -->
-      <div id="progress-section" class="hidden">
-        <div class="page-header">
-          <h1>My Progress</h1>
-        </div>
-        <div class="section">
-          <h2>Subject Performance</h2>
-          <p style="margin-bottom: 1rem;">Your grades across different subjects:</p>
-          
-          <div style="margin-bottom: 2rem;">
-            <p style="margin-bottom: 0.5rem;"><strong>Mathematics: A- (90%)</strong></p>
-            <div class="progress-bar">
-              <div class="progress-fill" style="width: 90%"></div>
-            </div>
-          </div>
-
-          <div style="margin-bottom: 2rem;">
-            <p style="margin-bottom: 0.5rem;"><strong>Physics: B+ (85%)</strong></p>
-            <div class="progress-bar">
-              <div class="progress-fill" style="width: 85%"></div>
-            </div>
-          </div>
-
-          <div style="margin-bottom: 2rem;">
-            <p style="margin-bottom: 0.5rem;"><strong>Chemistry: A (92%)</strong></p>
-            <div class="progress-bar">
-              <div class="progress-fill" style="width: 92%"></div>
-            </div>
-          </div>
-
-          <div style="margin-bottom: 2rem;">
-            <p style="margin-bottom: 0.5rem;"><strong>Computer Science: A+ (95%)</strong></p>
-            <div class="progress-bar">
-              <div class="progress-fill" style="width: 95%"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Resources Section -->
-      <div id="resources-section" class="hidden">
-        <div class="page-header">
-          <h1>Study Resources</h1>
-        </div>
-        <div class="section">
-          <h2>Available Materials</h2>
-          <table>
-            <thead>
-              <tr>
-                <th>Resource</th>
-                <th>Subject</th>
+                <th>Sender</th>
                 <th>Type</th>
-                <th>Date Added</th>
+                <th>Subject</th>
+                <th>Date</th>
+                <th>Status</th>
                 <th>Action</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Calculus Study Guide</td>
-                <td>Mathematics</td>
-                <td>PDF</td>
-                <td>April 25, 2026</td>
-                <td><button class="btn btn-secondary">Download</button></td>
+                <td>John Doe</td>
+                <td>Student</td>
+                <td>Inquiry about IGCSE Physics tutoring</td>
+                <td>May 3, 2026</td>
+                <td><span class="status-badge status-pending">Unread</span></td>
+                <td><button class="btn btn-primary" onclick="viewEmail(1)">View</button></td>
               </tr>
               <tr>
-                <td>Physics Formulas Sheet</td>
-                <td>Physics</td>
-                <td>PDF</td>
-                <td>April 20, 2026</td>
-                <td><button class="btn btn-secondary">Download</button></td>
+                <td>Mary Smith</td>
+                <td>Parent</td>
+                <td>Question about A Level Mathematics</td>
+                <td>May 2, 2026</td>
+                <td><span class="status-badge status-pending">Unread</span></td>
+                <td><button class="btn btn-primary" onclick="viewEmail(2)">View</button></td>
               </tr>
               <tr>
-                <td>Chemistry Practice Problems</td>
-                <td>Chemistry</td>
-                <td>PDF + Video</td>
-                <td>April 18, 2026</td>
-                <td><button class="btn btn-secondary">Access</button></td>
+                <td>David Johnson</td>
+                <td>Tutor</td>
+                <td>Tutor application submission</td>
+                <td>May 1, 2026</td>
+                <td><span class="status-badge status-completed">Read</span></td>
+                <td><button class="btn btn-secondary" onclick="viewEmail(3)">View</button></td>
+              </tr>
+              <tr>
+                <td>Emma Wilson</td>
+                <td>Student</td>
+                <td>Request for reading materials</td>
+                <td>April 30, 2026</td>
+                <td><span class="status-badge status-completed">Replied</span></td>
+                <td><button class="btn btn-secondary" onclick="viewEmail(4)">View</button></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="btn-group">
+            <button class="btn btn-primary">Compose Email</button>
+            <button class="btn btn-secondary">View All Emails</button>
+          </div>
+        </div>
+
+        <!-- Pending Tasks -->
+        <div class="section">
+          <h2>📋 Pending Tasks</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Task</th>
+                <th>Priority</th>
+                <th>Due Date</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Review tutor applications (2 pending)</td>
+                <td>High</td>
+                <td>May 5, 2026</td>
+                <td><span class="status-badge status-pending">Pending</span></td>
+              </tr>
+              <tr>
+                <td>Send Friday reading materials notification</td>
+                <td>Medium</td>
+                <td>May 7, 2026</td>
+                <td><span class="status-badge status-pending">Scheduled</span></td>
+              </tr>
+              <tr>
+                <td>Update student progress reports</td>
+                <td>Medium</td>
+                <td>May 10, 2026</td>
+                <td><span class="status-badge status-completed">In Progress</span></td>
+              </tr>
+              <tr>
+                <td>Respond to parent inquiries</td>
+                <td>High</td>
+                <td>May 4, 2026</td>
+                <td><span class="status-badge status-pending">Pending</span></td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
 
-      <!-- Profile Section -->
-      <div id="profile-section" class="hidden">
+      <!-- Emails Section -->
+      <div id="emails-section" class="hidden">
         <div class="page-header">
-          <h1>My Profile</h1>
+          <h1>Manage Emails</h1>
         </div>
         <div class="section">
-          <h2>Profile Information</h2>
+          <h2>All Emails</h2>
+          <div style="margin-bottom: 1rem;">
+            <button class="btn btn-primary" style="margin-right: 1rem;">Compose New Email</button>
+            <select style="padding: 0.5rem; border: 1px solid #ddd; border-radius: 5px;">
+              <option>All Emails</option>
+              <option>From Students</option>
+              <option>From Parents</option>
+              <option>From Tutors</option>
+              <option>Unread Only</option>
+            </select>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Sender</th>
+                <th>Type</th>
+                <th>Subject</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>John Doe</td>
+                <td>Student</td>
+                <td>Inquiry about IGCSE Physics tutoring</td>
+                <td>May 3, 2026</td>
+                <td><span class="status-badge status-pending">Unread</span></td>
+                <td>
+                  <button class="btn btn-primary" onclick="viewEmail(1)">View</button>
+                  <button class="btn btn-secondary" onclick="replyEmail(1)">Reply</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Mary Smith</td>
+                <td>Parent</td>
+                <td>Question about A Level Mathematics</td>
+                <td>May 2, 2026</td>
+                <td><span class="status-badge status-pending">Unread</span></td>
+                <td>
+                  <button class="btn btn-primary" onclick="viewEmail(2)">View</button>
+                  <button class="btn btn-secondary" onclick="replyEmail(2)">Reply</button>
+                </td>
+              </tr>
+              <tr>
+                <td>David Johnson</td>
+                <td>Tutor</td>
+                <td>Tutor application submission</td>
+                <td>May 1, 2026</td>
+                <td><span class="status-badge status-completed">Read</span></td>
+                <td>
+                  <button class="btn btn-secondary" onclick="viewEmail(3)">View</button>
+                  <button class="btn btn-secondary" onclick="replyEmail(3)">Reply</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Students Section -->
+      <div id="students-section" class="hidden">
+        <div class="page-header">
+          <h1>Students Management</h1>
+        </div>
+        <div class="section">
+          <h2>Active Students</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Grade</th>
+                <th>Subjects</th>
+                <th>Joined</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Nakato Sarah</td>
+                <td>Grade 10 IGCSE</td>
+                <td>Math, Physics</td>
+                <td>March 2026</td>
+                <td><span class="status-badge status-completed">Active</span></td>
+                <td>
+                  <button class="btn btn-secondary">View Profile</button>
+                  <button class="btn btn-secondary">Contact</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Kato James</td>
+                <td>Grade 11 IGCSE</td>
+                <td>Physics, Chemistry</td>
+                <td>February 2026</td>
+                <td><span class="status-badge status-completed">Active</span></td>
+                <td>
+                  <button class="btn btn-secondary">View Profile</button>
+                  <button class="btn btn-secondary">Contact</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Akello Fatuma</td>
+                <td>A Level</td>
+                <td>Mathematics</td>
+                <td>January 2026</td>
+                <td><span class="status-badge status-completed">Active</span></td>
+                <td>
+                  <button class="btn btn-secondary">View Profile</button>
+                  <button class="btn btn-secondary">Contact</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Tutors Section -->
+      <div id="tutors-section" class="hidden">
+        <div class="page-header">
+          <h1>Tutors Management</h1>
+        </div>
+        <div class="section">
+          <h2>Active Tutors</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Subjects</th>
+                <th>Students</th>
+                <th>Rating</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Olive Nankonyoli</td>
+                <td>Math & Physics</td>
+                <td>15</td>
+                <td>⭐⭐⭐⭐⭐ (4.9)</td>
+                <td><span class="status-badge status-completed">Active</span></td>
+                <td>
+                  <button class="btn btn-secondary">View Profile</button>
+                  <button class="btn btn-secondary">Contact</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Mwamula Collins</td>
+                <td>Physics & Chemistry</td>
+                <td>12</td>
+                <td>⭐⭐⭐⭐⭐ (4.8)</td>
+                <td><span class="status-badge status-completed">Active</span></td>
+                <td>
+                  <button class="btn btn-secondary">View Profile</button>
+                  <button class="btn btn-secondary">Contact</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Wawomola Denis</td>
+                <td>Computer Science</td>
+                <td>10</td>
+                <td>⭐⭐⭐⭐⭐ (4.9)</td>
+                <td><span class="status-badge status-completed">Active</span></td>
+                <td>
+                  <button class="btn btn-secondary">View Profile</button>
+                  <button class="btn btn-secondary">Contact</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Kiiza Angelo</td>
+                <td>Biology</td>
+                <td>8</td>
+                <td>⭐⭐⭐⭐⭐ (4.7)</td>
+                <td><span class="status-badge status-completed">Active</span></td>
+                <td>
+                  <button class="btn btn-secondary">View Profile</button>
+                  <button class="btn btn-secondary">Contact</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="btn-group" style="margin-top: 1rem;">
+            <button class="btn btn-primary">Review Applications</button>
+            <button class="btn btn-secondary">Add New Tutor</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reports Section -->
+      <div id="reports-section" class="hidden">
+        <div class="page-header">
+          <h1>Reports & Analytics</h1>
+        </div>
+        <div class="section">
+          <h2>Monthly Performance Report</h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+            <div style="text-align: center; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+              <h3 style="color: #667eea; margin-bottom: 0.5rem;">Total Students</h3>
+              <p style="font-size: 2rem; font-weight: bold;">87</p>
+              <p style="color: #666;">+5 from last month</p>
+            </div>
+            <div style="text-align: center; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+              <h3 style="color: #667eea; margin-bottom: 0.5rem;">Sessions Completed</h3>
+              <p style="font-size: 2rem; font-weight: bold;">234</p>
+              <p style="color: #666;">This month</p>
+            </div>
+            <div style="text-align: center; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+              <h3 style="color: #667eea; margin-bottom: 0.5rem;">Average Rating</h3>
+              <p style="font-size: 2rem; font-weight: bold;">4.8⭐</p>
+              <p style="color: #666;">Tutor performance</p>
+            </div>
+            <div style="text-align: center; padding: 1rem; background: #f8f9fa; border-radius: 10px;">
+              <h3 style="color: #667eea; margin-bottom: 0.5rem;">Revenue</h3>
+              <p style="font-size: 2rem; font-weight: bold;">UGX 2.4M</p>
+              <p style="color: #666;">+15% growth</p>
+            </div>
+          </div>
+          <button class="btn btn-primary">Generate Full Report</button>
+          <button class="btn btn-secondary">Export Data</button>
+        </div>
+      </div>
+
+      <!-- Settings Section -->
+      <div id="settings-section" class="hidden">
+        <div class="page-header">
+          <h1>Settings</h1>
+        </div>
+        <div class="section">
+          <h2>System Settings</h2>
           <form>
             <div style="margin-bottom: 1.5rem;">
-              <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Full Name</label>
-              <input type="text" value="Sarah Nakimuli" style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 5px;">
+              <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Email Notifications</label>
+              <input type="checkbox" checked> Send weekly reading materials notifications<br>
+              <input type="checkbox" checked> Notify on new tutor applications<br>
+              <input type="checkbox" checked> Alert on unread emails after 24 hours
             </div>
 
             <div style="margin-bottom: 1.5rem;">
-              <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Email</label>
-              <input type="email" value="sarah@example.com" style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 5px;">
+              <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Auto-responders</label>
+              <input type="checkbox" checked> Send confirmation for contact form submissions<br>
+              <input type="checkbox"> Send welcome email to new students
             </div>
 
-            <div style="margin-bottom: 1.5rem;">
-              <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Phone</label>
-              <input type="tel" value="+256 700 000 000" style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 5px;">
-            </div>
-
-            <div style="margin-bottom: 1.5rem;">
-              <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Preferred Subjects</label>
-              <input type="text" value="Mathematics, Physics, Chemistry" style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 5px;">
-            </div>
-
-            <button type="button" class="btn btn-primary" onclick="alert('Profile updated successfully!')">Save Changes</button>
+            <button type="button" class="btn btn-primary" onclick="alert('Settings saved successfully!')">Save Settings</button>
           </form>
         </div>
       </div>
@@ -703,10 +823,11 @@
     function navigateTo(section) {
       // Hide all sections
       document.getElementById('overview-section').classList.add('hidden');
-      document.getElementById('sessions-section').classList.add('hidden');
-      document.getElementById('progress-section').classList.add('hidden');
-      document.getElementById('resources-section').classList.add('hidden');
-      document.getElementById('profile-section').classList.add('hidden');
+      document.getElementById('emails-section').classList.add('hidden');
+      document.getElementById('students-section').classList.add('hidden');
+      document.getElementById('tutors-section').classList.add('hidden');
+      document.getElementById('reports-section').classList.add('hidden');
+      document.getElementById('settings-section').classList.add('hidden');
 
       // Show selected section
       document.getElementById(section + '-section').classList.remove('hidden');
@@ -722,6 +843,14 @@
     function logout() {
       alert('You have been logged out successfully!');
       window.location.href = 'index.html';
+    }
+
+    function viewEmail(id) {
+      alert(`Viewing email ${id}... (In a real implementation, this would open the email details)`);
+    }
+
+    function replyEmail(id) {
+      alert(`Replying to email ${id}... (In a real implementation, this would open a compose window)`);
     }
 
     // Close dropdown when clicking outside
