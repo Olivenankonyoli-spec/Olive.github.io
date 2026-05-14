@@ -3,7 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog - Elite STEM Tutors</title>
+  <script>
+    // Blog reading requires login
+    function readBlogPost(title) {
+      if (!localStorage.getItem('loggedIn')) {
+        alert('Please log in to read blog posts.');
+        window.location.href = 'login.html';
+        return;
+      }
+      // Simulate reading the post
+      alert(`Reading: ${title}\n\n(This would open the full article in a real implementation)`);
+    }
+  </script>
   <style>
     * {
       margin: 0;
@@ -290,7 +301,7 @@
       <li><a href="about.html">About</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="testimonials.html">Testimonials</a></li>
-      <li><a href="blog.html">Blog</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
       <li><a href="index.html#contact">Contact</a></li>
       <li><a href="login.html">Login</a></li>
     </ul>
@@ -328,7 +339,7 @@
             <span>6 min read</span>
           </div>
           <p class="blog-excerpt">The Pomodoro Technique — named after the tomato-shaped kitchen timer — structures your study into focused intervals with strategic pauses.</p>
-          <a href="pomodoro-technique.html" class="read-more">Read More →</a>
+          <a href="#" onclick="readBlogPost('The Pomodoro Technique: Study Smarter, Not Harder')" class="read-more">Read More →</a>
         </div>
       </div>
 
@@ -342,7 +353,7 @@
             <span>6 min read</span>
           </div>
           <p class="blog-excerpt">Top students don't have better memories — they have better systems. Here are the proven memory hacks that the highest performers actually use.</p>
-          <a href="memory-hacks.html" class="read-more">Read More →</a>
+          <a href="#" onclick="readBlogPost('Memory Hacks: Retain Information 10x Better')" class="read-more">Read More →</a>
         </div>
       </div>
 
@@ -356,7 +367,7 @@
             <span>10 min read</span>
           </div>
           <p class="blog-excerpt">Four weeks out from exam day is not a crisis — it's a golden window. This guide gives you a week-by-week blueprint to walk into your exam confident.</p>
-          <a href="exam-preparation.html" class="read-more">Read More →</a>
+          <a href="#" onclick="readBlogPost('Exam Preparation Strategies for STEM Students')" class="read-more">Read More →</a>
         </div>
       </div>
 
@@ -371,7 +382,7 @@
             <span>9 min read</span>
           </div>
           <p class="blog-excerpt">Calculus is the mathematics of change — how things move, grow, and transform. Differentiation answers: "How fast is this changing?"</p>
-          <a href="calculus-guide.html" class="read-more">Read More →</a>
+          <a href="#" onclick="readBlogPost('Calculus Guide: Derivatives and Integrals')" class="read-more">Read More →</a>
         </div>
       </div>
 
@@ -385,7 +396,7 @@
             <span>7 min read</span>
           </div>
           <p class="blog-excerpt">Algebra is a language of patterns and relationships, but it's also a minefield of potential errors. Here are the ten most common algebra errors.</p>
-          <a href="algebra-mistakes.html" class="read-more">Read More →</a>
+          <a href="#" onclick="readBlogPost('Common Algebra Mistakes and How to Avoid Them')" class="read-more">Read More →</a>
         </div>
       </div>
 
@@ -400,7 +411,7 @@
             <span>8 min read</span>
           </div>
           <p class="blog-excerpt">Waves and oscillations are everywhere in physics — from sound waves to electromagnetic waves. Understanding these phenomena requires connecting SHM with wave theory.</p>
-          <a href="waves-oscillations.html" class="read-more">Read More →</a>
+          <a href="#" onclick="readBlogPost('Waves and Oscillations: Physics Fundamentals')" class="read-more">Read More →</a>
         </div>
       </div>
 
@@ -414,7 +425,7 @@
             <span>8 min read</span>
           </div>
           <p class="blog-excerpt">Isaac Newton's three laws of motion, published in 1687, are the bedrock of classical physics. They explain everything from planetary orbits to car acceleration.</p>
-          <a href="newtons-laws.html" class="read-more">Read More →</a>
+          <a href="#" onclick="readBlogPost('Newton\'s Laws: Understanding Motion')" class="read-more">Read More →</a>
         </div>
       </div>
     </div>
@@ -430,7 +441,13 @@
   <!-- Footer -->
   <footer>
     <p>&copy; 2026 Elite STEM Tutors. All rights reserved.</p>
-    <p>Contact: +256 706 387 777 | info@elitestemtutors.com</p>
+    <p>Building Future Scientists & Engineers</p>
+    <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1rem;">
+      <a href="https://linkedin.com/company/elitestemtutors" target="_blank" style="color: #0A66C2; font-size: 1.5rem;"><i class="fab fa-linkedin"></i></a>
+      <a href="https://twitter.com/elitestemtutors" target="_blank" style="color: #1DA1F2; font-size: 1.5rem;"><i class="fab fa-twitter"></i></a>
+      <a href="https://instagram.com/elitestemtutors" target="_blank" style="color: #E4405F; font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
+      <a href="https://facebook.com/elitestemtutors" target="_blank" style="color: #1877F2; font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
+    </div>
   </footer>
 
   <script>

@@ -41,8 +41,10 @@
       transition: color 0.3s;
     }
 
-    nav a:hover {
+    nav a:hover,
+    nav a.active {
       color: #d49b2a;
+      text-decoration: underline;
     }
 
     /* Header Section */
@@ -199,7 +201,7 @@
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="services.html">Services</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
       <li><a href="reading-materials.html">Reading Materials</a></li>
       <li><a href="testimonials.html">Testimonials</a></li>
       <li><a href="blog.html">Blog</a></li>
@@ -220,6 +222,19 @@
       <h2>Tutoring Options</h2>
       <div class="services-grid">
         <div class="service-card">
+          <h3>� Online Sessions</h3>
+          <p>Live video tutoring from the comfort of your home. Same quality as in-person with added convenience and flexibility.</p>
+          <ul class="features-list">
+            <li>Zoom/Google Meet</li>
+            <li>Screen sharing</li>
+            <li>Recording available</li>
+            <li>Global access</li>
+          </ul>
+          <div class="price">UGX 30,000 for 1 hour / UGX 50,000 for 2 hours</div>
+          <button class="btn-enroll" onclick="enrollService('Online Sessions')">Enroll Now</button>
+        </div>
+
+        <div class="service-card">
           <h3>👤 One-on-One Tutoring</h3>
           <p>Personalized sessions with an expert tutor focused entirely on your needs. Perfect for students who need intensive support or want to excel faster.</p>
           <ul class="features-list">
@@ -228,7 +243,7 @@
             <li>Progress tracking</li>
             <li>30-min to 2-hour sessions</li>
           </ul>
-          <div class="price">UGX 50,000 - 100,000 per session</div>
+          <div class="price">UGX 100,000 for 2 hours (Physical)</div>
           <button class="btn-enroll" onclick="enrollService('One-on-One Tutoring')">Enroll Now</button>
         </div>
 
@@ -241,7 +256,7 @@
             <li>Fixed schedule</li>
             <li>Weekly sessions</li>
           </ul>
-          <div class="price">UGX 20,000 - 30,000 per student/session</div>
+          <div class="price">UGX 20,000 each for 1 hour / UGX 40,000 each for 2 hours (Online only)</div>
           <button class="btn-enroll" onclick="enrollService('Group Classes')">Enroll Now</button>
         </div>
 
@@ -254,21 +269,8 @@
             <li>Exam strategies</li>
             <li>Last-minute review</li>
           </ul>
-          <div class="price">UGX 500,000 - 1,000,000 (Full package)</div>
+          <div class="price">UGX 500,000 for 14 hours (covered in 2 weeks)</div>
           <button class="btn-enroll" onclick="enrollService('Intensive Exam Prep')">Enroll Now</button>
-        </div>
-
-        <div class="service-card">
-          <h3>💻 Online Sessions</h3>
-          <p>Live video tutoring from the comfort of your home. Same quality as in-person with added convenience and flexibility.</p>
-          <ul class="features-list">
-            <li>Zoom/Google Meet</li>
-            <li>Screen sharing</li>
-            <li>Recording available</li>
-            <li>Global access</li>
-          </ul>
-          <div class="price">UGX 40,000 - 80,000 per session</div>
-          <button class="btn-enroll" onclick="enrollService('Online Sessions')">Enroll Now</button>
         </div>
 
         <div class="service-card">
@@ -280,7 +282,7 @@
             <li>Practice problems</li>
             <li>Answer keys</li>
           </ul>
-          <div class="price">UGX 10,000 - 50,000 per package</div>
+          <div class="price">UGX 20,000 per package</div>
           <button class="btn-enroll" onclick="enrollService('Resource Packages')">Enroll Now</button>
         </div>
 
@@ -328,16 +330,34 @@
         </thead>
         <tbody>
           <tr>
-            <td>One-on-One Session</td>
-            <td>1-2 hours</td>
-            <td>50,000 - 100,000</td>
+            <td>One-on-One Session (Physical)</td>
+            <td>2 hours</td>
+            <td>100,000</td>
             <td>Intensive support</td>
           </tr>
           <tr>
-            <td>Group Class</td>
-            <td>1.5 hours</td>
-            <td>20,000 - 30,000/student</td>
-            <td>Collaborative learning</td>
+            <td>One-on-One Online Session</td>
+            <td>1 hour</td>
+            <td>30,000</td>
+            <td>Convenient learning</td>
+          </tr>
+          <tr>
+            <td>One-on-One Online Session</td>
+            <td>2 hours</td>
+            <td>50,000</td>
+            <td>Extended support</td>
+          </tr>
+          <tr>
+            <td>Group Class (Online)</td>
+            <td>1 hour</td>
+            <td>20,000/student</td>
+            <td>Peer learning</td>
+          </tr>
+          <tr>
+            <td>Group Class (Online)</td>
+            <td>2 hours</td>
+            <td>40,000/student</td>
+            <td>Extended group session</td>
           </tr>
           <tr>
             <td>Weekly Package</td>
@@ -352,10 +372,16 @@
             <td>Continuous access</td>
           </tr>
           <tr>
-            <td>Exam Prep (6 weeks)</td>
-            <td>12 sessions</td>
-            <td>600,000 - 1,000,000</td>
+            <td>Exam Prep (2 weeks)</td>
+            <td>14 sessions</td>
+            <td>500,000</td>
             <td>Exam success</td>
+          </tr>
+          <tr>
+            <td>Resource Package</td>
+            <td>Digital materials</td>
+            <td>20,000</td>
+            <td>Self-paced learning</td>
           </tr>
         </tbody>
       </table>
@@ -396,10 +422,10 @@
     <p>&copy; 2026 Elite STEM Tutors. All rights reserved.</p>
     <p>Building Future Scientists & Engineers</p>
     <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1rem;">
-      <a href="https://linkedin.com/company/elitestemtutors" target="_blank" style="color: white; font-size: 1.5rem;">📘 LinkedIn</a>
-      <a href="https://twitter.com/elitestemtutors" target="_blank" style="color: white; font-size: 1.5rem;">🐦 Twitter</a>
-      <a href="https://instagram.com/elitestemtutors" target="_blank" style="color: white; font-size: 1.5rem;">📷 Instagram</a>
-      <a href="https://facebook.com/elitestemtutors" target="_blank" style="color: white; font-size: 1.5rem;">📘 Facebook</a>
+      <a href="https://linkedin.com/company/elitestemtutors" target="_blank" style="color: #0A66C2; font-size: 1.5rem;"><i class="fab fa-linkedin"></i></a>
+      <a href="https://twitter.com/elitestemtutors" target="_blank" style="color: #1DA1F2; font-size: 1.5rem;"><i class="fab fa-twitter"></i></a>
+      <a href="https://instagram.com/elitestemtutors" target="_blank" style="color: #E4405F; font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
+      <a href="https://facebook.com/elitestemtutors" target="_blank" style="color: #1877F2; font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
     </div>
   </footer>
 
