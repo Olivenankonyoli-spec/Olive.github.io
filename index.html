@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -380,6 +380,16 @@
       margin: 0.5rem 0;
     }
   </style>
+<style>
+  body { background: #ffffff !important; color: #111 !important; }
+  nav { background-color: #ffffff !important; border-bottom: 1px solid #ddd !important; }
+  nav a { color: #111 !important; }
+  nav a:hover, nav a.active { color: #8b1f34 !important; text-decoration: underline !important; }
+  .nav-logo { display: flex !important; align-items: center !important; gap: 1rem !important; }
+  .nav-logo img { max-width: 160px !important; height: auto !important; display: block !important; }
+  .cta-button, .btn-enroll, button, .button { background-color: #8b1f34 !important; color: #fff !important; border: none !important; box-shadow: none !important; }
+  .cta-button:hover, .btn-enroll:hover, button:hover, .button:hover { background-color: #d49b2a !important; color: #111 !important; }
+</style>
 </head>
 
 <body>
@@ -404,7 +414,8 @@
   <div class="header" id="home">
     <div class="header-content">
       <h1>Elite STEM Tutors</h1>
-      <p>Excel in IGCSE and A Level Math, Physics, Chemistry & Computer Science</p>
+      <p>Excel in IGCSE and A Level Math, Physics, Chemistry, Biology & Computer Science</p>
+      <p style="font-size: 1.15rem; margin: 1rem auto 0; max-width: 800px; font-weight: 700; color: #f8d03f;">New students receive a free 30-minute first session to start strong.</p>
       <button class="cta-button">Get Started</button>
     </div>
   </div>
@@ -416,6 +427,7 @@
       <div class="flyer-copy">
         <h2>Download Our Flyer</h2>
         <p>See our latest tutoring programs, session formats, and success-focused guidance in one beautiful handout.</p>
+        <p style="font-weight: 700; color: #111;">Grab your free 30-minute first session offer inside.</p>
         <a href="images/flyer.jpeg" target="_blank" class="cta-button">View the Flyer</a>
       </div>
     </div>
@@ -428,23 +440,23 @@
       <h2>Our Subjects</h2>
       <div class="subject-grid">
         <div class="subject-card">
-          <h3>📐 Mathematics</h3>
+          <h3> Mathematics</h3>
           <p>Algebra, Geometry, Calculus, Statistics - Master every concept from basics to advanced levels.</p>
         </div>
         <div class="subject-card">
-          <h3>⚛️ Physics</h3>
+          <h3> Physics</h3>
           <p>Mechanics, Electricity, Thermodynamics - Understand the laws of motion and energy.</p>
         </div>
         <div class="subject-card">
-          <h3>🧪 Chemistry</h3>
+          <h3> Chemistry</h3>
           <p>Organic, Inorganic, Physical Chemistry - Explore reactions and molecular structures.</p>
         </div>
         <div class="subject-card">
-          <h3>🧬 Biology</h3>
+          <h3> Biology</h3>
           <p>Cell Biology, Genetics, Ecology - Understand life sciences and biological processes.</p>
         </div>
         <div class="subject-card">
-          <h3>💻 Computer Science</h3>
+          <h3> Computer Science</h3>
           <p>Programming, Data Structures, Algorithms - Build your coding skills from scratch.</p>
         </div>
       </div>
@@ -479,19 +491,19 @@
       <p style="text-align: center; margin-bottom: 2rem; color: white;">Shape the future of education with us. We're looking for passionate educators to join our elite team.</p>
       <div class="team-benefits">
         <div class="benefit-item">
-          <h3>🌟 Impact Lives</h3>
+          <h3> Impact Lives</h3>
           <p>Help international students achieve their academic dreams in IGCSE and A Level.</p>
         </div>
         <div class="benefit-item">
-          <h3>💰 Competitive Compensation</h3>
+          <h3> Competitive Compensation</h3>
           <p>Earn top rates while doing what you love.</p>
         </div>
         <div class="benefit-item">
-          <h3>📈 Professional Growth</h3>
+          <h3> Professional Growth</h3>
           <p>Continuous training and development opportunities.</p>
         </div>
         <div class="benefit-item">
-          <h3>🏠 Flexible Work</h3>
+          <h3> Flexible Work</h3>
           <p>Work from anywhere with our online platform.</p>
         </div>
       </div>
@@ -538,6 +550,7 @@
     <p>&copy; 2026 Elite STEM Tutors. All rights reserved.</p>
     <p>Building Future Scientists & Engineers</p>
     <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1rem;">
+      <a href="https://wa.me/256706387777" target="_blank" style="color: #25D366; font-size: 1.5rem;" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
       <a href="https://linkedin.com/company/elitestemtutors" target="_blank" style="color: #0A66C2; font-size: 1.5rem;"><i class="fab fa-linkedin"></i></a>
       <a href="https://twitter.com/elitestemtutors" target="_blank" style="color: #1DA1F2; font-size: 1.5rem;"><i class="fab fa-twitter"></i></a>
       <a href="https://instagram.com/elitestemtutors" target="_blank" style="color: #E4405F; font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
@@ -593,7 +606,6 @@
       'home': 'Elite STEM Tutors - IGCSE & A Level Excellence',
       'subjects': 'Our Subjects - Elite STEM Tutors',
       'features': 'Why Choose Us - Elite STEM Tutors',
-      'join-team': 'Join Our Team - Elite STEM Tutors',
       'contact': 'Contact Us - Elite STEM Tutors'
     };
 

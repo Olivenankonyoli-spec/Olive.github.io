@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -107,6 +107,20 @@
       font-size: 0.9rem;
     }
 
+    .team-photo-placeholder {
+      width: 100%;
+      height: 180px;
+      border: 2px dashed #999;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #555;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+      background: #fff;
+    }
+
     .stats {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -145,6 +159,16 @@
       margin: 0.5rem 0;
     }
   </style>
+<style>
+  body { background: #ffffff !important; color: #111 !important; }
+  nav { background-color: #ffffff !important; border-bottom: 1px solid #ddd !important; }
+  nav a { color: #111 !important; }
+  nav a:hover, nav a.active { color: #8b1f34 !important; text-decoration: underline !important; }
+  .nav-logo { display: flex !important; align-items: center !important; gap: 1rem !important; }
+  .nav-logo img { max-width: 160px !important; height: auto !important; display: block !important; }
+  .cta-button, .btn-enroll, button, .button { background-color: #8b1f34 !important; color: #fff !important; border: none !important; box-shadow: none !important; }
+  .cta-button:hover, .btn-enroll:hover, button:hover, .button:hover { background-color: #d49b2a !important; color: #111 !important; }
+</style>
 </head>
 
 <body>
@@ -240,26 +264,47 @@
       <h2>Meet Our Expert Tutors</h2>
       <div class="team-grid">
         <div class="team-member">
-          <h3>👨‍🏫 Olive Nankonyoli</h3>
-          <p><strong>Mathematics & Physics Specialist</strong></p>
-          <p>Passionate educator with a deep understanding of mathematical concepts and physical principles, helping students unlock their potential in STEM fields.</p>
+          <div class="team-photo-placeholder">Profile picture placeholder</div>
+          <h3> Kiiza Angelo</h3>
+          <p><strong>Biology Enthusiast</strong></p>
+          <p>Knowledgeable guide who brings the wonders of life sciences to life, inspiring students to explore and understand the natural world around them.</p>
         </div>
         <div class="team-member">
-          <h3>👨‍🔬 Mwamula Collins</h3>
+          <div class="team-photo-placeholder">Profile picture placeholder</div>
+          <h3> Mwamula Collins</h3>
           <p><strong>Physics & Chemistry Expert</strong></p>
           <p>Dedicated tutor who makes complex scientific theories accessible and engaging, fostering curiosity and critical thinking in every lesson.</p>
         </div>
         <div class="team-member">
-          <h3>👩‍💻 Wawomola Denis</h3>
+          <img src="images/profile picture.jpeg" alt="Olive Nankonyoli" style="width: 100%; border-radius: 12px; margin-bottom: 1.25rem; display: block; max-height: 200px; object-fit: cover;">
+          <h3> Olive Nankonyoli</h3>
+          <p><strong>Mathematics & Physics Specialist</strong></p>
+          <p>Passionate educator with a deep understanding of mathematical concepts and physical principles, helping students unlock their potential in STEM fields.</p>
+        </div>
+        <div class="team-member">
+          <div class="team-photo-placeholder">Profile picture placeholder</div>
+          <h3>👩‍ Wawomola Denis</h3>
           <p><strong>Computer Science Maestro</strong></p>
           <p>Innovative instructor bridging the gap between theory and practice, guiding students through the exciting world of programming and algorithms.</p>
         </div>
-        <div class="team-member">
-          <h3>📚 Kiiza Angelo</h3>
-          <p><strong>Biology Enthusiast</strong></p>
-          <p>Knowledgeable guide who brings the wonders of life sciences to life, inspiring students to explore and understand the natural world around them.</p>
         </div>
       </div>
+    </section>
+
+    <!-- Join Our Team -->
+    <section class="content-section" style="background: linear-gradient(135deg, rgba(139,31,52,0.1) 0%, rgba(8,29,62,0.1) 100%); padding: 2rem; border-radius: 10px; border-left: 4px solid #8b1f34;">
+      <h2>Join Our Team of Expert Tutors</h2>
+      <p>Are you passionate about STEM education? Share your expertise and help students excel!</p>
+      <div style="margin: 1.5rem 0; text-align: left; max-width: 600px; margin-left: auto; margin-right: auto;">
+        <p><strong>Benefits of joining our team:</strong></p>
+        <ul style="list-style: none; padding: 0;">
+          <li style="padding: 0.5rem 0;"><strong>✓ Flexible working hours</strong></li>
+          <li style="padding: 0.5rem 0;"><strong>✓ Competitive compensation</strong></li>
+          <li style="padding: 0.5rem 0;"><strong>✓ Professional development opportunities</strong></li>
+          <li style="padding: 0.5rem 0;"><strong>✓ Supportive work environment</strong></li>
+        </ul>
+      </div>
+      <a href="index.html#contact" style="display: inline-block; background-color: #8b1f34; color: white; padding: 1rem 2rem; border-radius: 5px; text-decoration: none; margin-top: 1rem; transition: background-color 0.3s; font-weight: 600;" onmouseover="this.style.backgroundColor='#d49b2a'; this.style.color='#000000'" onmouseout="this.style.backgroundColor='#8b1f34'; this.style.color='#ffffff'">Apply as Tutor</a>
     </section>
 
     <!-- Contact Section -->
@@ -280,6 +325,7 @@
     <p>&copy; 2026 Elite STEM Tutors. All rights reserved.</p>
     <p>Building Future Scientists & Engineers</p>
     <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1rem;">
+      <a href="https://wa.me/256706387777" target="_blank" style="color: #25D366; font-size: 1.5rem;" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
       <a href="https://linkedin.com/company/elitestemtutors" target="_blank" style="color: #0A66C2; font-size: 1.5rem;"><i class="fab fa-linkedin"></i></a>
       <a href="https://twitter.com/elitestemtutors" target="_blank" style="color: #1DA1F2; font-size: 1.5rem;"><i class="fab fa-twitter"></i></a>
       <a href="https://instagram.com/elitestemtutors" target="_blank" style="color: #E4405F; font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
@@ -288,3 +334,4 @@
   </footer>
 </body>
 </html>
+

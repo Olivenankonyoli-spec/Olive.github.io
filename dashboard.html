@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -373,6 +373,16 @@
       margin-bottom: 0.5rem;
     }
   </style>
+<style>
+  body { background: #ffffff !important; color: #111 !important; }
+  nav { background-color: #ffffff !important; border-bottom: 1px solid #ddd !important; }
+  nav a { color: #111 !important; }
+  nav a:hover, nav a.active { color: #8b1f34 !important; text-decoration: underline !important; }
+  .nav-logo { display: flex !important; align-items: center !important; gap: 1rem !important; }
+  .nav-logo img { max-width: 160px !important; height: auto !important; display: block !important; }
+  .cta-button, .btn-enroll, button, .button { background-color: #8b1f34 !important; color: #fff !important; border: none !important; box-shadow: none !important; }
+  .cta-button:hover, .btn-enroll:hover, button:hover, .button:hover { background-color: #d49b2a !important; color: #111 !important; }
+</style>
 </head>
 
 <body>
@@ -383,7 +393,7 @@
     </div>
     <div class="nav-right">
       <div class="user-menu">
-        <button class="user-btn" onclick="toggleMenu()">👤 My Account</button>
+        <button class="user-btn" onclick="toggleMenu()"> My Account</button>
         <div class="dropdown-menu" id="userMenu">
           <a href="#profile" onclick="navigateTo('profile')">My Profile</a>
           <a href="#settings" onclick="navigateTo('settings')">Settings</a>
@@ -400,9 +410,9 @@
       <ul>
         <li><a href="#overview" class="active" onclick="navigateTo('overview')">📊 Overview</a></li>
         <li><a href="#emails" onclick="navigateTo('emails')">📧 Manage Emails</a></li>
-        <li><a href="#students" onclick="navigateTo('students')">👨‍🎓 Students</a></li>
-        <li><a href="#tutors" onclick="navigateTo('tutors')">👨‍🏫 Tutors</a></li>
-        <li><a href="#reports" onclick="navigateTo('reports')">📈 Reports</a></li>
+        <li><a href="#students" onclick="navigateTo('students')">👨‍ Students</a></li>
+        <li><a href="#tutors" onclick="navigateTo('tutors')"> Tutors</a></li>
+        <li><a href="#reports" onclick="navigateTo('reports')"> Reports</a></li>
         <li><a href="#settings" onclick="navigateTo('settings')">⚙️ Settings</a></li>
       </ul>
     </div>
@@ -432,7 +442,7 @@
           </div>
 
           <div class="card">
-            <h3>👨‍🎓 Active Students</h3>
+            <h3>👨‍ Active Students</h3>
             <div class="card-value">87</div>
             <div class="card-label">+5 this month</div>
             <div class="progress-bar">
@@ -441,7 +451,7 @@
           </div>
 
           <div class="card">
-            <h3>👨‍🏫 Active Tutors</h3>
+            <h3> Active Tutors</h3>
             <div class="card-value">8</div>
             <div class="card-label">2 applications pending</div>
             <div class="progress-bar">
@@ -450,7 +460,7 @@
           </div>
 
           <div class="card">
-            <h3>💰 Monthly Revenue</h3>
+            <h3> Monthly Revenue</h3>
             <div class="card-value">UGX 2.4M</div>
             <div class="card-label">+15% from last month</div>
             <div class="progress-bar">
@@ -864,3 +874,4 @@
   </script>
 </body>
 </html>
+
