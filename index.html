@@ -5,455 +5,85 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Elite STEM Tutors - IGCSE & A Level Excellence</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      color: #333;
-    }
-
-    /* Navigation Bar */
-    nav {
-      background-color: #081d3e;
-      padding: 0.75rem 2rem;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .nav-logo img {
-      max-width: 160px;
-      height: auto;
-      background: transparent;
-      display: block;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: flex-end;
-      gap: 1.75rem;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-
-    nav a:hover,
-    nav a.active {
-      color: #d49b2a;
-      text-decoration: underline;
-    }
-
-    nav a:hover {
-      color: #d49b2a;
-    }
-
-    /* Header Section */
-    .header {
-      background: linear-gradient(135deg, rgba(8,29,62,0.95) 0%, rgba(75,21,34,0.85) 40%, rgba(139,31,52,0.75) 100%), url('images/banner.jpg') center/cover no-repeat;
-      color: white;
-      padding: 4rem 2rem;
-      text-align: center;
-      position: relative;
-    }
-
-    .header::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.3);
-    }
-
-    .header-content {
-      position: relative;
-      z-index: 1;
-    }
-
-    .logo {
-      max-width: 200px;
-      height: auto;
-      margin-bottom: 1rem;
-      background: transparent;
-    }
-
-    .header h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .flyer-section {
-      padding: 2rem 2rem 0;
-      background: #f7f7f7;
-    }
-
-    .flyer-card {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr;
-      gap: 1.5rem;
-      align-items: center;
-      background: white;
-      border-radius: 15px;
-      padding: 1.5rem;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .flyer-card img {
-      width: 100%;
-      border-radius: 15px;
-      display: block;
-    }
-
-    .flyer-copy h2 {
-      color: #8b1f34;
-      margin-bottom: 1rem;
-    }
-
-    .flyer-copy p {
-      color: #4a4a4a;
-      margin-bottom: 1.5rem;
-      line-height: 1.8;
-    }
-
-    .service-list {
-      list-style: none;
-      padding-left: 0;
-      margin: 1rem 0 0;
-      text-align: left;
-    }
-
-    .service-list li {
-      margin-bottom: 0.75rem;
-      padding-left: 1.25rem;
-      position: relative;
-      color: #555;
-    }
-
-    .service-list li:before {
-      content: '✓';
-      position: absolute;
-      left: 0;
-      color: #8b1f34;
-      font-weight: bold;
-    }
-
-    .header p {
-      font-size: 1.3rem;
-      opacity: 0.9;
-    }
-
-    /* Main Container */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem;
-    }
-
-    /* Subjects Section */
-    .subjects {
-      margin: 3rem 0;
-    }
-
-    .subjects h2 {
-      font-size: 2rem;
-      margin-bottom: 2rem;
-      text-align: center;
-      color: #2c3e50;
-    }
-
-    .subject-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-
-    .subject-card {
-      background: white;
-      border: 2px solid #e0e0e0;
-      border-radius: 10px;
-      padding: 2rem;
-      text-align: center;
-      transition: transform 0.3s, box-shadow 0.3s;
-      cursor: pointer;
-    }
-
-    .subject-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    .subject-card h3 {
-      color: #667eea;
-      margin-bottom: 1rem;
-      font-size: 1.5rem;
-    }
-
-    .subject-card p {
-      color: #666;
-    }
-
-    /* Features Section */
-    .features {
-      background-color: #f8f9fa;
-      margin: 3rem 0;
-      padding: 3rem 2rem;
-      border-radius: 10px;
-    }
-
-    .features h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 2rem;
-      color: #2c3e50;
-    }
-
-    .feature-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-    }
-
-    .feature-item {
-      text-align: center;
-    }
-
-    .feature-item h3 {
-      color: #8b1f34;
-      margin-bottom: 0.5rem;
-    }
-
-    /* Services Section */
-    .services {
-      margin: 3rem 0;
-    }
-
-    .services h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      text-align: center;
-      color: #8b1f34;
-    }
-
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-    }
-
-    .service-card {
-      background: white;
-      border: 2px solid #e0e0e0;
-      border-radius: 10px;
-      padding: 2rem;
-      text-align: center;
-      transition: transform 0.3s, box-shadow 0.3s;
-      cursor: pointer;
-    }
-
-    .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    .service-card h3 {
-      color: #8b1f34;
-      margin-bottom: 1rem;
-      font-size: 1.5rem;
-    }
-
-    .service-card p {
-      color: #666;
-      margin-bottom: 1rem;
-      line-height: 1.7;
-    }
-
-    .service-card .service-list {
-      margin-bottom: 1rem;
-    }
-
-    .price {
-      font-size: 1.1rem;
-      color: #8b1f34;
-      font-weight: bold;
-      margin-top: 1rem;
-    }
-
-    /* Join Team Section */
-    .join-team {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 3rem 2rem;
-      border-radius: 10px;
-      margin: 3rem 0;
-      text-align: center;
-    }
-
-    .join-team h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    }
-
-    .join-team p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-      opacity: 0.9;
-    }
-
-    .team-benefits {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    .benefit-item {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 1.5rem;
-      border-radius: 10px;
-      backdrop-filter: blur(10px);
-    }
-
-    .benefit-item h3 {
-      margin-bottom: 0.5rem;
-      font-size: 1.3rem;
-    }
-
-    .benefit-item p {
-      opacity: 0.9;
-    }
-
-    /* CTA Button */
-    .cta-button {
-      background-color: #8b1f34;
-      color: white;
-      padding: 1rem 2rem;
-      border: none;
-      border-radius: 5px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background-color 0.3s;
-      display: inline-block;
-      text-decoration: none;
-      margin-top: 1rem;
-    }
-
-    .cta-button:hover {
-      background-color: #d49b2a;
-    }
-
-    /* Footer */
-    footer {
-      background-color: #2c3e50;
-      color: white;
-      text-align: center;
-      padding: 2rem;
-      margin-top: 3rem;
-    }
-
-    footer p {
-      margin: 0.5rem 0;
-    }
-  </style>
+  <link rel="stylesheet" href="css/main.css">
 </head>
-
 <body>
-  <!-- Navigation -->
-  <nav>
-    <div class="nav-logo">
-      <a href="index.html"><img src="images/logo.jpeg" alt="Elite STEM Tutors Logo"></a>
-    </div>
-    <ul>
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="reading-materials.html">Reading Materials</a></li>
-      <li><a href="testimonials.html">Testimonials</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="login.html">Login</a></li>
-    </ul>
-  </nav>
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html" class="nav-brand">
+        <img src="images/logo.jpeg" alt="Elite STEM Tutors">
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul id="nav-menu" class="nav-menu">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="reading-materials.html">Reading Materials</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <!-- Header Section -->
-  <div class="header" id="home">
-    <div class="header-content">
+  <section class="hero hero--banner" id="home">
+    <div class="hero-content">
       <h1>Elite STEM Tutors</h1>
-      <p>Excel in IGCSE and A Level Math, Physics, Chemistry & Computer Science</p>
-      <button class="cta-button">Get Started</button>
+      <p class="lead">Excel in IGCSE and A Level Math, Physics, Chemistry & Computer Science</p>
+      <a href="#contact" class="btn btn-primary">Get Started</a>
     </div>
-  </div>
+  </section>
 
-  <!-- Flyer Section -->
   <section class="flyer-section">
-    <div class="flyer-card">
+    <div class="flyer-card reveal">
       <img src="images/flyer.jpeg" alt="Elite STEM Tutors Flyer">
       <div class="flyer-copy">
         <h2>Download Our Flyer</h2>
         <p>See our latest tutoring programs, session formats, and success-focused guidance in one beautiful handout.</p>
-        <a href="images/flyer.jpeg" target="_blank" class="cta-button">View the Flyer</a>
+        <a href="images/flyer.jpeg" target="_blank" class="btn btn-primary">View the Flyer</a>
       </div>
     </div>
   </section>
 
-  <!-- Main Content -->
   <div class="container">
-    <!-- Subjects Section -->
-    <section class="subjects" id="subjects">
-      <h2>Our Subjects</h2>
-      <div class="subject-grid">
-        <div class="subject-card">
-          <h3>📐 Mathematics</h3>
-          <p>Algebra, Geometry, Calculus, Statistics - Master every concept from basics to advanced levels.</p>
+    <section class="section" id="subjects">
+      <h2 class="section-title">Our Subjects</h2>
+      <p class="section-subtitle">Expert tutoring across the full STEM curriculum for IGCSE and A Level.</p>
+      <div class="card-grid">
+        <div class="card reveal">
+          <div class="card-icon">📐</div>
+          <h3>Mathematics</h3>
+          <p>Algebra, Geometry, Calculus, Statistics — master every concept from basics to advanced levels.</p>
         </div>
-        <div class="subject-card">
-          <h3>⚛️ Physics</h3>
-          <p>Mechanics, Electricity, Thermodynamics - Understand the laws of motion and energy.</p>
+        <div class="card reveal">
+          <div class="card-icon">⚛️</div>
+          <h3>Physics</h3>
+          <p>Mechanics, Electricity, Thermodynamics — understand the laws of motion and energy.</p>
         </div>
-        <div class="subject-card">
-          <h3>🧪 Chemistry</h3>
-          <p>Organic, Inorganic, Physical Chemistry - Explore reactions and molecular structures.</p>
+        <div class="card reveal">
+          <div class="card-icon">🧪</div>
+          <h3>Chemistry</h3>
+          <p>Organic, Inorganic, Physical Chemistry — explore reactions and molecular structures.</p>
         </div>
-        <div class="subject-card">
-          <h3>🧬 Biology</h3>
-          <p>Cell Biology, Genetics, Ecology - Understand life sciences and biological processes.</p>
+        <div class="card reveal">
+          <div class="card-icon">🧬</div>
+          <h3>Biology</h3>
+          <p>Cell Biology, Genetics, Ecology — understand life sciences and biological processes.</p>
         </div>
-        <div class="subject-card">
-          <h3>💻 Computer Science</h3>
-          <p>Programming, Data Structures, Algorithms - Build your coding skills from scratch.</p>
+        <div class="card reveal">
+          <div class="card-icon">💻</div>
+          <h3>Computer Science</h3>
+          <p>Programming, Data Structures, Algorithms — build your coding skills from scratch.</p>
         </div>
       </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features" id="features">
-      <h2>Why Choose Us?</h2>
-      <div class="feature-list">
+    <section class="section features-band" id="features">
+      <h2 class="section-title">Why Choose Us?</h2>
+      <div class="feature-grid">
         <div class="feature-item">
           <h3>✓ Expert Tutors</h3>
           <p>Experienced educators with proven track records</p>
@@ -473,159 +103,102 @@
       </div>
     </section>
 
-    <!-- Join Our Team Section -->
-    <section class="join-team" id="join-team">
+    <section class="section cta-band" id="join-team">
       <h2>Join Our Team of Expert Tutors</h2>
-      <p style="text-align: center; margin-bottom: 2rem; color: white;">Shape the future of education with us. We're looking for passionate educators to join our elite team.</p>
-      <div class="team-benefits">
-        <div class="benefit-item">
+      <p>Shape the future of education with us. We're looking for passionate educators to join our elite team.</p>
+      <div class="benefit-grid">
+        <div class="benefit-card">
           <h3>🌟 Impact Lives</h3>
           <p>Help international students achieve their academic dreams in IGCSE and A Level.</p>
         </div>
-        <div class="benefit-item">
+        <div class="benefit-card">
           <h3>💰 Competitive Compensation</h3>
           <p>Earn top rates while doing what you love.</p>
         </div>
-        <div class="benefit-item">
+        <div class="benefit-card">
           <h3>📈 Professional Growth</h3>
           <p>Continuous training and development opportunities.</p>
         </div>
-        <div class="benefit-item">
+        <div class="benefit-card">
           <h3>🏠 Flexible Work</h3>
           <p>Work from anywhere with our online platform.</p>
         </div>
       </div>
-      <div style="text-align: center; margin-top: 2rem;">
-        <a href="mailto:careers@elitestemtutors.com" class="cta-button">Apply Now</a>
-      </div>
+      <a href="mailto:careers@elitestemtutors.com" class="btn btn-primary">Apply Now</a>
     </section>
   </div>
 
-  <!-- Contact Section -->
-  <section class="container" id="contact">
-    <h2 style="text-align: center; margin: 2rem 0; color: #2c3e50;">Get In Touch</h2>
-    <div style="max-width: 600px; margin: 0 auto;">
-      <form id="contactForm" style="background: #f8f9fa; padding: 2rem; border-radius: 10px;">
-        <div style="margin-bottom: 1.5rem;">
-          <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Full Name</label>
-          <input type="text" id="name" name="name" required style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem;">
-        </div>
-        <div style="margin-bottom: 1.5rem;">
-          <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Email Address</label>
-          <input type="email" id="email" name="email" required style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem;">
-        </div>
-        <div style="margin-bottom: 1.5rem;">
-          <label for="phone" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Phone Number</label>
-          <input type="tel" id="phone" name="phone" style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem;">
-        </div>
-        <div style="margin-bottom: 1.5rem;">
-          <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Message</label>
-          <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 5px; font-size: 1rem;"></textarea>
-        </div>
-        <button type="submit" class="cta-button" style="width: 100%;">Send Message</button>
-      </form>
-      <div style="text-align: center; margin-top: 2rem;">
-        <p><strong>Direct Contact:</strong></p>
-        <p>📧 Email: info@elitestemtutors.com</p>
-        <p>📱 Phone: +256 706 387 777</p>
-        <p><a href="https://wa.me/256706387777" target="_blank" style="color: #667eea; text-decoration: none;">💬 WhatsApp us</a></p>
+  <section class="container contact-section" id="contact">
+    <h2 class="section-title">Get In Touch</h2>
+    <p class="section-subtitle">Book your first session or ask us anything — we reply within 24 hours.</p>
+    <form id="contactForm" class="contact-form">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required>
       </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone">
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+    </form>
+    <div class="contact-info">
+      <p><strong>Direct Contact</strong></p>
+      <p>📧 info@elitestemtutors.com</p>
+      <p>📱 +256 706 387 777</p>
+      <p><a href="https://wa.me/256706387777" target="_blank" rel="noopener">💬 WhatsApp us</a></p>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
+  <footer class="site-footer">
     <p>&copy; 2026 Elite STEM Tutors. All rights reserved.</p>
-    <p>Building Future Scientists & Engineers</p>
-    <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1rem;">
-      <a href="https://linkedin.com/company/elitestemtutors" target="_blank" style="color: #0A66C2; font-size: 1.5rem;"><i class="fab fa-linkedin"></i></a>
-      <a href="https://twitter.com/elitestemtutors" target="_blank" style="color: #1DA1F2; font-size: 1.5rem;"><i class="fab fa-twitter"></i></a>
-      <a href="https://instagram.com/elitestemtutors" target="_blank" style="color: #E4405F; font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
-      <a href="https://facebook.com/elitestemtutors" target="_blank" style="color: #1877F2; font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
+    <p class="tagline">Building Future Scientists & Engineers</p>
+    <div class="social-links">
+      <a href="https://linkedin.com/company/elitestemtutors" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://twitter.com/elitestemtutors" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="https://instagram.com/elitestemtutors" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://facebook.com/elitestemtutors" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
     </div>
   </footer>
 
+  <script src="js/nav.js"></script>
   <script>
-    // Simple smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
       anchor.addEventListener('click', function (e) {
+        var href = this.getAttribute('href');
+        if (href === '#') return;
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
+        var target = document.querySelector(href);
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
 
-    // Handle contact form submission
-    const contactForm = document.getElementById('contactForm');
+    var contactForm = document.getElementById('contactForm');
     if (contactForm) {
-      contactForm.addEventListener('submit', function(e) {
+      contactForm.addEventListener('submit', function (e) {
         e.preventDefault();
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
-        
-        // Show confirmation
-        alert(`Thank you ${name}! We received your message. We'll contact you at ${email} soon.`);
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        alert('Thank you ' + name + '! We received your message. We\'ll contact you at ' + email + ' soon.');
         contactForm.reset();
       });
     }
 
-    // Add click animation to buttons
-    document.querySelectorAll('.cta-button').forEach(button => {
-      button.addEventListener('click', function() {
-        if (this.id !== 'contactForm') {
-          if (!this.closest('form')) {
-            alert('Contact us to book your first session!');
-          }
-        }
+    var reveals = document.querySelectorAll('.reveal');
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
-    });
-
-    // Highlight nav item based on scroll position
-    const navLinks = document.querySelectorAll('nav a[href^="#"], nav a[href$="index.html"]');
-    const sections = document.querySelectorAll('body > .header, #subjects, #features, #join-team, #contact');
-    const sectionTitles = {
-      'home': 'Elite STEM Tutors - IGCSE & A Level Excellence',
-      'subjects': 'Our Subjects - Elite STEM Tutors',
-      'features': 'Why Choose Us - Elite STEM Tutors',
-      'join-team': 'Join Our Team - Elite STEM Tutors',
-      'contact': 'Contact Us - Elite STEM Tutors'
-    };
-
-    function updateActiveNav() {
-      const scrollPos = window.scrollY + 120;
-      let activeSet = false;
-
-      sections.forEach(section => {
-        const top = section.offsetTop;
-        const height = section.offsetHeight;
-        const id = section.id || 'home';
-        if (scrollPos >= top && scrollPos < top + height) {
-          document.querySelectorAll('nav a').forEach(link => link.classList.remove('active'));
-          const activeLink = document.querySelector(`nav a[href="#${id}"]`) || document.querySelector('nav a[href="index.html"]');
-          if (activeLink) {
-            activeLink.classList.add('active');
-          }
-          // Update page title
-          document.title = sectionTitles[id] || 'Elite STEM Tutors - IGCSE & A Level Excellence';
-          activeSet = true;
-        }
-      });
-
-      if (!activeSet) {
-        document.querySelectorAll('nav a').forEach(link => link.classList.remove('active'));
-        document.querySelector('nav a[href="index.html"]').classList.add('active');
-        document.title = sectionTitles['home'];
-      }
-    }
-
-    window.addEventListener('scroll', updateActiveNav);
-    window.addEventListener('load', updateActiveNav);
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(function (el) { observer.observe(el); });
   </script>
 </body>
 </html>

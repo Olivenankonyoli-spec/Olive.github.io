@@ -4,177 +4,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us - Elite STEM Tutors</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      color: #333;
-    }
-
-    /* Navigation Bar */
-    nav {
-      background-color: #081d3e;
-      padding: 1rem 0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #d49b2a;
-    }
-
-    /* Header Section */
-    .header {
-      background: linear-gradient(135deg, rgba(8,29,62,0.95) 0%, rgba(75,21,34,0.85) 40%, rgba(139,31,52,0.75) 100%);
-      color: white;
-      padding: 3rem 2rem;
-      text-align: center;
-    }
-
-    .header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    /* Main Container */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem;
-    }
-
-    .content-section {
-      margin: 3rem 0;
-    }
-
-    .content-section h2 {
-      color: #1a1a40;
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .content-section p {
-      font-size: 1.1rem;
-      color: #555;
-      margin-bottom: 1rem;
-      line-height: 1.8;
-    }
-
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .team-member {
-      background: #f8f9fa;
-      padding: 2rem;
-      border-radius: 10px;
-      text-align: center;
-      border-left: 4px solid #800000;
-    }
-
-    .team-member h3 {
-      color: #800000;
-      margin: 1rem 0 0.5rem;
-    }
-
-    .team-member p {
-      color: #666;
-      font-size: 0.9rem;
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      background: #f0f0f0;
-      padding: 2rem;
-      border-radius: 10px;
-      margin: 2rem 0;
-    }
-
-    .stat-box {
-      text-align: center;
-    }
-
-    .stat-box h3 {
-      color: #800000;
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .stat-box p {
-      color: #555;
-      font-size: 1rem;
-    }
-
-    /* Footer */
-    footer {
-      background-color: #1a1a40;
-      color: white;
-      text-align: center;
-      padding: 2rem;
-      margin-top: 3rem;
-    }
-
-    footer p {
-      margin: 0.5rem 0;
-    }
-  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="css/main.css">
 </head>
-
 <body>
-  <!-- Navigation -->
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html" class="active">About</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="reading-materials.html">Reading Materials</a></li>
-      <li><a href="testimonials.html">Testimonials</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
-      <li><a href="login.html">Login</a></li>
-    </ul>
-  </nav>
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html" class="nav-brand">
+        <img src="images/logo.jpeg" alt="Elite STEM Tutors">
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul id="nav-menu" class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="reading-materials.html">Reading Materials</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <!-- Header Section -->
-  <div class="header">
+  <header class="page-header">
     <h1>About Elite STEM Tutors</h1>
     <p>Building Tomorrow's Scientists & Engineers</p>
-  </div>
+  </header>
 
-  <!-- Main Content -->
   <div class="container">
-    <!-- Our Mission -->
     <section class="content-section">
       <h2>Our Mission</h2>
       <p>
-        Elite STEM Tutors is dedicated to transforming the way students learn science, technology, engineering, and mathematics. 
+        Elite STEM Tutors is dedicated to transforming the way students learn science, technology, engineering, and mathematics.
         We believe that every student has the potential to excel, and with the right guidance and support, they can achieve extraordinary results.
       </p>
       <p>
@@ -182,21 +46,19 @@
       </p>
     </section>
 
-    <!-- Our Story -->
     <section class="content-section">
       <h2>Our Story</h2>
       <p>
-        Founded in 2020, Elite STEM Tutors started with a simple vision: to bridge the gap between classroom learning and true understanding. 
+        Founded in 2020, Elite STEM Tutors started with a simple vision: to bridge the gap between classroom learning and true understanding.
         Our founder noticed that many students struggled not because they lacked intelligence, but because they lacked proper guidance and mentorship.
       </p>
       <p>
-        What began as a one-on-one tutoring service has grown into a comprehensive educational platform serving hundreds of students across Uganda. 
+        What began as a one-on-one tutoring service has grown into a comprehensive educational platform serving hundreds of students across Uganda.
         Today, we pride ourselves on our personalized approach, experienced tutors, and proven track record of success.
       </p>
     </section>
 
-    <!-- Statistics -->
-    <div class="stats">
+    <div class="stats-grid">
       <div class="stat-box">
         <h3>100+</h3>
         <p>Students Tutored</p>
@@ -215,27 +77,15 @@
       </div>
     </div>
 
-    <!-- Why Choose Us -->
     <section class="content-section">
       <h2>Why Choose Us?</h2>
-      <p>
-        <strong>Experienced Tutors:</strong> Our team consists of highly qualified educators with years of experience in their respective fields.
-      </p>
-      <p>
-        <strong>Personalized Learning:</strong> We tailor our teaching methods to each student's unique learning style and pace.
-      </p>
-      <p>
-        <strong>Proven Results:</strong> Our students consistently achieve top grades and gain admission to leading universities.
-      </p>
-      <p>
-        <strong>Flexible & Affordable:</strong> We offer flexible scheduling and competitive rates to make quality education accessible to all.
-      </p>
-      <p>
-        <strong>Holistic Approach:</strong> Beyond academics, we build critical thinking, problem-solving, and confidence.
-      </p>
+      <p><strong>Experienced Tutors:</strong> Our team consists of highly qualified educators with years of experience in their respective fields.</p>
+      <p><strong>Personalized Learning:</strong> We tailor our teaching methods to each student's unique learning style and pace.</p>
+      <p><strong>Proven Results:</strong> Our students consistently achieve top grades and gain admission to leading universities.</p>
+      <p><strong>Flexible & Affordable:</strong> We offer flexible scheduling and competitive rates to make quality education accessible to all.</p>
+      <p><strong>Holistic Approach:</strong> Beyond academics, we build critical thinking, problem-solving, and confidence.</p>
     </section>
 
-    <!-- Our Team -->
     <section class="content-section">
       <h2>Meet Our Expert Tutors</h2>
       <div class="team-grid">
@@ -262,29 +112,28 @@
       </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="content-section" style="text-align: center; background: #f8f9fa; padding: 2rem; border-radius: 10px;">
+    <section class="content-section cta-panel">
       <h2>Get In Touch</h2>
       <p>Have questions? We'd love to hear from you!</p>
-      <p style="margin: 1rem 0;">
+      <p class="contact-info" style="margin: 1rem 0;">
         <strong>📱 Phone:</strong> +256 706 387 777<br>
         <strong>📧 Email:</strong> info@elitestemtutors.com<br>
-        <a href="https://wa.me/256706387777" style="color: #667eea; text-decoration: none;">💬 WhatsApp us</a>
+        <a href="https://wa.me/256706387777" target="_blank" rel="noopener">💬 WhatsApp us</a>
       </p>
-      <a href="index.html#contact" style="display: inline-block; background-color: #8b1f34; color: white; padding: 1rem 2rem; border-radius: 5px; text-decoration: none; margin-top: 1rem; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#d49b2a'; this.style.color='#000000'" onmouseout="this.style.backgroundColor='#8b1f34'; this.style.color='#ffffff'">Send us a Message</a>
+      <a href="index.html#contact" class="btn btn-primary">Send us a Message</a>
     </section>
   </div>
 
-  <!-- Footer -->
-  <footer>
+  <footer class="site-footer">
     <p>&copy; 2026 Elite STEM Tutors. All rights reserved.</p>
-    <p>Building Future Scientists & Engineers</p>
-    <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1rem;">
-      <a href="https://linkedin.com/company/elitestemtutors" target="_blank" style="color: #0A66C2; font-size: 1.5rem;"><i class="fab fa-linkedin"></i></a>
-      <a href="https://twitter.com/elitestemtutors" target="_blank" style="color: #1DA1F2; font-size: 1.5rem;"><i class="fab fa-twitter"></i></a>
-      <a href="https://instagram.com/elitestemtutors" target="_blank" style="color: #E4405F; font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
-      <a href="https://facebook.com/elitestemtutors" target="_blank" style="color: #1877F2; font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
+    <p class="tagline">Building Future Scientists & Engineers</p>
+    <div class="social-links">
+      <a href="https://linkedin.com/company/elitestemtutors" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://twitter.com/elitestemtutors" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="https://instagram.com/elitestemtutors" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://facebook.com/elitestemtutors" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
     </div>
   </footer>
+  <script src="js/nav.js"></script>
 </body>
 </html>

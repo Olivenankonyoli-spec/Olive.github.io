@@ -4,212 +4,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reading Materials - Elite STEM Tutors</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      color: #333;
-    }
-
-    /* Navigation Bar */
-    nav {
-      background-color: #081d3e;
-      padding: 1rem 0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #d49b2a;
-    }
-
-    /* Header Section */
-    .header {
-      background: linear-gradient(135deg, rgba(8,29,62,0.95) 0%, rgba(75,21,34,0.85) 40%, rgba(139,31,52,0.75) 100%);
-      color: white;
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-
-    .header h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .header p {
-      font-size: 1.3rem;
-      opacity: 0.9;
-    }
-
-    /* Main Container */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem;
-    }
-
-    /* Materials Section */
-    .materials-section {
-      margin: 3rem 0;
-    }
-
-    .materials-section h2 {
-      font-size: 2rem;
-      margin-bottom: 2rem;
-      text-align: center;
-      color: #8b1f34;
-    }
-
-    .grade-selector {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-
-    .grade-selector label {
-      font-size: 1.2rem;
-      margin-right: 1rem;
-      color: #2c3e50;
-    }
-
-    .grade-selector select {
-      padding: 0.75rem;
-      font-size: 1rem;
-      border: 2px solid #667eea;
-      border-radius: 5px;
-      background: white;
-      cursor: pointer;
-    }
-
-    .materials-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-
-    .material-card {
-      background: white;
-      border: 2px solid #e0e0e0;
-      border-radius: 10px;
-      padding: 2rem;
-      text-align: center;
-      transition: transform 0.3s, box-shadow 0.3s;
-      cursor: pointer;
-    }
-
-    .material-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    .material-card h3 {
-      color: #667eea;
-      margin-bottom: 1rem;
-      font-size: 1.5rem;
-    }
-
-    .material-card p {
-      color: #666;
-      margin-bottom: 1.5rem;
-    }
-
-    .download-btn {
-      background-color: #667eea;
-      color: white;
-      padding: 0.75rem 1.5rem;
-      border: none;
-      border-radius: 5px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background-color 0.3s;
-      text-decoration: none;
-      display: inline-block;
-    }
-
-    .download-btn:hover {
-      background-color: #764ba2;
-    }
-
-    /* Footer */
-    footer {
-      background-color: #2c3e50;
-      color: white;
-      text-align: center;
-      padding: 2rem;
-      margin-top: 3rem;
-    }
-
-    footer p {
-      margin: 0.5rem 0;
-    }
-
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-
-    .social-links a {
-      color: white;
-      font-size: 1.5rem;
-      transition: color 0.3s;
-    }
-
-    .social-links a:hover {
-      color: #3498db;
-    }
-  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
-  <!-- Navigation -->
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="reading-materials.html" class="active">Reading Materials</a></li>
-      <li><a href="testimonials.html">Testimonials</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
-      <li><a href="login.html">Login</a></li>
-    </ul>
-  </nav>
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html" class="nav-brand">
+        <img src="images/logo.jpeg" alt="Elite STEM Tutors">
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul id="nav-menu" class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="reading-materials.html" class="active">Reading Materials</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <!-- Header Section -->
-  <div class="header">
+  <header class="page-header">
     <h1>Reading Materials</h1>
     <p>Access comprehensive study resources for IGCSE and A Level</p>
-    <p style="font-size: 0.9rem; opacity: 0.8;">📧 Signed-in students receive email notifications about new materials every Friday</p>
-  </div>
+    <p style="font-size: 0.9rem; opacity: 0.85; margin-top: 0.5rem;">📧 Signed-in students receive email notifications about new materials every Friday</p>
+  </header>
 
   <!-- Main Content -->
   <div class="container">
     <!-- Materials Section -->
     <section class="materials-section">
-      <h2>Study Resources</h2>
+      <h2 class="section-title">Study Resources</h2>
       <div class="grade-selector">
         <label for="grade-select">Select Grade Level:</label>
         <select id="grade-select">
@@ -226,17 +57,17 @@
     </section>
   </div>
 
-  <!-- Footer -->
-  <footer>
+  <footer class="site-footer">
     <p>&copy; 2026 Elite STEM Tutors. All rights reserved.</p>
-    <p>Building Future Scientists & Engineers</p>
-    <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 1rem;">
-      <a href="https://linkedin.com/company/elitestemtutors" target="_blank" style="color: #0A66C2; font-size: 1.5rem;"><i class="fab fa-linkedin"></i></a>
-      <a href="https://twitter.com/elitestemtutors" target="_blank" style="color: #1DA1F2; font-size: 1.5rem;"><i class="fab fa-twitter"></i></a>
-      <a href="https://instagram.com/elitestemtutors" target="_blank" style="color: #E4405F; font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
-      <a href="https://facebook.com/elitestemtutors" target="_blank" style="color: #1877F2; font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
+    <p class="tagline">Building Future Scientists & Engineers</p>
+    <div class="social-links">
+      <a href="https://linkedin.com/company/elitestemtutors" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://twitter.com/elitestemtutors" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="https://instagram.com/elitestemtutors" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://facebook.com/elitestemtutors" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
     </div>
   </footer>
+  <script src="js/nav.js"></script>
 
   <script>
     const materialsData = {
