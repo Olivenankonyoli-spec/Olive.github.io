@@ -44,12 +44,22 @@
       display: block;
     }
 
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+
     nav ul {
       list-style: none;
       display: flex;
       justify-content: flex-end;
       gap: 1.75rem;
       flex-wrap: wrap;
+      align-items: center;
     }
 
     nav a {
@@ -67,6 +77,42 @@
 
     nav a:hover {
       color: #d49b2a;
+    }
+
+    @media (max-width: 860px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      nav ul {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: #081d3e;
+        width: 100%;
+        max-width: 320px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        padding: 1rem;
+        display: none;
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+      }
+
+      nav ul.open {
+        display: flex;
+      }
+
+      nav ul li {
+        width: 100%;
+      }
+
+      nav ul li a {
+        display: block;
+        width: 100%;
+        padding: 0.85rem 1rem;
+      }
     }
 
     /* Header Section */
@@ -384,6 +430,7 @@
   body { background: #ffffff !important; color: #111 !important; }
   nav { background-color: #ffffff !important; border-bottom: 1px solid #ddd !important; }
   nav a { color: #111 !important; }
+  .menu-toggle { color: #111 !important; }
   nav a:hover, nav a.active { color: #8b1f34 !important; text-decoration: underline !important; }
   .nav-logo { display: flex !important; align-items: center !important; gap: 1rem !important; }
   .nav-logo img { max-width: 160px !important; height: auto !important; display: block !important; }
@@ -398,6 +445,7 @@
     <div class="nav-logo">
       <a href="index.html"><img src="images/logo.jpeg" alt="Elite STEM Tutors Logo"></a>
     </div>
+    <button class="menu-toggle" aria-label="Open navigation menu">☰</button>
     <ul>
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="about.html">About</a></li>
@@ -405,7 +453,6 @@
       <li><a href="reading-materials.html">Reading Materials</a></li>
       <li><a href="testimonials.html">Testimonials</a></li>
       <li><a href="blog.html">Blog</a></li>
-      <li><a href="#contact">Contact</a></li>
       <li><a href="login.html">Login</a></li>
     </ul>
   </nav>
@@ -414,9 +461,9 @@
   <div class="header" id="home">
     <div class="header-content">
       <h1>Elite STEM Tutors</h1>
-      <p>Excel in IGCSE and A Level Math, Physics, Chemistry, Biology & Computer Science</p>
-      <p style="font-size: 1.15rem; margin: 1rem auto 0; max-width: 800px; font-weight: 700; color: #f8d03f;">New students receive a free 30-minute first session to start strong.</p>
-      <button class="cta-button">Get Started</button>
+      <p>Excel in IGCSE and A Level Mathematics, Physics, Chemistry, Biology, and Computer Science.</p>
+      <p style="font-size: 1.25rem; margin: 1rem auto 0; max-width: 800px; font-weight: 700; color: #f8d03f; line-height: 1.5;">Secure your complimentary 30-minute introductory session today — expertly designed to launch your academic success.</p>
+      <button class="cta-button">Reserve Your Free Session</button>
     </div>
   </div>
 
@@ -485,36 +532,7 @@
       </div>
     </section>
 
-    <!-- Join Our Team Section -->
-    <section class="join-team" id="join-team">
-      <h2>Join Our Team of Expert Tutors</h2>
-      <p style="text-align: center; margin-bottom: 2rem; color: white;">Shape the future of education with us. We're looking for passionate educators to join our elite team.</p>
-      <div class="team-benefits">
-        <div class="benefit-item">
-          <h3> Impact Lives</h3>
-          <p>Help international students achieve their academic dreams in IGCSE and A Level.</p>
-        </div>
-        <div class="benefit-item">
-          <h3> Competitive Compensation</h3>
-          <p>Earn top rates while doing what you love.</p>
-        </div>
-        <div class="benefit-item">
-          <h3> Professional Growth</h3>
-          <p>Continuous training and development opportunities.</p>
-        </div>
-        <div class="benefit-item">
-          <h3> Flexible Work</h3>
-          <p>Work from anywhere with our online platform.</p>
-        </div>
-      </div>
-      <div style="text-align: center; margin-top: 2rem;">
-        <a href="mailto:careers@elitestemtutors.com" class="cta-button">Apply Now</a>
-      </div>
-    </section>
   </div>
-
-  <!-- Contact Section -->
-  <section class="container" id="contact">
     <h2 style="text-align: center; margin: 2rem 0; color: #2c3e50;">Get In Touch</h2>
     <div style="max-width: 600px; margin: 0 auto;">
       <form id="contactForm" style="background: #f8f9fa; padding: 2rem; border-radius: 10px;">
@@ -601,7 +619,7 @@
 
     // Highlight nav item based on scroll position
     const navLinks = document.querySelectorAll('nav a[href^="#"], nav a[href$="index.html"]');
-    const sections = document.querySelectorAll('body > .header, #subjects, #features, #join-team, #contact');
+    const sections = document.querySelectorAll('body > .header, #subjects, #features');
     const sectionTitles = {
       'home': 'Elite STEM Tutors - IGCSE & A Level Excellence',
       'subjects': 'Our Subjects - Elite STEM Tutors',
@@ -635,6 +653,22 @@
         document.title = sectionTitles['home'];
       }
     }
+
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+      document.querySelector('nav ul').classList.toggle('open');
+    });
+
+    window.addEventListener('scroll', function() {
+      if (window.innerWidth <= 860) {
+        document.querySelector('nav ul').classList.remove('open');
+      }
+    });
+
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 860) {
+        document.querySelector('nav ul').classList.remove('open');
+      }
+    });
 
     window.addEventListener('scroll', updateActiveNav);
     window.addEventListener('load', updateActiveNav);

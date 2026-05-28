@@ -36,6 +36,20 @@
       position: sticky;
       top: 0;
       z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1rem;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 1.8rem;
+      cursor: pointer;
+      margin-left: 1rem;
     }
 
     nav ul {
@@ -45,6 +59,43 @@
       gap: 2rem;
       flex-wrap: wrap;
       padding: 0 1rem;
+      align-items: center;
+    }
+
+    @media (max-width: 860px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      nav ul {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: #081d3e;
+        width: 100%;
+        max-width: 320px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        padding: 1rem;
+        display: none;
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+      }
+
+      nav ul.open {
+        display: flex;
+      }
+
+      nav ul li {
+        width: 100%;
+      }
+
+      nav ul li a {
+        display: block;
+        width: 100%;
+        padding: 0.85rem 1rem;
+      }
     }
 
     nav a {
@@ -79,6 +130,7 @@
     .header h1 {
       font-size: 2.5rem;
       margin-bottom: 0.5rem;
+    }
 
     @media (max-width: 768px) {
       .header h1 {
@@ -252,6 +304,12 @@
       margin-bottom: 1rem;
     }
 
+    .cta-banner p {
+      font-size: 1rem;
+      max-width: 700px;
+      margin: 0 auto 1.5rem;
+    }
+
     .cta-button {
       background: #8b1f34;
       color: white;
@@ -294,6 +352,7 @@
   body { background: #ffffff !important; color: #111 !important; }
   nav { background-color: #ffffff !important; border-bottom: 1px solid #ddd !important; }
   nav a { color: #111 !important; }
+  .menu-toggle { color: #111 !important; }
   nav a:hover, nav a.active { color: #8b1f34 !important; text-decoration: underline !important; }
   .nav-logo { display: flex !important; align-items: center !important; gap: 1rem !important; }
   .nav-logo img { max-width: 160px !important; height: auto !important; display: block !important; }
@@ -305,21 +364,22 @@
 <body>
   <!-- Navigation -->
   <nav>
+    <a class="nav-logo" href="index.html" style="color:white; font-weight:700; text-decoration:none;">Elite STEM Tutors</a>
+    <button class="menu-toggle" aria-label="Open navigation menu">☰</button>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="testimonials.html">Testimonials</a></li>
       <li><a href="blog.html" class="active">Blog</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
       <li><a href="login.html">Login</a></li>
     </ul>
   </nav>
 
   <!-- Header Section -->
   <div class="header">
-    <h1>Elite STEM Blog</h1>
-    <p>Tips, Tricks & Study Hacks for Academic Success</p>
+    <h1>Elite STEM Insights</h1>
+    <p>Thoughtful guidance and practical strategies for academic excellence in STEM.</p>
   </div>
 
   <!-- Main Content -->
@@ -442,7 +502,7 @@
     <!-- CTA Banner -->
     <div class="cta-banner">
       <h2>Need Personalized Help?</h2>
-      <p style="margin-bottom: 1.5rem;">Get expert tutoring tailored to your specific learning needs. Start with your FREE 1-hour first session!</p>
+      <p style="margin-bottom: 1.5rem;">Get expert tutoring tailored to your specific learning needs. Start with your complimentary 30-minute first session.</p>
       <a href="services.html" class="cta-button">Book Your Free Session</a>
     </div>
   </div>
@@ -491,6 +551,22 @@
         document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
         this.classList.add('active');
       });
+    });
+
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+      document.querySelector('nav ul').classList.toggle('open');
+    });
+
+    window.addEventListener('scroll', function() {
+      if (window.innerWidth <= 860) {
+        document.querySelector('nav ul').classList.remove('open');
+      }
+    });
+
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 860) {
+        document.querySelector('nav ul').classList.remove('open');
+      }
     });
   </script>
 </body>
