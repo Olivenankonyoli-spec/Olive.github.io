@@ -1,328 +1,23 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Calculus Guide: Differentiation Made Simple | Elite STEM Tutors</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --ink: #0f1117;
-      --mid: #444b5a;
-      --light: #8a91a0;
-      --rule: #e4e6eb;
-      --accent: #2e5bdc;
-      --accent-light: #eef1fc;
-      --gold: #c8972a;
-      --bg: #f9f9fb;
-    }
-
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--bg);
-      color: var(--ink);
-      line-height: 1.75;
-    }
-
-    /* ── HERO ── */
-    .hero {
-      background: linear-gradient(145deg, #0f1c3f 0%, #1a3178 55%, #2e5bdc 100%);
-      padding: 80px 24px 60px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 70% 30%, rgba(200,151,42,.18) 0%, transparent 60%);
-    }
-    .hero-tag {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--gold);
-      border: 1px solid rgba(200,151,42,.4);
-      padding: 5px 14px;
-      border-radius: 40px;
-      margin-bottom: 22px;
-    }
-    .hero h1 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      font-weight: 900;
-      color: #fff;
-      line-height: 1.2;
-      max-width: 680px;
-      margin: 0 auto 20px;
-    }
-    .hero-meta {
-      color: rgba(255,255,255,.55);
-      font-size: 14px;
-      display: flex;
-      justify-content: center;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-
-    /* ── ARTICLE WRAPPER ── */
-    .article-wrap {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 56px 24px 80px;
-    }
-
-    /* ── INTRO ── */
-    .intro {
-      font-size: 1.1rem;
-      font-weight: 300;
-      color: var(--mid);
-      border-left: 3px solid var(--gold);
-      padding-left: 20px;
-      margin-bottom: 48px;
-      line-height: 1.8;
-    }
-
-    /* ── CONCEPT CARDS ── */
-    .concept-card {
-      background: #fff;
-      border: 1px solid var(--rule);
-      border-radius: 16px;
-      overflow: hidden;
-      margin-bottom: 32px;
-      box-shadow: 0 2px 16px rgba(0,0,0,.05);
-    }
-    .concept-header {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      padding: 22px 28px;
-      border-bottom: 1px solid var(--rule);
-    }
-    .concept-icon {
-      flex-shrink: 0;
-      width: 52px; height: 52px;
-      border-radius: 12px;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      font-size: 24px;
-    }
-    .c1 .concept-icon { background: #e8f0fe; }
-    .c2 .concept-icon { background: #fef3e2; }
-    .c3 .concept-icon { background: #e6f4ea; }
-    .c4 .concept-icon { background: #fce8e6; }
-    .c5 .concept-icon { background: #f3e5f5; }
-
-    .concept-title-group h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.25rem;
-      font-weight: 700;
-      margin-bottom: 2px;
-    }
-    .concept-title-group p {
-      font-size: 13px;
-      color: var(--light);
-      font-weight: 500;
-    }
-    .concept-body { padding: 24px 28px; }
-    .concept-body p { color: var(--mid); margin-bottom: 16px; font-size: .97rem; }
-
-    /* ── RULE BOX ── */
-    .rule-box {
-      background: var(--accent-light);
-      border-left: 4px solid var(--accent);
-      border-radius: 10px;
-      padding: 20px 24px;
-      margin: 20px 0;
-    }
-    .rule-label {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 8px;
-    }
-    .rule-equation {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--ink);
-      margin-bottom: 8px;
-    }
-    .rule-desc { font-size: .9rem; color: var(--mid); }
-
-    /* ── EXAMPLE GRID ── */
-    .example-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-      margin-top: 24px;
-    }
-    .example-card {
-      background: #fff;
-      border: 1px solid var(--rule);
-      border-radius: 12px;
-      padding: 20px;
-    }
-    .example-card h4 { font-size: .93rem; font-weight: 600; margin-bottom: 6px; }
-    .example-card p { font-size: .85rem; color: var(--mid); margin: 0; }
-
-    /* ── CALLOUT BOX ── */
-    .callout {
-      background: var(--accent-light);
-      border-left: 4px solid var(--accent);
-      border-radius: 10px;
-      padding: 20px 24px;
-      margin: 40px 0;
-    }
-    .callout-label {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 8px;
-    }
-    .callout p { color: var(--ink); font-size: .96rem; margin: 0; }
-
-    /* ── SECTION HEADING ── */
-    .section-h {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.45rem;
-      font-weight: 700;
-      margin: 48px 0 16px;
-    }
-    .section-p { color: var(--mid); margin-bottom: 16px; font-size: .97rem; }
-
-    /* ── COMMON PITFALLS ── */
-    .pitfalls-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      margin-top: 24px;
-    }
-    .pitfall-item {
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
-      background: #fff;
-      border: 1px solid #fce8e6;
-      border-radius: 10px;
-      padding: 16px 18px;
-    }
-    .pitfall-icon {
-      flex-shrink: 0;
-      width: 24px; height: 24px;
-      border-radius: 50%;
-      background: #fce8e6;
-      color: #c0392b;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 12px;
-      font-weight: 700;
-    }
-    .pitfall-content h4 {
-      font-size: .9rem;
-      font-weight: 600;
-      margin-bottom: 4px;
-      color: #c0392b;
-    }
-    .pitfall-content p {
-      font-size: .85rem;
-      color: var(--mid);
-      margin: 0;
-    }
-
-    /* ── APPLICATIONS ── */
-    .apps-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-      gap: 16px;
-      margin-top: 24px;
-    }
-    .app-card {
-      background: #fff;
-      border: 1px solid var(--rule);
-      border-radius: 12px;
-      padding: 20px;
-    }
-    .app-icon { font-size: 24px; margin-bottom: 10px; }
-    .app-card h4 { font-size: .93rem; font-weight: 600; margin-bottom: 6px; }
-    .app-card p { font-size: .85rem; color: var(--mid); margin: 0; }
-
-    /* ── CTA ── */
-    .cta-block {
-      background: linear-gradient(135deg, #0f1c3f, #2e5bdc);
-      border-radius: 20px;
-      padding: 48px 36px;
-      text-align: center;
-      margin-top: 60px;
-    }
-    .cta-block h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.6rem;
-      color: #fff;
-      margin-bottom: 12px;
-    }
-    .cta-block p { color: rgba(255,255,255,.65); font-size: .97rem; margin-bottom: 28px; }
-    .cta-btn {
-      display: inline-block;
-      background: var(--gold);
-      color: #0f1c3f;
-      font-weight: 700;
-      font-size: .95rem;
-      padding: 14px 32px;
-      border-radius: 50px;
-      text-decoration: none;
-      letter-spacing: .02em;
-    }
-
-    /* ── FOOTER META ── */
-    .article-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      border-top: 1px solid var(--rule);
-      margin-top: 56px;
-      padding-top: 24px;
-      font-size: 13px;
-      color: var(--light);
-    }
-    .tags span {
-      background: var(--accent-light);
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: 600;
-      padding: 4px 12px;
-      border-radius: 40px;
-      margin-right: 6px;
-    }
-
-    @media (max-width: 540px) {
-      .concept-header { flex-direction: column; align-items: flex-start; }
-      .article-wrap { padding: 40px 18px 60px; }
-      .cta-block { padding: 36px 24px; }
-    }
-  </style>
-<style>
-  body { background: #ffffff !important; color: #111 !important; }
-  nav { background-color: #ffffff !important; border-bottom: 1px solid #ddd !important; }
-  nav a { color: #111 !important; }
-  nav a:hover, nav a.active { color: #8b1f34 !important; text-decoration: underline !important; }
-  .nav-logo { display: flex !important; align-items: center !important; gap: 1rem !important; }
-  .nav-logo img { max-width: 160px !important; height: auto !important; display: block !important; }
-  .cta-button, .btn-enroll, button, .button { background-color: #8b1f34 !important; color: #fff !important; border: none !important; box-shadow: none !important; }
-  .cta-button:hover, .btn-enroll:hover, button:hover, .button:hover { background-color: #d49b2a !important; color: #111 !important; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A-Level Calculus Guide — Apex STEM Tutors</title>
+  <meta name="description" content="Apex STEM Tutors is a premier tutoring platform dedicated to helping IGCSE and A-Level students excel in Mathematics, Physics, Chemistry, Biology, and Computer Science. We provide personalized tutoring, exam preparation, concept mastery, and academic mentorship through experienced tutors.">
+  <link rel="icon" type="image/jpeg" href="images/logo.jpeg">
+  <link rel="apple-touch-icon" href="images/logo.jpeg">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Apex STEM Tutors">
+  <meta property="og:title" content="A-Level Calculus Guide — Apex STEM Tutors">
+  <meta property="og:description" content="Apex STEM Tutors is a premier tutoring platform dedicated to helping IGCSE and A-Level students excel in Mathematics, Physics, Chemistry, Biology, and Computer Science. We provide personalized tutoring, exam preparation, concept mastery, and academic mentorship through experienced tutors.">
+  <meta property="og:image" content="images/logo.jpeg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="A-Level Calculus Guide — Apex STEM Tutors">
+  <meta name="twitter:description" content="Apex STEM Tutors is a premier tutoring platform dedicated to helping IGCSE and A-Level students excel in Mathematics, Physics, Chemistry, Biology, and Computer Science. We provide personalized tutoring, exam preparation, concept mastery, and academic mentorship through experienced tutors.">
+  <meta name="twitter:image" content="images/logo.jpeg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 
@@ -330,7 +25,7 @@
 <nav style="background: #2c3e50; padding: 1rem 0; position: sticky; top: 0; z-index: 100;">
   <div style="max-width: 720px; margin: 0 auto; padding: 0 24px;">
     <div style="display: flex; justify-content: space-between; align-items: center;">
-      <a href="index.html" style="color: white; text-decoration: none; font-weight: 600;">← Elite STEM Tutors</a>
+      <a href="index.html" style="color: white; text-decoration: none; font-weight: 600;">← Apex STEM Tutors</a>
       <a href="blog.html" style="color: white; text-decoration: none; font-weight: 600;">Blog Index</a>
     </div>
   </div>
@@ -343,7 +38,7 @@
   <div class="hero-meta">
     <span> March 25, 2026</span>
     <span>⏱ 9 min read</span>
-    <span> Elite STEM Tutors</span>
+    <span> Apex STEM Tutors</span>
   </div>
 </div>
 
@@ -391,7 +86,7 @@
   <!-- CONCEPT 2 -->
   <div class="concept-card c2">
     <div class="concept-header">
-      <div class="concept-icon">📊</div>
+      <div class="concept-icon"></div>
       <div class="concept-title-group">
         <h2>Power Rule: The Workhorse</h2>
         <p>Differentiating polynomials</p>
@@ -425,7 +120,7 @@
   <!-- CONCEPT 3 -->
   <div class="concept-card c3">
     <div class="concept-header">
-      <div class="concept-icon">➕</div>
+      <div class="concept-icon"></div>
       <div class="concept-title-group">
         <h2>Sum, Product, and Chain Rules</h2>
         <p>Combining functions</p>
@@ -493,7 +188,7 @@
   <!-- CONCEPT 5 -->
   <div class="concept-card c5">
     <div class="concept-header">
-      <div class="concept-icon">📉</div>
+      <div class="concept-icon"></div>
       <div class="concept-title-group">
         <h2>Exponential and Logarithmic</h2>
         <p>Growth and decay</p>
@@ -526,7 +221,7 @@
 
   <!-- CALLOUT -->
   <div class="callout">
-    <div class="callout-label">💡 Elite Insight</div>
+    <div class="callout-label"> Elite Insight</div>
     <p>Calculus isn't about memorizing formulas — it's about recognizing patterns. Every differentiation problem is really just: "What rule applies here? How do the rules combine?" Master the five core rules above, and you can differentiate 90% of A-Level calculus problems. The rest is practice and pattern recognition.</p>
   </div>
 
@@ -536,35 +231,35 @@
 
   <ul class="pitfalls-list">
     <li class="pitfall-item">
-      <div class="pitfall-icon">⚠️</div>
+      <div class="pitfall-icon">️</div>
       <div class="pitfall-content">
         <h4>Forgetting the chain rule</h4>
         <p>When you see a function within a function, you need the chain rule. d/dx [sin(x²)] ≠ cos(x²) — it needs the extra 2x.</p>
       </div>
     </li>
     <li class="pitfall-item">
-      <div class="pitfall-icon">⚠️</div>
+      <div class="pitfall-icon">️</div>
       <div class="pitfall-content">
         <h4>Mixing up trig derivatives</h4>
         <p>d/dx [sin x] = cos x, but d/dx [cos x] = -sin x. The negative sign is easy to forget.</p>
       </div>
     </li>
     <li class="pitfall-item">
-      <div class="pitfall-icon">⚠️</div>
+      <div class="pitfall-icon">️</div>
       <div class="pitfall-content">
         <h4>Treating constants as variables</h4>
         <p>Constants differentiate to zero. In d/dx [3x² + 7], the 7 disappears, and the 3 is a constant multiplier.</p>
       </div>
     </li>
     <li class="pitfall-item">
-      <div class="pitfall-icon">⚠️</div>
+      <div class="pitfall-icon">️</div>
       <div class="pitfall-content">
         <h4>Product rule confusion</h4>
         <p>d/dx [f g] = f' g + f g'. Remember: first times derivative of second, plus second times derivative of first.</p>
       </div>
     </li>
     <li class="pitfall-item">
-      <div class="pitfall-icon">⚠️</div>
+      <div class="pitfall-icon">️</div>
       <div class="pitfall-content">
         <h4>Quotient rule complexity</h4>
         <p>d/dx [f/g] = (f' g - f g') / g². It's easier to rewrite as a product: f/g = f × g^(-1), then use product and chain rules.</p>
@@ -578,12 +273,12 @@
 
   <div class="apps-grid">
     <div class="app-card">
-      <div class="app-icon">🚗</div>
+      <div class="app-icon"></div>
       <h4>Engineering</h4>
       <p>Designing bridges, calculating maximum loads, optimizing fuel efficiency.</p>
     </div>
     <div class="app-card">
-      <div class="app-icon">💊</div>
+      <div class="app-icon"></div>
       <h4>Medicine</h4>
       <p>Modeling drug concentrations, understanding population dynamics in epidemiology.</p>
     </div>
@@ -598,12 +293,12 @@
       <p>Population growth models, enzyme kinetics, neural signal processing.</p>
     </div>
     <div class="app-card">
-      <div class="app-icon">🛰️</div>
+      <div class="app-icon">️</div>
       <h4>Physics</h4>
       <p>Velocity, acceleration, electric fields, quantum mechanics wave functions.</p>
     </div>
     <div class="app-card">
-      <div class="app-icon">🎮</div>
+      <div class="app-icon"></div>
       <h4>Computer Science</h4>
       <p>Machine learning algorithms, computer graphics, optimization problems.</p>
     </div>
@@ -612,7 +307,7 @@
   <!-- CLOSING -->
   <h2 class="section-h">The Path Forward</h2>
   <p class="section-p">Differentiation is a skill built through deliberate practice. Start with the power rule, master the chain rule, then add the others. Don't just memorize — understand why each rule works. Work through examples until the patterns become automatic.</p>
-  <p class="section-p">At Elite STEM Tutors, we teach calculus the way it should be taught: with intuition first, then rigor. Our students don't just learn to differentiate — they learn why differentiation matters and how to apply it to real problems in physics, engineering, and beyond.</p>
+  <p class="section-p">At Apex STEM Tutors, we teach calculus the way it should be taught: with intuition first, then rigor. Our students don't just learn to differentiate — they learn why differentiation matters and how to apply it to real problems in physics, engineering, and beyond.</p>
 
   <!-- CTA -->
   <div class="cta-block">
@@ -629,9 +324,10 @@
       <span>Differentiation</span>
       <span>A-Level</span>
     </div>
-    <div>Published: March 25, 2026 · Elite STEM Tutors</div>
+    <div>Published: March 25, 2026 · Apex STEM Tutors</div>
   </div>
 
 </div>
+  <script src="js/site.js"></script>
 </body>
 </html>

@@ -1,318 +1,23 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Newton's Laws: The Foundation of Physics | Elite STEM Tutors</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --ink: #0f1117;
-      --mid: #444b5a;
-      --light: #8a91a0;
-      --rule: #e4e6eb;
-      --accent: #2e5bdc;
-      --accent-light: #eef1fc;
-      --gold: #c8972a;
-      --bg: #f9f9fb;
-    }
-
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--bg);
-      color: var(--ink);
-      line-height: 1.75;
-    }
-
-    /* ── HERO ── */
-    .hero {
-      background: linear-gradient(145deg, #0f1c3f 0%, #1a3178 55%, #2e5bdc 100%);
-      padding: 80px 24px 60px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 70% 30%, rgba(200,151,42,.18) 0%, transparent 60%);
-    }
-    .hero-tag {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--gold);
-      border: 1px solid rgba(200,151,42,.4);
-      padding: 5px 14px;
-      border-radius: 40px;
-      margin-bottom: 22px;
-    }
-    .hero h1 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      font-weight: 900;
-      color: #fff;
-      line-height: 1.2;
-      max-width: 680px;
-      margin: 0 auto 20px;
-    }
-    .hero-meta {
-      color: rgba(255,255,255,.55);
-      font-size: 14px;
-      display: flex;
-      justify-content: center;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-
-    /* ── ARTICLE WRAPPER ── */
-    .article-wrap {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 56px 24px 80px;
-    }
-
-    /* ── INTRO ── */
-    .intro {
-      font-size: 1.1rem;
-      font-weight: 300;
-      color: var(--mid);
-      border-left: 3px solid var(--gold);
-      padding-left: 20px;
-      margin-bottom: 48px;
-      line-height: 1.8;
-    }
-
-    /* ── LAW CARDS ── */
-    .law-card {
-      background: #fff;
-      border: 1px solid var(--rule);
-      border-radius: 16px;
-      overflow: hidden;
-      margin-bottom: 32px;
-      box-shadow: 0 2px 16px rgba(0,0,0,.05);
-    }
-    .law-header {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      padding: 22px 28px;
-      border-bottom: 1px solid var(--rule);
-    }
-    .law-number {
-      flex-shrink: 0;
-      width: 52px; height: 52px;
-      border-radius: 12px;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
-    .law-number.l1 { background: #e8f0fe; color: #2e5bdc; }
-    .law-number.l2 { background: #fef3e2; color: #c8972a; }
-    .law-number.l3 { background: #e6f4ea; color: #2d7a47; }
-
-    .law-number .num {
-      font-family: 'Playfair Display', serif;
-      font-size: 22px;
-      line-height: 1;
-    }
-    .law-title-group h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.25rem;
-      font-weight: 700;
-      margin-bottom: 2px;
-    }
-    .law-title-group p {
-      font-size: 13px;
-      color: var(--light);
-      font-weight: 500;
-    }
-    .law-body { padding: 24px 28px; }
-    .law-body p { color: var(--mid); margin-bottom: 16px; font-size: .97rem; }
-
-    /* ── EQUATION BOX ── */
-    .equation-box {
-      background: var(--accent-light);
-      border-left: 4px solid var(--accent);
-      border-radius: 10px;
-      padding: 20px 24px;
-      margin: 20px 0;
-    }
-    .equation-label {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 8px;
-    }
-    .equation {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: var(--ink);
-      margin-bottom: 8px;
-    }
-    .equation-desc { font-size: .9rem; color: var(--mid); }
-
-    /* ── EXAMPLE GRID ── */
-    .example-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-      margin-top: 24px;
-    }
-    .example-card {
-      background: #fff;
-      border: 1px solid var(--rule);
-      border-radius: 12px;
-      padding: 20px;
-    }
-    .example-icon { font-size: 24px; margin-bottom: 10px; }
-    .example-card h4 { font-size: .93rem; font-weight: 600; margin-bottom: 6px; }
-    .example-card p { font-size: .85rem; color: var(--mid); margin: 0; }
-
-    /* ── CALLOUT BOX ── */
-    .callout {
-      background: var(--accent-light);
-      border-left: 4px solid var(--accent);
-      border-radius: 10px;
-      padding: 20px 24px;
-      margin: 40px 0;
-    }
-    .callout-label {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 8px;
-    }
-    .callout p { color: var(--ink); font-size: .96rem; margin: 0; }
-
-    /* ── SECTION HEADING ── */
-    .section-h {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.45rem;
-      font-weight: 700;
-      margin: 48px 0 16px;
-    }
-    .section-p { color: var(--mid); margin-bottom: 16px; font-size: .97rem; }
-
-    /* ── COMMON MISTAKES ── */
-    .mistakes-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      margin-top: 24px;
-    }
-    .mistake-item {
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
-      background: #fff;
-      border: 1px solid #fce8e6;
-      border-radius: 10px;
-      padding: 16px 18px;
-    }
-    .mistake-icon {
-      flex-shrink: 0;
-      width: 24px; height: 24px;
-      border-radius: 50%;
-      background: #fce8e6;
-      color: #c0392b;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 12px;
-      font-weight: 700;
-    }
-    .mistake-content h4 {
-      font-size: .9rem;
-      font-weight: 600;
-      margin-bottom: 4px;
-      color: #c0392b;
-    }
-    .mistake-content p {
-      font-size: .85rem;
-      color: var(--mid);
-      margin: 0;
-    }
-
-    /* ── CTA ── */
-    .cta-block {
-      background: linear-gradient(135deg, #0f1c3f, #2e5bdc);
-      border-radius: 20px;
-      padding: 48px 36px;
-      text-align: center;
-      margin-top: 60px;
-    }
-    .cta-block h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.6rem;
-      color: #fff;
-      margin-bottom: 12px;
-    }
-    .cta-block p { color: rgba(255,255,255,.65); font-size: .97rem; margin-bottom: 28px; }
-    .cta-btn {
-      display: inline-block;
-      background: var(--gold);
-      color: #0f1c3f;
-      font-weight: 700;
-      font-size: .95rem;
-      padding: 14px 32px;
-      border-radius: 50px;
-      text-decoration: none;
-      letter-spacing: .02em;
-    }
-
-    /* ── FOOTER META ── */
-    .article-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      border-top: 1px solid var(--rule);
-      margin-top: 56px;
-      padding-top: 24px;
-      font-size: 13px;
-      color: var(--light);
-    }
-    .tags span {
-      background: var(--accent-light);
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: 600;
-      padding: 4px 12px;
-      border-radius: 40px;
-      margin-right: 6px;
-    }
-
-    @media (max-width: 540px) {
-      .law-header { flex-direction: column; align-items: flex-start; }
-      .article-wrap { padding: 40px 18px 60px; }
-      .cta-block { padding: 36px 24px; }
-    }
-  </style>
-<style>
-  body { background: #ffffff !important; color: #111 !important; }
-  nav { background-color: #ffffff !important; border-bottom: 1px solid #ddd !important; }
-  nav a { color: #111 !important; }
-  nav a:hover, nav a.active { color: #8b1f34 !important; text-decoration: underline !important; }
-  .nav-logo { display: flex !important; align-items: center !important; gap: 1rem !important; }
-  .nav-logo img { max-width: 160px !important; height: auto !important; display: block !important; }
-  .cta-button, .btn-enroll, button, .button { background-color: #8b1f34 !important; color: #fff !important; border: none !important; box-shadow: none !important; }
-  .cta-button:hover, .btn-enroll:hover, button:hover, .button:hover { background-color: #d49b2a !important; color: #111 !important; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Newton's Laws Explained — Apex STEM Tutors</title>
+  <meta name="description" content="Apex STEM Tutors is a premier tutoring platform dedicated to helping IGCSE and A-Level students excel in Mathematics, Physics, Chemistry, Biology, and Computer Science. We provide personalized tutoring, exam preparation, concept mastery, and academic mentorship through experienced tutors.">
+  <link rel="icon" type="image/jpeg" href="images/logo.jpeg">
+  <link rel="apple-touch-icon" href="images/logo.jpeg">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Apex STEM Tutors">
+  <meta property="og:title" content="Newton's Laws Explained — Apex STEM Tutors">
+  <meta property="og:description" content="Apex STEM Tutors is a premier tutoring platform dedicated to helping IGCSE and A-Level students excel in Mathematics, Physics, Chemistry, Biology, and Computer Science. We provide personalized tutoring, exam preparation, concept mastery, and academic mentorship through experienced tutors.">
+  <meta property="og:image" content="images/logo.jpeg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Newton's Laws Explained — Apex STEM Tutors">
+  <meta name="twitter:description" content="Apex STEM Tutors is a premier tutoring platform dedicated to helping IGCSE and A-Level students excel in Mathematics, Physics, Chemistry, Biology, and Computer Science. We provide personalized tutoring, exam preparation, concept mastery, and academic mentorship through experienced tutors.">
+  <meta name="twitter:image" content="images/logo.jpeg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 
@@ -320,7 +25,7 @@
 <nav style="background: #2c3e50; padding: 1rem 0; position: sticky; top: 0; z-index: 100;">
   <div style="max-width: 720px; margin: 0 auto; padding: 0 24px;">
     <div style="display: flex; justify-content: space-between; align-items: center;">
-      <a href="index.html" style="color: white; text-decoration: none; font-weight: 600;">← Elite STEM Tutors</a>
+      <a href="index.html" style="color: white; text-decoration: none; font-weight: 600;">← Apex STEM Tutors</a>
       <a href="blog.html" style="color: white; text-decoration: none; font-weight: 600;">Blog Index</a>
     </div>
   </div>
@@ -333,7 +38,7 @@
   <div class="hero-meta">
     <span> April 5, 2026</span>
     <span>⏱ 8 min read</span>
-    <span> Elite STEM Tutors</span>
+    <span> Apex STEM Tutors</span>
   </div>
 </div>
 
@@ -365,17 +70,17 @@
       </div>
       <div class="example-grid">
         <div class="example-card">
-          <div class="example-icon">🚗</div>
+          <div class="example-icon"></div>
           <h4>Car Crash</h4>
           <p>Your body continues moving forward when the car stops suddenly because of inertia.</p>
         </div>
         <div class="example-card">
-          <div class="example-icon">🪑</div>
+          <div class="example-icon"></div>
           <h4>Tablecloth Trick</h4>
           <p>Pulling a tablecloth quickly leaves dishes on the table because they resist the change in motion.</p>
         </div>
         <div class="example-card">
-          <div class="example-icon">🛰️</div>
+          <div class="example-icon">️</div>
           <h4>Space Station</h4>
           <p>Astronauts orbit Earth at constant speed because no net force acts on them in orbit.</p>
         </div>
@@ -404,17 +109,17 @@
       </div>
       <div class="example-grid">
         <div class="example-card">
-          <div class="example-icon">🏃</div>
+          <div class="example-icon"></div>
           <h4>Sprinting</h4>
           <p>The same force produces greater acceleration on a lighter runner than a heavier one.</p>
         </div>
         <div class="example-card">
-          <div class="example-icon">🚀</div>
+          <div class="example-icon"></div>
           <h4>Rocket Launch</h4>
           <p>Rockets need enormous thrust because they have huge mass but must accelerate quickly.</p>
         </div>
         <div class="example-card">
-          <div class="example-icon">⚽</div>
+          <div class="example-icon"></div>
           <h4>Kicking a Ball</h4>
           <p>The force from your foot causes the ball to accelerate in the direction of the kick.</p>
         </div>
@@ -443,17 +148,17 @@
       </div>
       <div class="example-grid">
         <div class="example-card">
-          <div class="example-icon">🚶</div>
+          <div class="example-icon"></div>
           <h4>Walking</h4>
           <p>Your foot pushes backward on the ground; the ground pushes forward on your foot.</p>
         </div>
         <div class="example-card">
-          <div class="example-icon">🛩️</div>
+          <div class="example-icon">️</div>
           <h4>Jet Engine</h4>
           <p>Hot gases push backward out of the engine; the engine pushes forward on the gases.</p>
         </div>
         <div class="example-card">
-          <div class="example-icon">🎣</div>
+          <div class="example-icon"></div>
           <h4>Fishing</h4>
           <p>The fish pulls on the line; the line pulls equally on the fish (in opposite direction).</p>
         </div>
@@ -463,7 +168,7 @@
 
   <!-- CALLOUT -->
   <div class="callout">
-    <div class="callout-label">💡 Elite Insight</div>
+    <div class="callout-label"> Elite Insight</div>
     <p>Newton's laws apply to everything from subatomic particles to galaxies. They break down at very high speeds (near light speed) or very small scales (quantum level), where Einstein's relativity and quantum mechanics take over. But for everyday physics and most exam questions, Newton's laws are perfectly accurate.</p>
   </div>
 
@@ -473,35 +178,35 @@
 
   <ul class="mistakes-list">
     <li class="mistake-item">
-      <div class="mistake-icon">⚠️</div>
+      <div class="mistake-icon">️</div>
       <div class="mistake-content">
         <h4>Thinking force and motion are the same</h4>
         <p>Objects in motion don't need a constant force to keep moving (that's inertia). Forces cause changes in motion, not motion itself.</p>
       </div>
     </li>
     <li class="mistake-item">
-      <div class="mistake-icon">⚠️</div>
+      <div class="mistake-icon">️</div>
       <div class="mistake-content">
         <h4>Forgetting net force</h4>
         <p>Always calculate the vector sum of all forces. Multiple forces can cancel out, leaving no net force and no acceleration.</p>
       </div>
     </li>
     <li class="mistake-item">
-      <div class="mistake-icon">⚠️</div>
+      <div class="mistake-icon">️</div>
       <div class="mistake-content">
         <h4>Mixing up action-reaction pairs</h4>
         <p>Action and reaction forces act on different objects. They never cancel because they're on different bodies.</p>
       </div>
     </li>
     <li class="mistake-item">
-      <div class="mistake-icon">⚠️</div>
+      <div class="mistake-icon">️</div>
       <div class="mistake-content">
         <h4>Ignoring direction in F=ma</h4>
         <p>Acceleration is a vector — it has both magnitude and direction. The direction of acceleration matches the net force.</p>
       </div>
     </li>
     <li class="mistake-item">
-      <div class="mistake-icon">⚠️</div>
+      <div class="mistake-icon">️</div>
       <div class="mistake-content">
         <h4>Thinking heavier objects fall faster</h4>
         <p>In the absence of air resistance, all objects fall at the same rate (9.8 m/s²). This is a direct consequence of F=ma and the equal force of gravity.</p>
@@ -515,32 +220,32 @@
 
   <div class="example-grid">
     <div class="example-card">
-      <div class="example-icon">🚗</div>
+      <div class="example-icon"></div>
       <h4>Vehicle Safety</h4>
       <p>Airbags and crumple zones use inertia and force principles to protect passengers during collisions.</p>
     </div>
     <div class="example-card">
-      <div class="example-icon">🏗️</div>
+      <div class="example-icon">️</div>
       <h4>Structural Engineering</h4>
       <p>Buildings must withstand forces from wind, earthquakes, and gravity — all governed by Newton's laws.</p>
     </div>
     <div class="example-card">
-      <div class="example-icon">🚀</div>
+      <div class="example-icon"></div>
       <h4>Space Travel</h4>
       <p>Rockets work because of action-reaction: expelling mass backward creates forward thrust.</p>
     </div>
     <div class="example-card">
-      <div class="example-icon">⚽</div>
+      <div class="example-icon"></div>
       <h4>Sports Physics</h4>
       <p>From golf swings to pole vaulting, athletes unconsciously apply Newton's principles for maximum performance.</p>
     </div>
     <div class="example-card">
-      <div class="example-icon">📱</div>
+      <div class="example-icon"></div>
       <h4>Touchscreens</h4>
       <p>Modern devices use Newton's laws to detect gestures and provide haptic feedback.</p>
     </div>
     <div class="example-card">
-      <div class="example-icon">🌊</div>
+      <div class="example-icon"></div>
       <h4>Fluid Dynamics</h4>
       <p>Airplanes fly and ships float because of pressure differences created by Newton's force principles.</p>
     </div>
@@ -549,7 +254,7 @@
   <!-- CLOSING -->
   <h2 class="section-h">Master These, Master Physics</h2>
   <p class="section-p">Newton's three laws form the foundation of mechanics. Once you truly understand them — especially the subtle differences between the three — you'll find that most physics problems become much clearer. They're not just equations to memorize; they're a framework for understanding how the physical world works.</p>
-  <p class="section-p">At Elite STEM Tutors, we don't just teach students to plug numbers into F=ma. We teach them to think like Newton — to see the forces, understand the interactions, and predict what will happen next. This approach turns physics from a memorization exercise into an intuitive understanding.</p>
+  <p class="section-p">At Apex STEM Tutors, we don't just teach students to plug numbers into F=ma. We teach them to think like Newton — to see the forces, understand the interactions, and predict what will happen next. This approach turns physics from a memorization exercise into an intuitive understanding.</p>
 
   <!-- CTA -->
   <div class="cta-block">
@@ -567,9 +272,10 @@
       <span>IGCSE</span>
       <span>A-Level</span>
     </div>
-    <div>Published: April 5, 2026 · Elite STEM Tutors</div>
+    <div>Published: April 5, 2026 · Apex STEM Tutors</div>
   </div>
 
 </div>
+  <script src="js/site.js"></script>
 </body>
 </html>
