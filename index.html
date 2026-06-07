@@ -23,8 +23,7 @@
   <header class="site-header">
     <nav class="site-nav" aria-label="Main navigation">
       <a href="index.html" class="nav-brand">
-        <img src="images/logo.jpeg" alt="Apex STEM Tutors logo">
-        <span class="nav-brand-text">APEX<small>STEM TUTORS</small></span>
+        <img src="images/logo.jpg" alt="Apex STEM Tutors">
       </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
         <span></span><span></span><span></span>
@@ -36,7 +35,7 @@
         <li><a href="reading-materials.html">Reading Materials</a></li>
         <li><a href="testimonials.html">Testimonials</a></li>
         <li><a href="blog.html">Blog</a></li>
-        <li><a href="index.html#enroll" class="btn btn-primary" style="padding:.55rem 1.1rem;font-size:.85rem;">Enroll Now</a></li>
+        <li><a href="services.html" class="btn btn-primary" style="padding:.55rem 1.1rem;font-size:.85rem;">Enroll Now</a></li>
       </ul>
     </nav>
   </header>
@@ -49,7 +48,7 @@
         <h1>Help Your Child <span class="accent">Excel</span> in IGCSE &amp; A-Level STEM</h1>
         <p class="lead">Live, one-on-one specialist tutoring in <strong>Math, Physics, Chemistry, Biology &amp; Computer Science</strong> — designed for parents who want clear progress, week after week.</p>
         <div class="cta-row">
-          <a href="#enroll" class="btn btn-primary"><i class="fas fa-graduation-cap"></i> Enroll Your Child</a>
+          <a href="services.html" class="btn btn-primary"><i class="fas fa-graduation-cap"></i> Enroll Your Child</a>
           <a href="https://wa.me/256776740551" target="_blank" rel="noopener" class="btn btn-outline"><i class="fab fa-whatsapp"></i> Talk to Us</a>
         </div>
         <div class="hero-trust">
@@ -81,6 +80,25 @@
       <div class="subject-pill"><div class="ico"><i class="fas fa-dna"></i></div><h4>Biology</h4></div>
     </div>
   </div>
+
+  <!-- FLYER — high-visibility promo after subjects, before delivery details -->
+  <section class="container flyer-section">
+    <div class="flyer-card reveal-up">
+      <a href="images/flyer.jpeg" target="_blank" rel="noopener" class="flyer-image-link">
+        <img src="images/flyer.jpeg" alt="Apex STEM Tutors flyer — Master Math, Physics, Chemistry, Computer Science and Biology">
+      </a>
+      <div class="flyer-copy">
+        <span class="flyer-badge"><i class="fas fa-file-image"></i> Program Overview</span>
+        <h2>See Everything We Offer at a Glance</h2>
+        <p>Our flyer packs programs, subjects, session formats, and your <strong>free first one-hour session</strong> into one shareable handout — perfect for parents comparing options.</p>
+        <p class="flyer-note">Grab your free session offer inside.</p>
+        <div class="flyer-actions">
+          <a href="images/flyer.jpeg" target="_blank" rel="noopener" class="btn btn-primary"><i class="fas fa-expand"></i> View Full Flyer</a>
+          <a href="services.html" class="btn btn-secondary"><i class="fas fa-graduation-cap"></i> Enroll Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- DELIVERY METHOD -->
   <section class="container">
@@ -159,75 +177,13 @@
   <!-- PARENT TESTIMONIAL STRIP -->
   <section class="container">
     <div class="section">
-      <div class="reveal-up" style="background:var(--surface);border-radius:var(--radius-lg);border:1px solid var(--border);padding:2rem;display:grid;grid-template-columns:auto 1fr;gap:1.5rem;align-items:center;box-shadow:var(--shadow-sm);">
+      <div class="reveal-up" style="background:var(--surface);border-radius:var(--radius-lg);padding:2rem;display:grid;grid-template-columns:auto 1fr;gap:1.5rem;align-items:center;box-shadow:var(--shadow-sm);">
         <img src="images/parent-child.jpg" alt="" style="width:140px;height:140px;border-radius:50%;object-fit:cover;flex-shrink:0;" loading="lazy">
         <div>
           <div style="color:var(--gold);font-size:1.1rem;margin-bottom:.5rem;">★★★★★</div>
           <p style="font-style:italic;color:var(--text);font-size:1.05rem;line-height:1.6;margin-bottom:.75rem;">"After just three sessions my daughter started asking for extra practice on her own. The weekly parent report is the single most valuable thing &mdash; I always know exactly where she stands."</p>
           <p style="color:var(--text-muted);font-size:.9rem;"><strong style="color:var(--navy);">Sarah K.</strong> &middot; Parent of A-Level Physics student</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ENROLLMENT FORM -->
-  <section class="enroll-band" id="enroll">
-    <div class="enroll-wrap">
-      <div class="enroll-header reveal-up">
-        <h2>Book Your Child's <span style="color:var(--maroon);">Free First Tutoring Session</span></h2>
-        <p>Complete the form below and our team will contact you within 24 hours to schedule the free one-hour introductory lesson.</p>
-      </div>
-      <div class="enroll-card reveal-up">
-        <h3>Enrollment Form</h3>
-        <p class="sub">Fill out the details below to reserve a specialist tutor for your child.</p>
-        <form id="enrollForm">
-          <div class="enroll-grid">
-            <div class="form-group">
-              <label for="parentName">Parent / Guardian Name</label>
-              <input type="text" id="parentName" name="parentName" required>
-            </div>
-            <div class="form-group">
-              <label for="contact">Contact Number</label>
-              <input type="tel" id="contact" name="contact" placeholder="+256 ..." required>
-            </div>
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-              <label for="studentName">Student Name</label>
-              <input type="text" id="studentName" name="studentName" required>
-            </div>
-            <div class="form-group">
-              <label for="school">School Name</label>
-              <input type="text" id="school" name="school" required>
-            </div>
-            <div class="form-group">
-              <label for="level">Curriculum Level</label>
-              <select id="level" name="level" required>
-                <option value="">Select level...</option>
-                <option>IGCSE (Year 10)</option>
-                <option>IGCSE (Year 11)</option>
-                <option>AS Level (Year 12)</option>
-                <option>A Level (Year 13)</option>
-              </select>
-            </div>
-            <div class="form-group" style="grid-column:1/-1;">
-              <label for="subjects">Subjects of Interest</label>
-              <input type="text" id="subjects" name="subjects" placeholder="e.g. Mathematics, Physics, Chemistry">
-            </div>
-            <div class="form-group" style="grid-column:1/-1;">
-              <label for="notes">Anything we should know? (optional)</label>
-              <textarea id="notes" name="notes" rows="3" placeholder="Tell us about your child's current grades, goals, or challenges..."></textarea>
-            </div>
-          </div>
-          <button type="submit" class="btn btn-primary" style="width:100%;margin-top:1rem;padding:1rem;font-size:1rem;">
-            <i class="fas fa-paper-plane"></i> Reserve My Child's Free Session
-          </button>
-          <p style="text-align:center;color:var(--text-muted);font-size:.85rem;margin-top:1rem;">
-            Prefer to talk first? <a href="https://wa.me/256776740551" target="_blank" rel="noopener" style="color:var(--maroon);font-weight:600;text-decoration:none;">WhatsApp us at +256 776 740 551</a>
-          </p>
-        </form>
       </div>
     </div>
   </section>
@@ -257,7 +213,7 @@
           <li><a href="tel:+256776740551">+256 776 740 551</a></li>
           <li><a href="https://wa.me/256776740551" target="_blank" rel="noopener">WhatsApp</a></li>
           <li><a href="mailto:info@apexstemtutors.com">info@apexstemtutors.com</a></li>
-          <li><a href="#enroll">Book free session</a></li>
+          <li><a href="services.html">Book free session</a></li>
         </ul>
       </div>
       <div class="footer-col">
