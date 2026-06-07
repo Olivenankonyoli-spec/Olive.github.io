@@ -3,8 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reading Materials - Elite STEM Tutors</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <title>Reading Materials — Apex STEM Tutors</title>
+  <meta name="description" content="Apex STEM Tutors is a premier tutoring platform dedicated to helping IGCSE and A-Level students excel in Mathematics, Physics, Chemistry, Biology, and Computer Science. We provide personalized tutoring, exam preparation, concept mastery, and academic mentorship through experienced tutors.">
+  <link rel="icon" type="image/jpeg" href="images/logo.jpeg">
+  <link rel="apple-touch-icon" href="images/logo.jpeg">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Apex STEM Tutors">
+  <meta property="og:title" content="Reading Materials — Apex STEM Tutors">
+  <meta property="og:description" content="Apex STEM Tutors is a premier tutoring platform dedicated to helping IGCSE and A-Level students excel in Mathematics, Physics, Chemistry, Biology, and Computer Science. We provide personalized tutoring, exam preparation, concept mastery, and academic mentorship through experienced tutors.">
+  <meta property="og:image" content="images/logo.jpeg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Reading Materials — Apex STEM Tutors">
+  <meta name="twitter:description" content="Apex STEM Tutors is a premier tutoring platform dedicated to helping IGCSE and A-Level students excel in Mathematics, Physics, Chemistry, Biology, and Computer Science. We provide personalized tutoring, exam preparation, concept mastery, and academic mentorship through experienced tutors.">
+  <meta name="twitter:image" content="images/logo.jpeg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
 
@@ -12,20 +24,20 @@
   <header class="site-header">
     <nav class="site-nav" aria-label="Main navigation">
       <a href="index.html" class="nav-brand">
-        <img src="images/logo.jpeg" alt="Elite STEM Tutors">
+        <img src="images/logo.jpeg" alt="Apex STEM Tutors logo">
+        <span class="nav-brand-text">APEX<small>STEM TUTORS</small></span>
       </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
       <ul id="nav-menu" class="nav-menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="reading-materials.html" class="active">Reading Materials</a></li>
-        <li><a href="testimonials.html">Testimonials</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
-        <li><a href="login.html">Login</a></li>
+        <li><a href="index.html" data-nav="index">Home</a></li>
+        <li><a href="about.html" data-nav="about">About</a></li>
+        <li><a href="services.html" data-nav="services">Services</a></li>
+        <li><a href="reading-materials.html" data-nav="reading-materials" class="active">Reading Materials</a></li>
+        <li><a href="testimonials.html" data-nav="testimonials">Testimonials</a></li>
+        <li><a href="blog.html" data-nav="blog">Blog</a></li>
+        <li><a href="index.html#enroll" class="btn btn-primary" style="padding:.55rem 1.1rem;font-size:.85rem;">Enroll Now</a></li>
       </ul>
     </nav>
   </header>
@@ -33,7 +45,7 @@
   <header class="page-header">
     <h1>Reading Materials</h1>
     <p>Access comprehensive study resources for IGCSE and A Level</p>
-    <p style="font-size: 0.9rem; opacity: 0.85; margin-top: 0.5rem;">📧 Signed-in students receive email notifications about new materials every Friday</p>
+    <p style="font-size: 0.9rem; opacity: 0.85; margin-top: 0.5rem;"> Signed-in students receive email notifications about new materials every Friday</p>
   </header>
 
   <!-- Main Content -->
@@ -58,16 +70,51 @@
   </div>
 
   <footer class="site-footer">
-    <p>&copy; 2026 Elite STEM Tutors. All rights reserved.</p>
-    <p class="tagline">Building Future Scientists & Engineers</p>
-    <div class="social-links">
-      <a href="https://wa.me/256706387777" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-      <a href="https://linkedin.com/company/elitestemtutors" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-      <a href="https://twitter.com/elitestemtutors" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-      <a href="https://instagram.com/elitestemtutors" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="https://facebook.com/elitestemtutors" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <div style="display:flex;align-items:center;gap:.75rem;">
+          <img src="images/logo.jpeg" alt="" style="height:44px;border-radius:6px;">
+          <strong style="color:#fff;font-size:1.05rem;letter-spacing:-.01em;">Apex STEM Tutors</strong>
+        </div>
+        <p>Premier IGCSE &amp; A-Level tutoring in Mathematics, Physics, Chemistry, Biology and Computer Science. Live, parent-trusted sessions designed for real progress.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="reading-materials.html">Reading Materials</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+256776740551">+256 776 740 551</a></li>
+          <li><a href="https://wa.me/256776740551" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="mailto:info@apexstemtutors.com">info@apexstemtutors.com</a></li>
+          <li><a href="index.html#enroll">Book free session</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Follow</h4>
+        <div class="social-links" style="justify-content:flex-start;margin-top:0;">
+          <a href="https://www.linkedin.com/company/apex-stem-tutors/about/?viewAsMember=true" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://x.com/ApexStemTutors" target="_blank" rel="noopener" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.instagram.com/apexstemtutors" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=61590468123398" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://wa.me/256776740551" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Apex STEM Tutors. All rights reserved.</p>
+      <p>Building Future Scientists &amp; Engineers</p>
     </div>
   </footer>
+  <a class="fab-whatsapp" href="https://wa.me/256776740551" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <button class="fab-top" type="button" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
   <script src="js/nav.js"></script>
 
   <script>
@@ -139,5 +186,6 @@
     // Load default grade
     loadMaterials('grade9');
   </script>
+  <script src="js/site.js"></script>
 </body>
 </html>
