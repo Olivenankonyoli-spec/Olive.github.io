@@ -42,7 +42,7 @@
   </header>
 
   <header class="page-header">
-    <h1>Elite STEM Blog</h1>
+    <h1>Apex STEM Blog</h1>
     <p>Tips, Tricks & Study Hacks for Academic Success</p>
   </header>
 
@@ -52,17 +52,56 @@
     <div class="search-section">
       <input type="text" id="searchInput" placeholder=" Search articles..." onkeyup="filterBlog()">
       <div class="filter-buttons">
-        <button class="filter-btn active" onclick="filterBlog('all')">All Articles</button>
-        <button class="filter-btn" onclick="filterBlog('math')">Mathematics</button>
-        <button class="filter-btn" onclick="filterBlog('physics')">Physics</button>
-        <button class="filter-btn" onclick="filterBlog('tips')">Study Tips</button>
+        <button class="filter-btn active" data-category="all" onclick="filterBlog('all')">All Articles</button>
+        <button class="filter-btn" data-category="math" onclick="filterBlog('math')">Mathematics</button>
+        <button class="filter-btn" data-category="physics" onclick="filterBlog('physics')">Physics</button>
+        <button class="filter-btn" data-category="tips" onclick="filterBlog('tips')">Study Tips</button>
       </div>
     </div>
+
+    <div class="subject-showcase" aria-label="Browse by subject">
+      <div class="subject-card subject-card-math active" data-category="math" role="button" tabindex="0" onclick="filterBlog('math')">
+        <div class="subject-icon">∑</div>
+        <h3>Mathematics</h3>
+        <p>Algebra, calculus and exam-ready problem solving.</p>
+      </div>
+      <div class="subject-card subject-card-physics" data-category="physics" role="button" tabindex="0" onclick="filterBlog('physics')">
+        <div class="subject-icon">⚛</div>
+        <h3>Physics</h3>
+        <p>Motion, waves and the fundamentals behind the formulas.</p>
+      </div>
+      <div class="subject-card subject-card-tips" data-category="tips" role="button" tabindex="0" onclick="filterBlog('tips')">
+        <div class="subject-icon">🧠</div>
+        <h3>Study Tips</h3>
+        <p>Memory hacks, revision plans and faster learning methods.</p>
+      </div>
+    </div>
+
+    <section class="blog-spotlight" aria-label="Featured study guidance">
+      <div class="blog-spotlight-content">
+        <span class="blog-pill">Featured Study Guide</span>
+        <h2>Learn with structure, clarity, and confidence.</h2>
+        <p>Each article on this page is designed like a tutor-led lesson: clear explanations, practical steps, and exam-ready ideas that help students study with purpose.</p>
+        <div class="blog-spotlight-meta">
+          <span><i class="fas fa-book-open"></i> 7 expert articles</span>
+          <span><i class="fas fa-graduation-cap"></i> IGCSE &amp; A-Level friendly</span>
+        </div>
+      </div>
+      <div class="blog-spotlight-card">
+        <h3>How to use this blog</h3>
+        <ul>
+          <li>Choose the subject that feels hardest first.</li>
+          <li>Read one article at a time and take short notes.</li>
+          <li>Use the reading materials for extra practice.</li>
+        </ul>
+        <a href="reading-materials.html" class="btn btn-primary">Open Reading Materials</a>
+      </div>
+    </section>
 
     <!-- Blog Grid -->
     <div class="blog-grid" id="blogGrid">
       <!-- Study Tips Articles -->
-      <div class="blog-card" data-category="tips">
+      <div class="blog-card blog-card-tips" data-category="tips">
         <div class="blog-image">⏱️</div>
         <div class="blog-content">
           <div class="blog-category">Study Tips</div>
@@ -72,12 +111,12 @@
             <span>6 min read</span>
           </div>
           <p class="blog-excerpt">The Pomodoro Technique — named after the tomato-shaped kitchen timer — structures your study into focused intervals with strategic pauses.</p>
-          <a href="#" onclick="readBlogPost('The Pomodoro Technique: Study Smarter, Not Harder')" class="read-more">Read More →</a>
+          <a href="pomodoro-technique.html" class="read-more">Read More →</a>
         </div>
       </div>
 
-      <div class="blog-card" data-category="tips">
-        <div class="blog-image"></div>
+      <div class="blog-card blog-card-tips" data-category="tips">
+        <div class="blog-image">🧠</div>
         <div class="blog-content">
           <div class="blog-category">Study Tips</div>
           <h3>Memory Hacks: Retain Information 10x Better</h3>
@@ -86,12 +125,12 @@
             <span>6 min read</span>
           </div>
           <p class="blog-excerpt">Top students don't have better memories — they have better systems. Here are the proven memory hacks that the highest performers actually use.</p>
-          <a href="#" onclick="readBlogPost('Memory Hacks: Retain Information 10x Better')" class="read-more">Read More →</a>
+          <a href="memory-hacks.html" class="read-more">Read More →</a>
         </div>
       </div>
 
-      <div class="blog-card" data-category="tips">
-        <div class="blog-image"></div>
+      <div class="blog-card blog-card-tips" data-category="tips">
+        <div class="blog-image">📘</div>
         <div class="blog-content">
           <div class="blog-category">Study Tips</div>
           <h3>Exam Preparation: Your 4-Week Action Plan</h3>
@@ -100,13 +139,13 @@
             <span>10 min read</span>
           </div>
           <p class="blog-excerpt">Four weeks out from exam day is not a crisis — it's a golden window. This guide gives you a week-by-week blueprint to walk into your exam confident.</p>
-          <a href="#" onclick="readBlogPost('Exam Preparation Strategies for STEM Students')" class="read-more">Read More →</a>
+          <a href="exam-preparation.html" class="read-more">Read More →</a>
         </div>
       </div>
 
       <!-- Mathematics Articles -->
-      <div class="blog-card" data-category="math">
-        <div class="blog-image"></div>
+      <div class="blog-card blog-card-math" data-category="math">
+        <div class="blog-image">📐</div>
         <div class="blog-content">
           <div class="blog-category">Mathematics</div>
           <h3>Calculus Guide: Differentiation Made Simple</h3>
@@ -115,12 +154,12 @@
             <span>9 min read</span>
           </div>
           <p class="blog-excerpt">Calculus is the mathematics of change — how things move, grow, and transform. Differentiation answers: "How fast is this changing?"</p>
-          <a href="#" onclick="readBlogPost('Calculus Guide: Derivatives and Integrals')" class="read-more">Read More →</a>
+          <a href="calculus-guide.html" class="read-more">Read More →</a>
         </div>
       </div>
 
-      <div class="blog-card" data-category="math">
-        <div class="blog-image"></div>
+      <div class="blog-card blog-card-math" data-category="math">
+        <div class="blog-image">➗</div>
         <div class="blog-content">
           <div class="blog-category">Mathematics</div>
           <h3>Algebra Mistakes: 10 Common Errors & How to Fix Them</h3>
@@ -129,13 +168,13 @@
             <span>7 min read</span>
           </div>
           <p class="blog-excerpt">Algebra is a language of patterns and relationships, but it's also a minefield of potential errors. Here are the ten most common algebra errors.</p>
-          <a href="#" onclick="readBlogPost('Common Algebra Mistakes and How to Avoid Them')" class="read-more">Read More →</a>
+          <a href="algebra-mistakes.html" class="read-more">Read More →</a>
         </div>
       </div>
 
       <!-- Physics Articles -->
-      <div class="blog-card" data-category="physics">
-        <div class="blog-image">️</div>
+      <div class="blog-card blog-card-physics" data-category="physics">
+        <div class="blog-image">🌊</div>
         <div class="blog-content">
           <div class="blog-category">Physics</div>
           <h3>Waves & Oscillations: Physics of Motion</h3>
@@ -144,12 +183,12 @@
             <span>8 min read</span>
           </div>
           <p class="blog-excerpt">Waves and oscillations are everywhere in physics — from sound waves to electromagnetic waves. Understanding these phenomena requires connecting SHM with wave theory.</p>
-          <a href="#" onclick="readBlogPost('Waves and Oscillations: Physics Fundamentals')" class="read-more">Read More →</a>
+          <a href="waves-oscillations.html" class="read-more">Read More →</a>
         </div>
       </div>
 
-      <div class="blog-card" data-category="physics">
-        <div class="blog-image"></div>
+      <div class="blog-card blog-card-physics" data-category="physics">
+        <div class="blog-image">🚀</div>
         <div class="blog-content">
           <div class="blog-category">Physics</div>
           <h3>Newton's Laws: The Foundation of Physics</h3>
@@ -158,7 +197,7 @@
             <span>8 min read</span>
           </div>
           <p class="blog-excerpt">Isaac Newton's three laws of motion, published in 1687, are the bedrock of classical physics. They explain everything from planetary orbits to car acceleration.</p>
-          <a href="#" onclick="readBlogPost('Newton\'s Laws: Understanding Motion')" class="read-more">Read More →</a>
+          <a href="newtons-laws.html" class="read-more">Read More →</a>
         </div>
       </div>
     </div>
@@ -248,6 +287,18 @@
       btn.addEventListener('click', function() {
         document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
         this.classList.add('active');
+      });
+    });
+
+    document.querySelectorAll('.subject-card').forEach(card => {
+      card.addEventListener('click', function() {
+        document.querySelectorAll('.subject-card').forEach(item => item.classList.remove('active'));
+        this.classList.add('active');
+        const category = this.getAttribute('data-category') || 'all';
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+          btn.classList.toggle('active', btn.getAttribute('data-category') === category);
+        });
+        filterBlog(category);
       });
     });
   </script>

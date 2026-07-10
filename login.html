@@ -18,6 +18,7 @@
   <meta name="twitter:image" content="images/logo.jpeg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="css/main.css">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 
 <body class="page-auth auth-page">
@@ -188,6 +189,50 @@
   <button class="fab-top" type="button" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
   <script src="js/nav.js"></script>
   <script>
+    const notificationConfig = {
+      serviceId: 'YOUR_SERVICE_ID',
+      adminTemplateId: 'YOUR_ADMIN_TEMPLATE_ID',
+      clientTemplateId: 'YOUR_CLIENT_TEMPLATE_ID',
+      publicKey: 'YOUR_PUBLIC_KEY'
+    };
+
+    function sendNotificationEmails({ name, email, type }) {
+      const hasEmailJs = typeof window.emailjs !== 'undefined' && typeof window.emailjs.send === 'function';
+      const isConfigured = notificationConfig.serviceId !== 'YOUR_SERVICE_ID' && notificationConfig.adminTemplateId !== 'YOUR_ADMIN_TEMPLATE_ID' && notificationConfig.clientTemplateId !== 'YOUR_CLIENT_TEMPLATE_ID' && notificationConfig.publicKey !== 'YOUR_PUBLIC_KEY';
+
+      if (hasEmailJs && isConfigured) {
+        window.emailjs.init(notificationConfig.publicKey);
+
+        const adminTemplateParams = {
+          to_email: 'info@apexstemtutors.com',
+          from_name: name || 'Apex STEM Visitor',
+          from_email: email,
+          subject: `New ${type} submission from ${name || email}`,
+          message: `${name || 'A visitor'} submitted their email on the Apex STEM Tutors website.\n\nEmail: ${email}\nType: ${type}`
+        };
+
+        const clientTemplateParams = {
+          to_email: email,
+          from_name: 'Apex STEM Tutors',
+          subject: 'We received your submission',
+          message: `Hello ${name || 'there'},\n\nThank you for signing up with Apex STEM Tutors. We have received your details and will contact you shortly.\n\nBest regards,\nApex STEM Tutors`
+        };
+
+        Promise.all([
+          window.emailjs.send(notificationConfig.serviceId, notificationConfig.adminTemplateId, adminTemplateParams),
+          window.emailjs.send(notificationConfig.serviceId, notificationConfig.clientTemplateId, clientTemplateParams)
+        ]).catch((error) => {
+          console.error('Unable to send notification emails:', error);
+        });
+        return;
+      }
+
+      const subject = encodeURIComponent(`New ${type} submission from ${name || email}`);
+      const body = encodeURIComponent(`${name || 'A visitor'} submitted their email on the Apex STEM Tutors website.\n\nEmail: ${email}\nType: ${type}`);
+      window.open(`mailto:info@apexstemtutors.com?subject=${subject}&body=${body}`, '_blank', 'noopener,noreferrer');
+      window.open(`mailto:${email}?subject=${encodeURIComponent('We received your submission')}&body=${encodeURIComponent(`Hello ${name || 'there'},\n\nThank you for signing up with Apex STEM Tutors. We have received your details and will contact you shortly.\n\nBest regards,\nApex STEM Tutors`)}`, '_blank', 'noopener,noreferrer');
+    }
+
     // Toggle between login and register forms
     function toggleForms() {
       const loginBox = document.getElementById('loginBox');
@@ -221,6 +266,8 @@
       e.preventDefault();
       const email = document.getElementById('loginEmail').value;
       localStorage.setItem('loggedIn', 'true');
+      localStorage.setItem('lastLoginEmail', email);
+      sendNotificationEmails({ name: 'Returning user', email, type: 'login' });
       alert(`Welcome back! You have successfully logged in as ${email}.\n\nRedirecting to dashboard...`);
       // Redirect to dashboard
       setTimeout(() => {
@@ -256,6 +303,8 @@
 
       alert(`Welcome ${fullName}!\n\nYour account has been created successfully.\n\nEmail: ${email}\n\nThis is a demo registration. For actual account creation, please call +256 776 740 551`);
       localStorage.setItem('loggedIn', 'true');
+      localStorage.setItem('lastLoginEmail', email);
+      sendNotificationEmails({ name: fullName, email, type: 'registration' });
       this.reset();
       toggleForms();
     });

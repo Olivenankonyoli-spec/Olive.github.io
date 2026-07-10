@@ -44,7 +44,7 @@
   <header class="page-header">
     <h1>Reading Materials</h1>
     <p>Access comprehensive study resources for IGCSE and A Level</p>
-    <p style="font-size: 0.9rem; opacity: 0.85; margin-top: 0.5rem;"> Signed-in students receive email notifications about new materials every Friday</p>
+    <p style="font-size: 0.9rem; opacity: 0.85; margin-top: 0.5rem;">All students can access these resources instantly, and signed-in users receive email updates about new materials.</p>
   </header>
 
   <!-- Main Content -->
@@ -119,32 +119,28 @@
   <script>
     const materialsData = {
       grade9: [
-        { subject: 'Mathematics', description: 'Comprehensive notes covering algebra, geometry, and basic calculus for IGCSE Grade 9.', file: 'math_grade9.pdf' },
-        { subject: 'Physics', description: 'Fundamental physics concepts including motion, forces, and energy.', file: 'physics_grade9.pdf' },
-        { subject: 'Chemistry', description: 'Introduction to chemical reactions, atomic structure, and periodic table.', file: 'chemistry_grade9.pdf' },
-        { subject: 'Computer Science', description: 'Basics of programming, algorithms, and computational thinking.', file: 'cs_grade9.pdf' },
-        { subject: 'Biology', description: 'Cell biology, human physiology, and basic ecology concepts.', file: 'biology_grade9.pdf' }
+        { subject: 'Mathematics', description: 'IGCSE Grade 9 mathematics notes covering core algebra, geometry, and numeracy.', file: 'files/reading-materials/math-notes.pdf' },
+        { subject: 'Chemistry', description: 'IGCSE chemistry notes covering key concepts, reactions, and exam fundamentals.', file: 'files/reading-materials/chemistry-notes.pdf' },
+        { subject: 'Biology', description: 'Comprehensive biology notes covering cells, systems, and core IGCSE topics.', file: 'files/reading-materials/biology-notes.pdf' },
+        { subject: 'Computer Science', description: 'IGCSE computer science notes covering programming, logic, and computational thinking.', file: 'files/reading-materials/computer-science-notes.pdf' }
       ],
       grade10: [
-        { subject: 'Mathematics', description: 'Advanced algebra, trigonometry, and statistics for IGCSE Grade 10.', file: 'math_grade10.pdf' },
-        { subject: 'Physics', description: 'Electricity, magnetism, and wave phenomena.', file: 'physics_grade10.pdf' },
-        { subject: 'Chemistry', description: 'Organic chemistry, acids and bases, and chemical calculations.', file: 'chemistry_grade10.pdf' },
-        { subject: 'Computer Science', description: 'Data structures, programming paradigms, and software development.', file: 'cs_grade10.pdf' },
-        { subject: 'Biology', description: 'Genetics, evolution, and human health systems.', file: 'biology_grade10.pdf' }
+        { subject: 'Mathematics', description: 'IGCSE Grade 9 mathematics notes covering core algebra, geometry, and numeracy.', file: 'files/reading-materials/math-notes.pdf' },
+        { subject: 'Chemistry', description: 'IGCSE chemistry notes covering key concepts, reactions, and exam fundamentals.', file: 'files/reading-materials/chemistry-notes.pdf' },
+        { subject: 'Biology', description: 'Comprehensive biology notes covering cells, systems, and core IGCSE topics.', file: 'files/reading-materials/biology-notes.pdf' },
+        { subject: 'Computer Science', description: 'IGCSE computer science notes covering programming, logic, and computational thinking.', file: 'files/reading-materials/computer-science-notes.pdf' }
       ],
       grade11: [
-        { subject: 'Mathematics', description: 'Calculus, vectors, and advanced mathematical modeling.', file: 'math_grade11.pdf' },
-        { subject: 'Physics', description: 'Quantum physics, nuclear physics, and advanced mechanics.', file: 'physics_grade11.pdf' },
-        { subject: 'Chemistry', description: 'Physical chemistry, analytical chemistry, and biochemistry.', file: 'chemistry_grade11.pdf' },
-        { subject: 'Computer Science', description: 'Advanced algorithms, databases, and computer systems.', file: 'cs_grade11.pdf' },
-        { subject: 'Biology', description: 'Biotechnology, immunology, and advanced physiology.', file: 'biology_grade11.pdf' }
+        { subject: 'Mathematics', description: 'IGCSE Grade 9 mathematics notes covering core algebra, geometry, and numeracy.', file: 'files/reading-materials/math-notes.pdf' },
+        { subject: 'Chemistry', description: 'IGCSE chemistry notes covering key concepts, reactions, and exam fundamentals.', file: 'files/reading-materials/chemistry-notes.pdf' },
+        { subject: 'Biology', description: 'Comprehensive biology notes covering cells, systems, and core IGCSE topics.', file: 'files/reading-materials/biology-notes.pdf' },
+        { subject: 'Computer Science', description: 'IGCSE computer science notes covering programming, logic, and computational thinking.', file: 'files/reading-materials/computer-science-notes.pdf' }
       ],
       alevel: [
-        { subject: 'Mathematics', description: 'Pure mathematics, mechanics, and probability for A Level.', file: 'math_alevel.pdf' },
-        { subject: 'Physics', description: 'Quantum mechanics, relativity, and advanced physics topics.', file: 'physics_alevel.pdf' },
-        { subject: 'Chemistry', description: 'Advanced organic chemistry, physical chemistry, and analysis.', file: 'chemistry_alevel.pdf' },
-        { subject: 'Computer Science', description: 'Advanced programming, AI, and computer science theory.', file: 'cs_alevel.pdf' },
-        { subject: 'Biology', description: 'Molecular biology, genetics, and ecological systems.', file: 'biology_alevel.pdf' }
+        { subject: 'Mathematics', description: 'IGCSE Grade 9 mathematics notes covering core algebra, geometry, and numeracy.', file: 'files/reading-materials/math-notes.pdf' },
+        { subject: 'Chemistry', description: 'IGCSE chemistry notes covering key concepts, reactions, and exam fundamentals.', file: 'files/reading-materials/chemistry-notes.pdf' },
+        { subject: 'Biology', description: 'Comprehensive biology notes covering cells, systems, and core IGCSE topics.', file: 'files/reading-materials/biology-notes.pdf' },
+        { subject: 'Computer Science', description: 'IGCSE computer science notes covering programming, logic, and computational thinking.', file: 'files/reading-materials/computer-science-notes.pdf' }
       ]
     };
 
@@ -158,23 +154,14 @@
         card.innerHTML = `
           <h3>${material.subject}</h3>
           <p>${material.description}</p>
-          <button class="download-btn" onclick="downloadMaterial('${material.file}')">Download PDF</button>
+          <button class="download-btn" onclick="downloadMaterial('${material.file}')">Open PDF</button>
         `;
         grid.appendChild(card);
       });
     }
 
     function downloadMaterial(file) {
-      // Check if user is logged in (this would be handled by backend in real implementation)
-      const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
-      if (!isLoggedIn) {
-        alert('Please log in to download reading materials.');
-        window.location.href = 'login.html';
-        return;
-      }
-
-      // Simulate download
-      alert(`Downloading ${file}... (Note: In a real implementation, this would trigger an actual download)`);
+      window.location.href = 'open-material.html?file=' + encodeURIComponent(file);
     }
 
     // Load initial materials
