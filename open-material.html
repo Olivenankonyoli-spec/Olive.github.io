@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opening Reading Material — Apex STEM Tutors</title>
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    body {
+      background: #f4f6f9;
+      color: #1e293b;
+      margin: 0;
+    }
+    .reader-shell {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: #f4f6f9;
+    }
+    .reader-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.9rem 1rem;
+      background: #081d3e;
+      color: #fff;
+      flex-wrap: wrap;
+    }
+    .toolbar-group {
+      display: flex;
+      gap: 0.55rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .toolbar-group .btn {
+      padding: 0.58rem 0.85rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    .toolbar-group .btn:hover {
+      background: rgba(255,255,255,0.18);
+    }
+    .reader-status {
+      padding: 0.75rem 1rem;
+      font-size: 0.95rem;
+      color: #475569;
+      background: #fff;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .reader-frame-wrap {
+      flex: 1;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+    }
+    .reader-frame {
+      width: 100%;
+      max-width: 1100px;
+      min-height: 70vh;
+      border: none;
+      border-radius: 14px;
+      background: #fff;
+      box-shadow: 0 10px 30px rgba(8,29,62,0.14);
+    }
+    .reader-fallback {
+      width: 100%;
+      max-width: 720px;
+      text-align: center;
+      padding: 2rem 1.2rem;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(8,29,62,0.14);
+    }
+    @media (max-width: 700px) {
+      .reader-toolbar {
+        padding: 0.8rem 0.8rem 0.9rem;
+      }
+      .toolbar-group {
+        width: 100%;
+        justify-content: center;
+      }
+      .reader-frame-wrap {
+        padding: 0.7rem;
+      }
+      .reader-frame {
+        min-height: 60vh;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="reader-shell">
+    <div class="reader-toolbar">
+      <div class="toolbar-group">
+        <a href="reading-materials.html" class="btn">← Back</a>
+        <a id="openInNewTab" class="btn" href="#" target="_blank" rel="noopener">Open in new tab</a>
+      </div>
+      <div class="toolbar-group">
+        <a id="downloadLink" class="btn" href="#" target="_blank" rel="noopener">Download</a>
+      </div>
+    </div>
+    <div id="readerStatus" class="reader-status">Loading your study material…</div>
+    <div class="reader-frame-wrap">
+      <iframe id="pdfFrame" class="reader-frame" title="PDF reading material" src=""></iframe>
+    </div>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const file = params.get('file') || 'files/reading-materials/math-notes.pdf';
+    const frame = document.getElementById('pdfFrame');
+    const status = document.getElementById('readerStatus');
+    const downloadLink = document.getElementById('downloadLink');
+    const openInNewTab = document.getElementById('openInNewTab');
+
+    const safeFile = file.startsWith('http') ? file : file;
+    frame.src = safeFile + '#toolbar=0&navpanes=0&scrollbar=1&view=FitH';
+    downloadLink.href = safeFile;
+    openInNewTab.href = safeFile;
+    status.textContent = 'Your PDF is loading. If it does not appear, use the buttons above to open it directly.';
+  </script>
+</body>
+</html>
