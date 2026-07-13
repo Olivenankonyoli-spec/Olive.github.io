@@ -161,7 +161,12 @@
     }
 
     function downloadMaterial(file) {
-      window.location.href = 'open-material.html?file=' + encodeURIComponent(file);
+      const baseUrl = window.location.protocol === 'file:'
+        ? 'http://127.0.0.1:3000/'
+        : `${window.location.origin}/`;
+      const target = new URL('open-material.html', baseUrl);
+      target.searchParams.set('file', file);
+      window.location.href = target.href;
     }
 
     // Load initial materials

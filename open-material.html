@@ -120,10 +120,19 @@
     const downloadLink = document.getElementById('downloadLink');
     const openInNewTab = document.getElementById('openInNewTab');
 
-    const safeFile = file.startsWith('http') ? file : file;
-    frame.src = safeFile + '#toolbar=0&navpanes=0&scrollbar=1&view=FitH';
-    downloadLink.href = safeFile;
-    openInNewTab.href = safeFile;
+    function resolveFileUrl(filePath) {
+      if (!filePath) return '';
+      if (/^https?:\/\//i.test(filePath)) return filePath;
+      const base = window.location.protocol === 'file:'
+        ? 'http://127.0.0.1:3000/'
+        : `${window.location.origin}/`;
+      return new URL(filePath.replace(/^\/+/, ''), base).href;
+    }
+
+    const resolvedFile = resolveFileUrl(file);
+    frame.src = `${resolvedFile}#toolbar=0&navpanes=0&scrollbar=1&view=FitH`;
+    downloadLink.href = resolvedFile;
+    openInNewTab.href = resolvedFile;
     status.textContent = 'Your PDF is loading. If it does not appear, use the buttons above to open it directly.';
   </script>
 </body>

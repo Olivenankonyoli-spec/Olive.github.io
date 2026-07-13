@@ -1,4 +1,4 @@
-/* Elite STEM Tutors — shared design system */
+/* Apex STEM Tutors — shared design system */
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 :root {
@@ -17,6 +17,7 @@
   --shadow-md: 0 8px 24px rgba(8, 29, 62, 0.1);
   --shadow-lg: 0 16px 48px rgba(8, 29, 62, 0.14);
   --radius: 12px;
+  --radius-md: 16px;
   --radius-lg: 20px;
   --nav-height: 72px;
   --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
@@ -927,6 +928,314 @@ a {
   margin-bottom: 0.75rem;
 }
 
+/* ——— Article pages / lesson notes ——— */
+.article-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem 0.8rem;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #fff;
+  border-radius: 999px;
+  font-size: 0.77rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.9rem;
+}
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.95rem;
+  margin-top: 1rem;
+}
+
+.article-wrap .intro {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 1.25rem 1.4rem;
+  color: var(--text-muted);
+  font-size: 1.02rem;
+  line-height: 1.8;
+  margin-bottom: 0.5rem;
+}
+
+.article-summary {
+  background: linear-gradient(135deg, rgba(8, 29, 62, 0.04), rgba(139, 31, 52, 0.06));
+  border: 1px solid rgba(139, 31, 52, 0.12);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.summary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.summary-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  background: var(--maroon);
+  color: white;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.summary-header h2 {
+  color: var(--navy);
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.summary-card {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+}
+
+.summary-card h3 {
+  color: var(--maroon);
+  font-size: 0.96rem;
+  margin-bottom: 0.5rem;
+}
+
+.summary-card p,
+.summary-card li {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.summary-card ul {
+  padding-left: 1rem;
+  margin: 0;
+}
+
+.summary-card li + li {
+  margin-top: 0.35rem;
+}
+
+.technique-card,
+.concept-card,
+.law-card,
+.week-card,
+.mistake-card,
+.hack-card,
+.topic-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.technique-header,
+.concept-header,
+.law-header,
+.week-header,
+.mistake-header,
+.hack-header,
+.topic-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.technique-title-group h2,
+.concept-title-group h2,
+.law-title-group h2,
+.week-title-group h2,
+.mistake-title h2,
+.hack-title h2,
+.topic-title h2 {
+  color: var(--navy);
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+}
+
+.technique-title-group p,
+.concept-title-group p,
+.law-title-group p,
+.week-title-group p,
+.mistake-title p,
+.hack-title p,
+.topic-title p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.technique-body p,
+.concept-body p,
+.law-body p,
+.week-body p,
+.mistake-body p,
+.hack-body p,
+.topic-body p {
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.steps-box,
+.rule-box,
+.equation-box,
+.example-box,
+.how-to,
+.key-box,
+.eq-box,
+.callout {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.1rem;
+}
+
+.steps-label,
+.rule-label,
+.equation-label,
+.example-label,
+.how-to-label,
+.key-label,
+.callout-label {
+  color: var(--maroon);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.45rem;
+}
+
+.steps-list,
+.action-list,
+.fix-steps,
+.mistakes-list {
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.4rem;
+  color: var(--text-muted);
+}
+
+.callout {
+  border-left: 4px solid var(--gold);
+  background: linear-gradient(135deg, rgba(212, 155, 42, 0.14), rgba(255, 255, 255, 0.95));
+}
+
+.section-h {
+  color: var(--navy);
+  font-size: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.section-p {
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.example-grid,
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.9rem;
+  margin-top: 1rem;
+}
+
+.example-card,
+.benefit-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 0.95rem;
+}
+
+.example-card h4,
+.benefit-card h4 {
+  color: var(--navy);
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+}
+
+.example-card p,
+.benefit-card p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.mistake-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding: 0.95rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+
+.mistake-icon,
+.example-icon,
+.hack-number,
+.mistake-number,
+.topic-number,
+.week-badge,
+.law-number,
+.concept-icon,
+.technique-icon {
+  flex-shrink: 0;
+}
+
+@media (max-width: 700px) {
+  .grade-selector {
+    text-align: left;
+  }
+
+  .grade-selector select {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+
+  .materials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .material-card {
+    padding: 1.2rem;
+  }
+
+  .download-btn {
+    width: 100%;
+  }
+}
+
 /* ——— Testimonials ——— */
 .testimonial-grid {
   display: grid;
@@ -1231,6 +1540,135 @@ a {
 }
 
 /* ——— Blog page ——— */
+.blog-spotlight {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 1.25rem;
+  background: linear-gradient(135deg, rgba(139, 31, 52, 0.08), rgba(212, 155, 42, 0.14));
+  border: 1px solid rgba(139, 31, 52, 0.12);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.blog-spotlight-content h2 {
+  color: var(--navy);
+  font-size: 1.4rem;
+  margin-bottom: 0.6rem;
+}
+
+.blog-spotlight-content p {
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 0.9rem;
+}
+
+.blog-spotlight-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  color: var(--maroon);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.blog-spotlight-card {
+  background: white;
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.06);
+}
+
+.blog-spotlight-card h3 {
+  color: var(--navy);
+  margin-bottom: 0.75rem;
+}
+
+.blog-spotlight-card ul {
+  padding-left: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.blog-spotlight-card li + li {
+  margin-top: 0.4rem;
+}
+
+.blog-pill {
+  display: inline-block;
+  background: var(--maroon);
+  color: white;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 0.65rem;
+}
+
+.subject-showcase {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.subject-card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.subject-card:hover,
+.subject-card.active {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(139, 31, 52, 0.2);
+}
+
+.subject-card h3 {
+  color: var(--navy);
+  font-size: 1rem;
+  margin-bottom: 0.35rem;
+}
+
+.subject-card p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.subject-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.8rem;
+}
+
+.subject-card-math .subject-icon {
+  background: linear-gradient(135deg, var(--navy), #3b82f6);
+}
+
+.subject-card-physics .subject-icon {
+  background: linear-gradient(135deg, var(--gold), #f59e0b);
+}
+
+.subject-card-tips .subject-icon {
+  background: linear-gradient(135deg, var(--maroon), #ec4899);
+}
+
 .search-section {
   background: var(--surface);
   padding: 1.75rem;
@@ -1285,6 +1723,31 @@ a {
   cursor: default;
   display: flex;
   flex-direction: column;
+  border-left: 4px solid transparent;
+}
+
+.blog-card-math {
+  border-left-color: #3b82f6;
+}
+
+.blog-card-physics {
+  border-left-color: #f59e0b;
+}
+
+.blog-card-tips {
+  border-left-color: #ec4899;
+}
+
+.blog-card-math .blog-image {
+  background: linear-gradient(135deg, var(--navy), #3b82f6);
+}
+
+.blog-card-physics .blog-image {
+  background: linear-gradient(135deg, var(--gold), #f59e0b);
+}
+
+.blog-card-tips .blog-image {
+  background: linear-gradient(135deg, var(--maroon), #ec4899);
 }
 
 .blog-image {
